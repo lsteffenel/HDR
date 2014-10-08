@@ -1,0 +1,107 @@
+\documentclass[a4paper]{book}
+\usepackage[T1]{fontenc}
+
+\usepackage[latin1]{inputenc} 
+%\usepackage[francais]{babel}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\chapter{Résumé des Activités de Recherche}
+
+\section{Analyse de performance et expérimentation sur des réseaux à grande échelle}
+
+%%% Découverte topologie
+%%% pLogP
+%%% prédicion des performances réseau
+
+
+La découverte de topologie
+
+La découverte de topologie a un rôle très significatif dans notre travail, car son utilité réside notamment dans l'identification dh'étérogénéités sur une grille de calcul. Cette identification est très importante dans le contexte d'une grille de calcul, une fois que la présence d'hétérogénéités augmente la complexité des modèles et réduit la précision des prédictions de performance.
+Cependant, l'environnement d'optimisation mis en place dans ce travail requiert des propriétés qui ne sont pas facilement respectées par les outils traditionnels de découverte de topologie, tels que NWS. C'est ainsi que nous développons notre propre méthodologie de découverte de topologie, qui mélange à la fois des techniques traditionnelles et des techniques de mesure de performance. Cette méthodologie, adaptée a? l'environnement des applications parallèles, a pour objectif la découverte des caractéristiques du réseau dans toute son extension, avec une analyse très pragmatique des aspects qualitatifs et quantitatifs des interconnexions réseau.
+
+la modélisation des performances
+
+Nos contributions dans le domaine de la modélisation de performance portent sur le développement et la validation de modèles de coût pour les opérations de communication collective. À partir de trois patrons de communication représentatifs, Un vers Plusieurs, Un vers Plusieurs Personnalisé et Plusieurs vers Plusieurs Personnalisé, nous étudions les différents aspects qui influencent les opérations de communication collective.
+Dans le cas des patrons Un vers Plusieurs et Un vers Plusieurs Personnalisé, notre apport s'est concentré sur l'étude des différentes stratégies de communication et le développement de modèles de performance capables de représenter correctement le fonctionnement de ces stratégies.
+Dans le cas du patron de communication Plusieurs vers Plusieurs Personnalisé, par contre, nous avons constaté que les modèles couramment cités dans la littérature ne sont pas capables de représenter les conditions réelles de congestion du réseau. Cette observation nous a poussés vers l'étude de nouveaux modèles de performance, mieux adaptés aux situations réelles. Pour cela, nous augmentons les modèles de performance courants, de manière à rendre plus précise et efficace la prédiction de performances, sans pour autant augmenter la complexité du modèle.
+
+
+\section{Mécanismes pour la communication robuste}
+  
+Dans tous les systèmes distribués, la fiabilité et la tolérance aux fautes sont des facteurs essentiels au bon fonctionnement d'un système. Selon la nature des applications, des niveaux différents de fiabilité sont nécessaires, allant de la simple vérification d'une transmission à la coordination de l'ensemble d'acteurs. Le choix des techniques les plus apropriées à chaque type d'application est donc déterminé par des éléments tels que l'environnement d'exécution et le niveau de fiabilité réquis, mais aussi par la performance des solutions vis-à-vis la taille des problèmes et des systèmes.
+
+L'un des premiers défis réside en détecter les défaillances, afin de pouvoir agir par la suite, si nécessaire. Le postulat dit "Impossibilité FLP" (nommé en raison de ses auteurs, Fischer, Linch et Paterson) démontre que dans les systèmes distribués asynchrones il est impossible de faire la distinction entre un processus défaillant (ou noeud, s'il s'agit d'une machine physique) et un processus qui est simplement trop lent à répondre. Fort heureusement telle impossibilité peut être contournée dans les réseaux informatiques habituels, car ils ne sont pas totalement asynchrones : en utilisant les spécifications des réseaux et des indices système, il est possible établir des estimations aproximatives sur les bornes de communication et ainsi prévoir avec un certain marge d'erreur quel est l'état courant d'un processus distant. Si utilisés correctement, ces détecteur permettent aux différents algorithmes de tolérance aux fautes de sortir des situations de blocage (\textit{liveness}), tout en préservant la consistance des informations (\textit{safety}).
+
+Les détecteur de défaillance sont donc des mécanismes implementés sous la forme de sondes actives ou passives et qui ont pour but la surveillance de l'activité des processus, afin de pouvoir offrir une estimation sur l'état des noeuds lorsqu'une décision s'impose. Ces mécanismes peuvent être implementés au sein même des algorithmes ou en tant que module à part, mais son rôle est toujours celui de donner des indices sur l'état actuel des machines. Dans [STEFF] je me suis intéressé au problème de la spécification des détecteurs de défaillance et à l'analyse de leur précision/performance vis-à-vis les différentes possibilités d'implémentation. En effet, la literature classique sur le thème a permis la définition de deux modèles de base, l'un passif (Push) et l'autre actif (Pull), mais ces modèles ont rarement été analysés d'un point de vue pratique, i.e., en considérant la fiabilité des estimations, le temps de réaction, la surcharge du réseau et le passage à l'échelle. Dans [STEFF] j'ai pu mener des analyses sur ces facteurs dans le cadre d'une utilisation avec le problème du consensus distribué, ce qui a permis l'élaboration d'un cahier de recommandation selon le type de environnement envisagé. 
+
+Dans le travail précédent j'ai pu aussi constater que les détecteurs de défaillances sont d'autant plus efficaces qu'ils sont intégrés au coeur du fonctionnement des algorithmes qui ont besoin de ce type de recommandation. Ainsi, par la suite je me suis intéressé au problème de la diffusion totalement ordonnée. La littérature propose généralement trois modèles pour la gestion distribuée de données : le modèle transactionnel, le modèle par accord distribué (consensus) et le modèle par vues synchrones. Les deux premiers modèles sont généralement peu performants car ils imposent un accord sur chaque donnée échangée, alors que le troisième modèle parvient à offrir des meilleurs résultats grâce à une utilisation d'un décideur centralisé (primary-backup) et d'un groupe qui fait appel au consensus uniquement lorsqu'un événement requiert le changement de la vue du système. Dans la pratique, toutefois, le modèle en vue synchrone est parfois difficile à implémenter et peut induire à des inconsistances si mal utilisé. Afin de proposer une solution alternative au mécanisme des vues synchrones, j'ai proposé un modèle mixte adapté à la diffusion totalment ordonnée, basé à la fois sur les détecteurs de défaillance, sur un petit groupe de noeuds fortement synchronisés et sur le concept de vues intermédiaires, ce qui permet un meilleur passage à l'échelle du système tout en gardant la consistance et la réactivité face aux pannes.      
+
+%% Confiit ? anneaux, jetons, terminaison, etc.
+%% CloudFIT - P2P
+%% PER-MARE - 
+%% GRAPPES - Routage 
+
+Le travail effectué à l'UFRGS entre 1999 et 2001 sous encadrement du professeur Ingrid Jansch-Pôrto a porté sur l'étude du paradigme imposé par "l'impossibilité FLP", qui prévient un système totalement asynchrone d'inférer sur l'état des processus (il est impossible de distinguer si un processus est tombé en panne ou s'il est simplement plus lent que les autres processus). Cette impossibilité représente une limitation importante lors du développement d'algorithmes distribués, une fois qu'elle empêche la détection de l'état d'un processus dans un temps fini.
+
+Toutefois, certaines techniques ont été développées afin de contourner cette restriction. En effet, les systèmes réels rarement peuvent être considérés comme totalement asynchrones. Dans la plupart des cas ils existent des limitations temporelles auxquelles nous pouvons utiliser pour déterminer la défaillance des processus. C'est ainsi que Chandra et Toueg ont proposé l'utilisation de détecteurs de défaillance, petits modules indépendants de l'application dont la seule tâche est de garder contact avec d'autres détecteurs et de surveiller les éventuels retards de communication. Pour cela, différentes stratégies ont été élaborées, dont les plus connues sont les modèles « Push » et « Heartbeat ». Dans la stratégie Push, chaque processus demande explicitement aux autres processus s'ils sont encore actifs. Un temporisateur est ainsi déclenché, et si aucune réponse n'arrive dans un temps préétabli (plus grand que le RTT du réseau), ce processus suspecté est rajouté à une liste de processus possiblement défaillants. Dans la stratégie Heartbeat, par contre, chaque processus envoie régulièrement des messages de type «I am alive!», et la détection se fait par rapport à la fréquence de réception de tels messages.
+
+Alors que la liste de processus suspects peut être incorrecte (selon l'impossibilité FLP), elle permet à des algorithmes de consensus de progresser de manière consistante malgré la suspicion de certains processus. Ce qui est encore plus important, c'est que l'algorithme de consensus peut être utilisé comme base pour le développement de différents algorithmes distribués dont la diffusion atomique et l'élection.
+
+C'est à ce point qui nous sommes intéressés par les détecteurs de défaillance. Si d'un côté les détecteurs ont permis le développement d'algorithmes de consensus tolérants aux fautes, aucune recherche n'avait été menée afin de déterminer l'impact de ces détecteurs sur la performance du consensus. En effet, le nombre de messages échangés par les détecteurs est potentiellement important, ce qui peut causer des fortes interférences aux algorithmes qui en dépendent. Nous avons donc procédé à l'analyse de différents modèles de détection de défaillance, établissant de manière expérimentale leur influence sur l'opération de consensus par rapport à des métriques telles que la précision des suspicions, la réactivité en cas de défaillance et la saturation du réseau. Des expériences ont été élaborées afin d'indiquer les méthodes les plus précis et le réglage le plus optimal (par rapport aux caractéristiques du réseau) pour la fréquence d'envoi et les timeouts.
+Les résultats de ces travaux ont été le sujet d'un article publié dans une conférence de niveau international et de cinq articles publiés dans des conférences et workshops de niveau national.
+
+
+Le travail effectué à l'EPFL entre 2001 et 2002 a été fait dans le cadre de l'École Doctorale en Systèmes de Communication. Ces travaux, effectués sous encadrement du professeur André Schiper, ont porté sur l'étude d'algorithmes efficaces pour la diffusion atomique. En effet, après la publication des travaux de Chandra et Toueg (1996), la plupart des chercheurs ont adopté les algorithmes fondés sur le consensus. Le consensus est toutefois une opération assez lourde et peu optimisée par rapport au nombre de messages envoyés. Dans nos recherches, nous avons retrouvé une famille d'algorithmes antérieurs aux travaux de Chandra et Toueg qui avaient certaines caractéristiques intéressantes, notamment par rapport au nombre de messages échangés.
+
+Nous nous sommes intéressés à l'analyse du protocole RBP par rapport à une autre solution de diffusion avec ordre totale, le modèle de réplication Primary Backup+VSC. Comme le View Synchronous Communication (VSC) est une technique largement étudiée, elle présente plusieurs stratégies qui peuvent être utilisées pour améliorer le fonctionnement du protocole RBP. Ainsi, nous avons appliqué la technique dite « modèle des deux visions », qui s'est montrée spécialement intéressante lors de l'exécution dans un environnement hétérogène. C'est à partir de cette analyse que j'ai proposé une nouvelle version de RBP basée sur des détecteurs de défaillance et une organisation hiérarchique des noeuds.
+
+Les résultats de ce travail ont été le sujet d'un article publié dans une conférence de niveau international (EuroPar 2003). Plus récemment j'ai repris le sujet afin d'améliorer sa performance et de le mettre en comparaison avec d'autres travaux similaires. Ce nouveau travail a été publié comme rapport de recherche INRIA.
+
+
+
+\section{Middlewares pour la communication à grande échelle}
+
+
+Les grilles de calcul, exemples typiques des environnements hétérogènes, représentent un défi pour l'établissement et coordination efficace des communications entre plusieurs processus. Dans ce contexte, l'efficacité des applications parallèles est spécialement liée au développement de primitives de communication collective adaptées aux environnements des grilles de calcul. Par conséquent, des primitives de communication collective doivent être optimisées et dynamiquement adaptées pour répondre à l'hétérogénéité et/ou la volatilité de l'environnement. Néanmoins, les approches traditionnelles pour adapter ces opérations sont fondées sur le simple principe de la séparation des communications locales et distantes, ce qui est malheureusement loin d'être optimale. Le sujet de notre recherche, au contraire, considère plusieurs aspects nécessaires à une bonne optimisation des opérations de communication collective. Ainsi, notre travail examine comment la découverte de topologie, la modélisation des performances et les heuristiques d'optimisation peuvent être associées pour construire des structures de communication hiérarchiques qui atteignent des performances élevées sans pour autant perdre en simplicité.
+
+Depuis quelques années le domaine du calcul haute performance a beaucoup évolué. Les supercalculateurs ou machines parallèles à mémoire distribuée ont fait place à des systèmes plus vastes, composés à partir de machines standard, qui elles aussi ont évolué avec l'arrivé des technologies multi-coeur et GPGPU.
+
+C'est à partir des années 90, grâce à la dissémination de l'Internet grand public, que l'idée généraliser l'accès aux ressources de calcul a pris forme. En effet, Ian Foster et Karl Kesselman comparent ce partage des ressources de calcul avec l'accès à la puissance électrique délivrée par les fournisseurs. C'est alors que l'interconnexion de ressources géographiquement distantes et potentiellement hétérogènes devient la prochaine étape de l'évolution des systèmes parallèles. En effet, l'évolution des technologies d'interconnexion notamment dans ce qui concerne le débit des liaisons de longue distance a permis l'interconnexion et le partage des ressources de calcul de plusieurs partenaires scientifiques, donnant naissance à ce qu'on appelle les grilles de calcul, ou metacomputing, selon le point de vue, matériel ou logiciel.
+
+Dans le cas des paradigmes d'exécution où les processus parallèles communiquent entre eux, la performance des communications devient un facteur essentiel. C'est le cas des communications collectives, opérations qui correspondent aux patrons de communication à plusieurs interlocuteurs et qui sont des outils puissants et indispensables pour la computation parallèle. Normalement, les implémentations des communications collectives (par exemple dans la bibliothèque MPI) sont adaptées aux environnements du type réseau local et ne sont pas optimisées pour les environnements fortement hétérogènes comme les grilles de calcul. Le travail effectué dans le cadre de cette thèse vise alors l'étude du comportement des communications collectives et leur modélisation en vue de concevoir des algorithmes performants adaptés aux grilles de calcul.
+
+Plusieurs travaux récents visent l'implémentation des opérations de communication collective adaptées aux systèmes à grande échelle, notamment les grilles de calcul. Dans ces environnements, l'hétérogénéité est un facteur prépondérant qui doit obligatoirement être pris en compte. L'hétérogénéité intrinsèque à ces environnements, associée à la constante évolution des ressources, empêche la création d'opérations spécifiques pour ces environnements. Pour simplifier cette modélisation, la plupart des solutions considèrent les grilles comme l'interconnexion d'îlots de grappes homogènes. Dans ce contexte, la majorité des systèmes concentre l'optimisation au niveau des communications entre les grappes, puisque ces liaisons sont généralement plus lentes que celles intérieures à la grappe.
+Il existe, toutefois, la possibilité d'organiser les communications en un plus grand nombre de couches. En effet, le découpage en plusieurs couches de communication peut conduire à des réductions du temps d'exécution plus importantes qu'un découpage en deux couches et, pour cela, il est nécessaire d'avoir la connaissance a priori du coût de communication interne à chaque grappe. Dans ce cas, le calcul de la distribution et de la hiérarchie des communications dépend des temps de communication à l'intérieur des
+grappes, qui varient selon l'opération de communication collective, le nombre de noeuds et les caractéristiques du réseau de chaque grappe.
+Dans ce travail, nous faisons face au problème de l'optimisation des opérations collectives sur des grilles de calcul à travers deux aspects fondamentaux et complémentaires, la modélisation des performances et l'étude de techniques d'ordonnancement des communications.
+
+
+l'optimisation des communications collectives pour les grilles de calcul
+
+Dans le domaine de l'optimisation des communications collectives pour les grilles de calcul, nos contributions principales portent sur la validation de techniques adaptées à cet environnement. Parmi ces techniques, nous étudions notamment les heuristiques d'ordonnancement de communication du type hiérarchique. En effet, nous travaillons sur l'hypothèse que les communications collectives sur les grilles de calcul peuvent être organisées en plusieurs couches hiérarchiques dynamiquement organisées. Cette hypothèse représente une évolution par rapport aux implémentations classiques pour les grilles comme ECO et MagPIe, où les communications sur grille suivent un ordre fixe préétabli.
+À partir de l'hypothèse en plusieurs couches, nous cherchons des heuristiques efficaces pour l'ordonnancement des communications. À l'aide de simulations et expériences pratiques, nous comparons le fonctionnement des différentes heuristiques, à la recherche de stratégies d'optimisation de communication à la fois efficaces et robustes. Cette analyse nous a permis notamment l'identification des facteurs qui affectent plus l'ordonnancement des communications, ce qui permettra le développement de nouvelles heuristiques plus adaptées aux besoins des futures générations de grilles de calcul.
+
+
+%% MPI
+%% Overlays Confiit/CloudFIT
+%% GRAPPES Routage
+
+\section{Support aux Applications Distribuées et HPC}
+
+%%% Confiit/CloudFIT
+%%% PER-MARE Hadoop
+%%% Docking
+%%% Context awareness
+%%% GridSecu
+
+\section{Future}
+
+%%% GRAPPES GAIA
+%%% CloudFIT
+
+\bibliography{/Users/lsteffenel/Documents/Angelo-Bibdesk.bib}
+
+\end{document}
