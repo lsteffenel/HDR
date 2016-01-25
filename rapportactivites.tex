@@ -12,7 +12,7 @@
 
 Tout au long de ma vie académique et professionnelle, mes travaux de recherche ont été orientés sur le développement et l'amélioration des systèmes distribués. Malgré les différents champs d'application (tolérance aux fautes, calcul distribué, traitement de masses de données), ces travaux on toujours eu pour ligne conductrice l'adaptation à l'hétérogénéité. En effet, l'hétérogénéité (des ressources, des communications, des calculs, des données, des besoins, etc.) est un facteur qui rend les systèmes à la fois plus complexes et moins fiables. Dans ce résumé d'activités je présente un aperçu des domaines où j'ai pu collaborer et qui sont marqués par l'hétérogénéité. 
 
-\section{Prise en compte de l'hétérogénéité au niveau du réseau}
+\section{L'hétérogénéité au niveau du réseau}
 
 \subsection{La découverte de la topologie}
 
@@ -48,7 +48,7 @@ L'un des premiers défis réside en détecter les défaillances, afin de pouvoir
 
 Les détecteur de défaillance sont donc des mécanismes implémentés sous la forme de sondes actives ou passives et qui ont pour but la surveillance de l'activité des processus, afin de pouvoir offrir une estimation sur l'état des noeuds lorsqu'une décision s'impose. Ces mécanismes peuvent être implémentés au sein même des algorithmes ou en tant que module à part, mais son rôle est toujours celui de donner des indices sur l'état actuel des machines. Dans [STEFF] je me suis intéressé au problème de la spécification des détecteurs de défaillance et à l'analyse de leur précision/performance vis-à-vis les différentes possibilités d'implémentation. En effet, la littérature classique sur le thème a permis la définition de deux modèles de base, l'un passif (Push) et l'autre actif (Pull), mais ces modèles ont rarement été analysés d'un point de vue pratique, i.e., en considérant la fiabilité des estimations, le temps de réaction, la surcharge du réseau et le passage à l'échelle. Dans [STEFF] j'ai pu mener des analyses sur ces facteurs dans le cadre d'une utilisation avec le problème du consensus distribué, ce qui a permis l'élaboration d'un cahier de recommandation selon le type de environnement envisagé. 
 
-\section{Mécanismes de support à la communication dans les environnements hétérogènes}
+\section{Communication dans les environnements hétérogènes}
 
 
 Dans le travail précédent j'ai pu aussi constater que les détecteurs de défaillances sont d'autant plus efficaces qu'ils sont intégrés au coeur du fonctionnement des algorithmes qui ont besoin de ce type de recommandation. Ainsi, par la suite je me suis intéressé au problème de la diffusion totalement ordonnée. La littérature propose généralement trois modèles pour la gestion distribuée de données : le modèle transactionnel, le modèle par accord distribué (consensus) et le modèle par vues synchrones. Les deux premiers modèles sont généralement peu performants car ils imposent un accord sur chaque donnée échangée, alors que le troisième modèle parvient à offrir des meilleurs résultats grâce à une utilisation d'un décideur centralisé (primary-backup) et d'un groupe qui fait appel au consensus uniquement lorsqu'un événement requiert le changement de la vue du système. Dans la pratique, toutefois, le modèle en vue synchrone est parfois difficile à implémenter et peut induire à des inconsistances si mal utilisé. Afin de proposer une solution alternative au mécanisme des vues synchrones, j'ai proposé un modèle mixte adapté à la diffusion totalement ordonnée, basé à la fois sur les détecteurs de défaillance, sur un petit groupe de noeuds fortement synchronisés et sur le concept de vues intermédiaires, ce qui permet un meilleur passage à l'échelle du système tout en gardant la consistance et la réactivité face aux pannes.      
@@ -81,7 +81,7 @@ Les résultats de ce travail ont été le sujet d'un article publié dans une co
 %% Overlays Confiit/CloudFIT
 %% GRAPPES Routage
 
-\section{Support aux Applications Distribuées et HPC}
+\section{Support aux Applications Distribuées et l'HPC}
 
 %%% Confiit/CloudFIT
 %%% PER-MARE Hadoop
@@ -89,9 +89,9 @@ Les résultats de ce travail ont été le sujet d'un article publié dans une co
 %%% Context awareness
 %%% GridSecu
 
-\section{Future}
+\section{Futur: l'Internet des Objets}
 
-%%% GRAPPES GAIA
+%%% GRAPPES
 %%% CloudFIT
 
 \bibliography{/Users/lsteffenel/Documents/Angelo-Bibdesk.bib}
