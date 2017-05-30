@@ -1,0 +1,65 @@
+\select@language {french}
+\contentsline {part}{Introduction}{9}{chapter*.2}
+\contentsline {chapter}{\numberline {1}L'Hétérogénéité des Communications}{11}{chapter.1}
+\contentsline {section}{\numberline {1}Modélisation des Performances d'un Réseau}{12}{section.1.1}
+\contentsline {subsection}{\numberline {1.1}Exécution dans les systèmes distribués}{12}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.2}Modélisation des Communications}{13}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.3}pLogP}{14}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.4}Exemple d'utilisation: modélisation d'un Broadcast\emph {: MPI\_Bcast}}{15}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.5}Validation des modèles}{17}{subsection.1.1.5}
+\contentsline {section}{\numberline {2}Modélisation de MPI\_Broadcast dans une Grille}{18}{section.1.2}
+\contentsline {subsection}{\numberline {2.1}Évaluation pratique}{24}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {2.2}Considérations sur l'opération MPI\_Bcast }{26}{subsection.1.2.2}
+\contentsline {section}{\numberline {3}Bilan et Perspectives}{27}{section.1.3}
+\contentsline {chapter}{\numberline {2}L'hétérogénéité des Données}{29}{chapter.2}
+\contentsline {section}{\numberline {1}L'Hétérogénéité des Données - la grille GRAPP\&S}{29}{section.2.1}
+\contentsline {subsection}{\numberline {1.1}Introduction}{29}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {1.2}État de l'Art}{30}{subsection.2.1.2}
+\contentsline {section}{\numberline {2}L'Architecture GRAPP\&S }{32}{section.2.2}
+\contentsline {subsection}{\numberline {2.1}Définitions}{32}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2}Communication et les réseaux overlay}{33}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Éléments de l'Architecture GRAPP\&S}{33}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.4}Communicator ($c$)}{33}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.5}Ressource manager ($RM$)}{34}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.6}Data manager ($DM$)}{34}{subsection.2.2.6}
+\contentsline {section}{\numberline {3}Gestion de la Communauté}{34}{section.2.3}
+\contentsline {subsection}{\numberline {3.1}Gestion des N{\oe }uds}{36}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Connexion d'un n{\oe }ud}{36}{subsubsection.2.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Déconnexion d'un n{\oe }ud}{36}{subsubsection.2.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Algorithmes d'élection}{37}{subsection.2.3.2}
+\contentsline {section}{\numberline {4}Opérations dans GRAPP\&S}{38}{section.2.4}
+\contentsline {subsection}{\numberline {4.1}Stockage et Indexation}{38}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {4.2}Recherche}{38}{subsection.2.4.2}
+\contentsline {section}{\numberline {5}Bilan et Perspectives}{40}{section.2.5}
+\contentsline {chapter}{\numberline {3}L'hétérogénéité des Ressources de Calcul}{41}{chapter.3}
+\contentsline {section}{\numberline {1}Hétérogénéité des Tâches - application à la recherche en amarrage moléculaire}{42}{section.3.1}
+\contentsline {subsection}{\numberline {1.1}Travaux proches et métodologie de parallélisation}{42}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {1.2}Parallélisme Intérieur : décomposition des tâches}{43}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Décomposition géométrique arbitraire}{43}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Décomposition Géométrique avec superposition}{44}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Recherche de cavités}{45}{subsubsection.3.1.2.3}
+\contentsline {subsection}{\numberline {1.3}Gestion et déploiement des tâches de calcul}{45}{subsection.3.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Optimisation aux clusters HPC}{46}{subsubsection.3.1.3.1}
+\contentsline {subsection}{\numberline {1.4}Évaluation pratique}{47}{subsection.3.1.4}
+\contentsline {section}{\numberline {2}Hétérogénéité des Ressources de Calcul}{49}{section.3.2}
+\contentsline {subsection}{\numberline {2.1}About Hadoop Scheduling}{51}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Hadoop Framework Architecture}{51}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Hadoop Schedulers}{51}{subsubsection.3.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Related Work}{53}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {2.3}Context-Aware Scheduling}{54}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {2.4}Experiments and Results}{56}{subsection.3.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Execution scenarios}{56}{subsubsection.3.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Application benchmarks}{58}{subsubsection.3.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Environment setup and configuration for the controlled experiments}{58}{subsubsection.3.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Discussions}{65}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {2.6}Conclusion}{67}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}CloudFIT : un intergiciel pour le \textit {edge-computing} et les réseaux IoT}{69}{chapter.4}
+\contentsline {section}{\numberline {1}Introduction}{70}{section.4.1}
+\contentsline {section}{\numberline {2}État de l'Art}{71}{section.4.2}
+\contentsline {section}{\numberline {3}Calcul Multi-Échelle}{72}{section.4.3}
+\contentsline {subsection}{\numberline {3.1}Communication, coordination et clustering}{73}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {3.2}Contexte et ordonnancement}{75}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {3.3}Accès aux données}{75}{subsection.4.3.3}
+\contentsline {part}{Conclusion et perspectives}{81}{figure.4.5}
+\contentsline {part}{Publications personnelles}{83}{figure.4.5}
+\contentsline {chapter}{Bibliographie}{91}{section*.34}

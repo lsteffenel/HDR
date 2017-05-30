@@ -1,0 +1,161 @@
+%%
+%% commandes diverses
+%%
+
+\NeedsTeXFormat{LaTeX2e}[95/01/31]
+\ProvidesPackage{cmddvr}[1995/12/21 : commandes diverses v1.0] 
+\typeout{Package : cdmdvr 1995/12/21 : commandes diverses v1.0}
+
+\DeclareOption*{\PackageWarning{cmddvr}{Option '\CurrentOption' inconnue}}
+\ProcessOptions
+
+%% ordre \fsc{<nom>} pour ecrire les noms propres
+\def\fsc@@@@#1{\def\@tempa#1{#1}%
+               \expandafter\fsc@\@tempa#1\@@}%
+\def\fsc{\protect\fsc@@@@}%
+\def\fsc@#1#2\@@{\leavevmode{%
+                 \sc\hbox{\let\protect\@empty%
+                          \let\@typeset@protect\@empty%
+                          \let\@changed@x\@changed@x@mouth%
+                          \if\relax\noexpand#1\fsc@@@#1#2\@@%
+                          \else\edef\@tempa{#1#2}%
+                               \expandafter\fsc@@\@tempa\@@%
+                          \fi}}}%
+\def\fsc@@#1#2\@@{\uppercase{#1}\lsc@{#2}}%
+\def\fsc@@@#1#2#3\@@{\uppercase{#1{#2}}\lsc@{#3}}%
+
+%% ordre \lsc{<nom>} pour ecrire les sigles
+\def\lsc#1{\leavevmode{\sc\hbox{\protect\lsc@{#1}}}}%
+       \def\lsc@#1{{\edef\csname @temp@\endcsname{{#1}}%
+                     \expandafter\lowercase\csname @temp@\endcsname}}%
+
+%% ordre \fup{<texte>} pour ecrire une texte en exposant
+\def\fup#1{\leavevmode\raise+0.55ex%
+           \hbox{\protect\small\lowercase{#1}}\kern+.17em}%
+
+%% espace entre les paragraphes
+\newcommand{\parspace}{\vskip2ex}		
+
+%% ligne de separation dans un texte
+\newcommand{\textrule}{\hrule height 0.4pt}
+
+%% reference a des notes en bas de page (a la place de \ref{##})
+\newcommand{\fnref}[1]{\fup{\scriptsize \ref{#1}}}
+
+%% petites commandes diverses
+\def\@Fsp#1{$^{\mathrm #1}$}
+\def\@umer#1{\@Fsp{#1}\kern.2em\ignorespaces}
+\def\cad{\hbox{c.-\`a-d.} }
+\def\cf{{\em cf.} }
+%\def\degres{\@Fsp{o} }
+\def\ie{{\em i.e.} }
+\def\ieme{\protect\fup{e} }
+\def\iemes{\protect\fup{es} }
+\def\ier{\protect\fup{er} }
+\def\iers{\protect\fup{ers} }
+\def\iere{\protect\fup{re} }
+\def\ieres{\protect\fup{res} }
+\def\numero{n\@umer{o} }
+\def\Numero{N\@umer{o} }
+\def\numeros{n\@umer{os} }
+\def\Numeros{N\@umer{os} }
+
+%% manipulation des lettrine
+\font\lettrinefont=cmr17 scaled 1800
+\def\@FL{%
+\newcount\@FrCount
+\newdimen\@FrDimen
+\def\lettrine{\par%
+              \let\@tempa\relax%
+              \def\@tempa{\def\@fbr{\fboxrule=\z@}%
+                                   \protect\@lettrineS%
+                                  }%
+              \@tempa}%
+    \def\@ettrine##1##2\par{\bgroup\parskip=\z@%
+                           {\rm\xdef\bef@ly{\the\font}}%
+                           \let\newpage=\relax\let\clearpage=\relax%
+                           \let\cleardoublepage=\relax%
+                                    \edef\bef@fnt{\the\font}%
+                           \def\bef@let{}%
+                          \@@ttrine{##1}{##2}\egroup}%
+    \def\@@ttrine##1##2{\def\@@ttrnxt{\@@@trine##1\@@{##2}\smallskip}%
+                       \@@ttrnxt\par}%
+    \def\@@@trine##1##2\@@##3{\@fbr\everypar{}%
+    \ifx\lettrinefontname\undefined\let\auTo@lh\undefined%
+               \else\let\auTo@lh\lettrinehang%
+               \ifx\auTo@lh\undefined\def\auTo@lh{2}\fi%
+               \bgroup%
+               \ifx\@htfreq\undefined\newdimen\@htfreq\newdimen\@htfbase\fi%
+               \setbox0=\hbox{M}\@htfreq=\ht0%
+               \def\dimentocount####1{\expandafter\auTo@gf\the####1}%
+               \font\@fontreq=\lettrinefontname%
+               \setbox0=\hbox{\@fontreq ##1}\@htfbase=\ht0%
+               \advance\@htfreq by \auTo@lh\baselineskip%
+               \advance\@htfreq by \lineskip%
+               \advance\@htfreq by -\baselineskip%
+               \multiply\@htfreq by 100 %
+               \multiply\@htfbase by 100 %
+               \divide\@htfreq by \dimentocount\@htfbase%
+               \multiply\@htfreq by \@m%
+\global\font\lettrinefont=\lettrinefontname\space scaled \dimentocount\@htfreq%
+               \egroup%
+    \fi%
+         \setbox0\hbox{%
+                       {\shortstack{\bef@let{\lettrinefont##1}\relax%
+                        \ifdim\fontdimen\@ne\font>\z@\/\space\fi}}}%
+         \@FrDimenH=\ht0\advance\@FrDimenH by\dp0%
+         \@FrDimenS=\@FrDimenH\advance\@FrDimenS by\fboxsep%
+         \divide\@FrDimenS by\baselineskip\@FrCount=\@FrDimenS%
+         \@FrDimen=\baselineskip\multiply\@FrDimen by-\@FrCount%
+         \advance\@FrDimen by\@FrDimenH%
+         \ifdim\@FrDimen>0.025\baselineskip \advance\@FrCount by 1\fi%
+         \ifx\auTo@lh\undefined\else\@FrCount=\auTo@lh\fi%
+         \ifx\lettrinehang\undefined\else\@FrCount=\lettrinehang\fi%
+         \@FrDimenI=\wd0%
+         \ifdim\fboxrule=\z@\else\advance\@FrDimenI by2\fboxrule%
+                                 \advance\@FrDimenI by2\fboxsep\fi%
+         \@FrDimenS=\fontdimen2\font\advance\@FrDimenI by+3\@FrDimenS%
+         \ifdim\fboxrule=\z@\advance\@FrDimenI by-0.30\@FrDimenS\fi%
+         \advance\@FrCount by -1%
+                 \@FrDimen=\@FrCount\baselineskip%
+         \advance\@FrCount by 1%
+         \ifdim\fboxrule=\z@\else\advance\@FrDimen by -\fboxrule\fi%
+         \@FrDimenH=-\dp0%
+         \setbox0\hbox{\ifdim\fboxrule=\z@\kern-\fboxsep\fi%
+                       \fbox{\shortstack{{%
+                          \lettrinefont\raise-\@FrDimen\hbox{##1}\relax%
+                          \ifdim\fontdimen\@ne\font>\z@\/\space\fi}}}}%
+         \box0\@FrDimen=\@FrDimenH%
+              \advance\@FrDimenH by-\@FrCount\baselineskip%
+              \advance\@FrDimenH by \lineskip%
+              \ifdim\fboxrule=\z@\else\advance\@FrDimenH by -\fboxrule\fi%
+         \vspace*{\@FrDimenH}%
+         \hangindent=\@FrDimenI%
+\ifx\lettrinehang\undefined%
+         \ifdim\@FrDimen<-0.025\baselineskip%
+               \advance\@FrCount by\@ne%
+               \divide\@FrDimen by-\baselineskip%
+               \advance\@FrCount by\@FrDimen%
+         \fi%
+\fi%
+         \ifnum\@FrCount=1\typeout{lettrine \`a revoir}\fi%
+         \hangafter=-\@FrCount%
+         \noindent\kern-2.5\@FrDimenS%
+         \def\@temp@{##2}%
+         \ifx\empty\@temp@\typeout{lettrine r\'eduite \`a 1 seule lettre}%
+                      \else{\lsc{##2}}\fi\space ##3%
+                           }%
+\def\flettrine{\par%
+               \let\@tempa\relax%
+               \def\@tempa{\def\@fbr{}\protect\@lettrineS}%
+               \@tempa}%
+\def\@lettrineS{\ifx\@FrDimenH\undefined%
+                              \newdimen\@FrDimenH\newdimen\@FrDimenI\fi%
+                \ifx\@FrDimenS\undefined\newdimen\@FrDimenS\fi%
+                \@ettrine%
+               }%
+}%
+\@FL
+
+\endinput
+%%

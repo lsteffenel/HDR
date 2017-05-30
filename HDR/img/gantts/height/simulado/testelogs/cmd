@@ -1,0 +1,11 @@
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ grep -e "RMContainerImpl" C.log > grepRM
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ grep  -e "Assigned container" C.log > grepAssign
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ mkdir ini
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ mkdir fim
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ mv grepAssign ini/
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ grep -e "to RUNNING" grepRM > ini/run
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ grep -e "to COMPLETED" grepRM > fim/comp
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C$ cd ini/
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C/ini$ cut -d' ' -f2,6,8,11-12,15 grepAssign > AssignCut
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C/ini$ cd ../fim/
+cassales@cassales:~/Dropbox/UFSM/Mestrado/ARTIGO MISTERIOSO/logs/C/fim$ cut -d' ' -f2,5,11 comp > RMCut

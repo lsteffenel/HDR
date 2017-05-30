@@ -1,0 +1,65 @@
+#!/bin/sh
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/ediction/\édiction/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/Echange/\Échange/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/Inferieure/Inf\érieure/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/Optimise/Optimis\é/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/hain/ha\în/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/estime/observ\ée/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/Mesurees/Mesur\é\es/' $x > temp`
+   mv temp $x
+ done
+for x in `ls *.eps`
+ do
+  if [ ! -f $x ]; then
+   continue
+  fi
+   `sed -e 's/modelise/modelis\é/' $x > temp`
+   mv temp $x
+ done

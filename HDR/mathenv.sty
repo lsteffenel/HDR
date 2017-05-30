@@ -1,0 +1,200 @@
+%%
+%% definition d'environnement mathematiques
+%%
+
+\NeedsTeXFormat{LaTeX2e}[95/01/31]
+\ProvidesPackage{mathenv}[1996/01/26 : environnements mathematiques v1.1] 
+\typeout{Package : mathenv 1996/01/26 : environnements mathematiques v1.1}
+
+\newif\if@french
+\newif\if@chapter
+\newif\if@numbered
+\newif\if@sserif
+\@numberedtrue
+\@sseriffalse
+
+\DeclareOption{french}
+	{\@frenchtrue}
+\DeclareOption{english}
+	{\@frenchfalse}
+\DeclareOption{chapter}
+	{\@chaptertrue}
+\DeclareOption{section}
+	{\@chapterfalse}
+\DeclareOption{nonumber}
+	{\@numberedfalse}
+\DeclareOption{sserif}
+	{\@sseriftrue}
+\DeclareOption*{\PackageWarning{mathenv}{Option '\CurrentOption' inconnue}}
+
+\ExecuteOptions{french, section}
+\ProcessOptions
+
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{latexsym}
+
+\if@french
+   \newcommand{\axiomname}{Axiome}%
+   \newcommand{\corollaryname}{Corollaire}%
+   \newcommand{\definitionname}{D\'efinition}%
+   \newcommand{\examplename}{Exemple}%
+   \newcommand{\lemmaname}{Lemme}%
+   \newcommand{\notationname}{Notation}%
+   \newcommand{\notename}{Note}%
+   \newcommand{\problemname}{Probl\`eme}%
+   \newcommand{\proofname}{Preuve~}%
+   \newcommand{\propositionname}{Proposition}%
+   \newcommand{\propertyname}{Propri\'et\'e}%
+   \newcommand{\remarkname}{Remarque~}%
+   \newcommand{\theoremname}{Th\'eor\`eme}
+\else
+   \newcommand{\axiomname}{Axiom}%
+   \newcommand{\corollaryname}{Corollary}%
+   \newcommand{\definitionname}{Definition}%
+   \newcommand{\examplename}{Example}%
+   \newcommand{\lemmaname}{Lemma}%
+   \newcommand{\notationname}{Notation}%
+   \newcommand{\notename}{Note}%
+   \newcommand{\problemname}{Problem}%
+   \newcommand{\proofname}{Proof}%
+   \newcommand{\propositionname}{Proposition}%
+   \newcommand{\propertyname}{Property}%
+   \newcommand{\remarkname}{Remark}%
+   \newcommand{\theoremname}{Theorem}
+\fi
+
+%% definitions des ensembles mathematiques
+\newcommand{\Nset}{\ensuremath{\mathbb{N}} }
+\newcommand{\Zset}{\ensuremath{\mathbb{Z}} }
+\newcommand{\Qset}{\ensuremath{\mathbb{Q}} }
+\newcommand{\Rset}{\ensuremath{\mathbb{R}} }
+\newcommand{\Cset}{\ensuremath{\mathbb{C}} }
+
+%% definition de la complexit\'e parallele
+\newcommand{\Opar}{\ensuremath{\mbox{O}_\shortparallel}}
+\newcommand{\Tpar}{\ensuremath{\mbox{T}_\shortparallel}}
+\newcommand{\Omegapar}{\ensuremath{\Omega_\shortparallel}}
+
+%% definition de environnements theoremes
+\if@numbered
+   \if@chapter
+      \newtheorem{theorem}{\theoremname}[chapter]
+   \else
+      \newtheorem{theorem}{\theoremname}[section]
+   \fi
+\else
+   \newtheorem{theorem}{\theoremname}
+\fi
+
+\newtheorem{axiom}[theorem]{\axiomname}
+\newtheorem{corollary}[theorem]{\corollaryname}
+\newtheorem{definition}[theorem]{\definitionname}
+\newtheorem{lemma}[theorem]{\lemmaname}
+\newtheorem{notation}[theorem]{\notationname}
+\newtheorem{note}[theorem]{\notename}
+\newtheorem{problem}[theorem]{\problemname}
+\newtheorem{proposition}[theorem]{\propositionname}
+\newtheorem{property}[theorem]{\propertyname}
+
+%% modification du meta-environnement << theorem >>
+\if@sserif
+   \def\@begintheorem#1#2{\trivlist
+       \item[\hskip \labelsep{\sffamily\bfseries #1\ #2}]\itshape}
+   \def\@oparbegintheorem#1#2#3{\trivlist
+       \item[\hskip \labelsep{\sffamily\bfseries #1\ #2\ (#3)}]\itshape}
+\else
+   \def\@begintheorem#1#2{\trivlist
+       \item[\hskip \labelsep{\bfseries #1\ #2}]\itshape}
+   \def\@oparbegintheorem#1#2#3{\trivlist
+       \item[\hskip \labelsep{\bfseries #1\ #2\ (#3)}]\itshape}
+\fi
+
+%% definition de l'environnement << proof >>
+\if@sserif
+   \newenvironment{proof}
+     {\medskip{\raggedleft{\sffamily\bfseries\proofname:~}}\nopagebreak}
+     {\hfill $\Box$ \hfil\par\medskip}
+\else
+   \newenvironment{proof}
+     {\medskip{\raggedleft{\bfseries\proofname:~}}\nopagebreak}
+     {\hfill $\Box$ \hfil\par\medskip}
+\fi
+
+%% definition de l'environnement << proof* >> : pas de carre en fin de derniere
+%% ligne
+\if@sserif
+   \newenvironment{proof*}
+     {\medskip{\raggedleft{\sffamily\bfseries\proofname:~}}\nopagebreak}{}
+\else
+   \newenvironment{proof*}
+     {\medskip{\raggedleft{\bfseries\proofname:~}}\nopagebreak}{}
+\fi
+
+\newcommand{\EndProof}{\hfill $\Box$}
+
+%% definition de l'environnement << remark >>
+\if@sserif
+   \newenvironment{remark}
+     {\medskip{\raggedleft{\sffamily\bfseries\small\remarkname:~}}\nopagebreak
+       \begin{small}}
+     {\end{small}\hfill $\diamond$ \hfil\par\medskip}
+\else
+   \newenvironment{remark}
+     {\medskip{\raggedleft{\bfseries\small\remarkname:~}}\nopagebreak
+       \begin{small}}
+     {\end{small}\hfill $\diamond$ \hfil\par\medskip}
+\fi
+
+%% definition de l'environnement << example >> (le nom de l'exemple est en
+%% parametre)
+\if@chapter
+   \newcounter{example}[chapter]
+   \if@french
+      \renewcommand{\theexample}{\thechapter.\@arabic\c@example~}
+   \else
+      \renewcommand{\theexample}{\thechapter.\@arabic\c@example}
+   \fi
+\else
+   \newcounter{example}[section]
+   \if@french
+      \renewcommand{\theexample}{\thesection.\@arabic\c@example~}
+   \else
+      \renewcommand{\theexample}{\thesection.\@arabic\c@example}
+   \fi
+\fi
+\newlength{\examplewidth}
+\setlength{\examplewidth}{\textwidth}
+\addtolength{\examplewidth}{-\parindent}
+\if@sserif
+   \newenvironment{example}[1]
+     {\refstepcounter{example}%
+         \trivlist\item[\hskip \labelsep{\sffamily\bfseries
+           \examplename~\theexample:}~#1.]%
+       \hfil\par\nopagebreak
+       \begin{small}}
+     {\end{small} \endtrivlist}
+\else
+   \newenvironment{example}[1]
+     {\refstepcounter{example}%
+         \trivlist\item[\hskip \labelsep{\bfseries
+           \examplename~\theexample:}~#1.]%
+       \hfil\par\nopagebreak
+       \begin{small}}
+     {\end{small} \endtrivlist}
+\fi
+
+%% definition de l'environnement << example* >> : pas de numero ni de nom
+\if@sserif
+   \newenvironment{example*}
+     {\trivlist\item[\hskip \labelsep{\sffamily\bfseries \examplename:}~]
+       \begin{small}}
+     {\end{small} \endtrivlist}
+\else
+   \newenvironment{example*}
+     {\trivlist\item[\hskip \labelsep{\bfseries \examplename:}~]
+       \begin{small}}
+     {\end{small} \endtrivlist}
+\fi
+
+\endinput
