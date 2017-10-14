@@ -876,7 +876,7 @@
 \newcommand{\domainname}{\'Ecole doctorale Sciences, Technologies, Santé}
 \newcommand{\soutname}{Soutenue \`a Reims, le }
 \newcommand{\compositionname}{\hskip-1.7cm Composition du jury :}
-\newcommand{\laboname}{CReSTIC -- CASH}
+\newcommand{\laboname}{Laboratoire CReSTIC (EA 3804) -- Équipe CASH}
 
 \newcommand{\today}{\number\day\space \ifcase\month\or
   janvier\or f\'evrier\or mars\or avril\or mai\or juin\or

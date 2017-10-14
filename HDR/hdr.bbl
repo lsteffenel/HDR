@@ -1,0 +1,920 @@
+\begin{thebibliography}{100}
+
+\bibitem{Abagyan2001}
+R.~Abagyan and M.~Totrov.
+\newblock High-throughput docking for lead generation.
+\newblock {\em Curr. Opin. Chem. Biol.}, 5(4):375--382, 2001.
+
+\bibitem{Alexandrov95}
+Albert Alexandrov, Mihai Ionescu, Klaus Schauser, and Chris Scheiman.
+\newblock {LogGP}: Incorporating long messages into the {LogP} model - one step
+  closer towards a realistic model for parallel computation.
+\newblock In {\em Proceedings of the 7th Annual Symposium on Parallel
+  Algorithms and Architecture (SPAA'95)}, 1995.
+
+\bibitem{Allen2002}
+F.~H. Allen.
+\newblock Acta crystallogr. b.
+\newblock {\em The Cambridge Structural Database: a quarter of a million
+  crystal structures and rising}, 58(3):380--388, 2002.
+
+\bibitem{Hadoop}
+Apache.
+\newblock Apache hadoop, 2014.
+\newblock \url{http://hadoop.apache.org/docs/r2.6.0/index.html}. Last access:
+  November 2014.
+
+\bibitem{Baldauf}
+Matthias Baldauf, Schahram Dustdar, and Florian Rosenberg.
+\newblock A survey on context-aware systems.
+\newblock {\em Int. J. Ad Hoc Ubiquitous Comput.}, 2(4):263--277, June 2007.
+
+\bibitem{Banikazemi98}
+Mohammad Banikazemi, Vijay Moorthy, and Dhabaleswar~K. Panda.
+\newblock Efficient collective communication on heterogeneous networks of
+  workstations.
+\newblock In {\em Proceedings of the International Conference on Parallel
+  Processing (ICPP'98)}, pages 460--467, 1998.
+
+\bibitem{Bar-Noy94}
+Amotz Bar-Noy and Shlomo Kipnis.
+\newblock Designing broadcasting algorithms in the postal model for
+  message-passing systems.
+\newblock {\em Math. Systems Theory}, 27(5):431--452, 1994.
+
+\bibitem{Steffenel04a}
+Luiz~Angelo Barchet-Steffenel and Gregory Mounie.
+\newblock Fast tuning of intra-cluster collective communications.
+\newblock In {\em Proceedings of the Euro PVM/MPI 2004}, LNCS Vol. 3241, pages
+  28--35, Budapest, Hungary, 2004.
+
+\bibitem{Steffenel04c}
+Luiz~Angelo Barchet-Steffenel and Gregory Mounie.
+\newblock Performance characterisation of intra-cluster collective
+  communications.
+\newblock In {\em Proceedings of the 16th Symposium on Computer Architecture
+  and High Performance Computing (SBAC-PAD 2004)}, pages 254--261, Foz do
+  Iguacu, Brazil, Sep 2004.
+
+\bibitem{Barnett96}
+Mike Barnett, David Payne, Robert van~de Geijn, and Jerrel Watts.
+\newblock Broadcasting on meshes with wormhole routing.
+\newblock {\em Journal of Parallel and Distributed Computing}, 35(2):111--122,
+  1996.
+
+\bibitem{Beaumont04a}
+Olivier Beaumont and Loris Marchal.
+\newblock Pipelining broadcasts on heterogeneous platforms under the one-port
+  model.
+\newblock Technical report, LIP, ENS Lyon, France, 2004.
+
+\bibitem{Beaumont04c}
+Olivier Beaumont, Loris Marchal, and Yves Robert.
+\newblock Broadcast trees for heterogeneous platforms.
+\newblock Technical report, LIP, ENS Lyon, France, 2004.
+
+\bibitem{Beaumont05b}
+Olivier Beaumont, Loris Marchal, and Yves Robert.
+\newblock Broadcasts trees for heterogeneous platforms.
+\newblock In {\em Proceedings of the International Parallel and Distributed
+  Processing Symposium (IPDPS 2005)}, 2005.
+
+\bibitem{Bernaschi98}
+Massimo Bernaschi and Giulio Iannello.
+\newblock Collective communication operations: Experimental results vs. theory.
+\newblock {\em Concurrency: Practice and Experience}, 10(5):359--386, April
+  1998.
+
+\bibitem{Bhat99}
+P.~B. Bhat, V.K. Prasanna, and C.S. Raghavendra.
+\newblock Adaptive communication algorithms for distributed heterogeneous
+  systems.
+\newblock {\em Journal of Parallel and Distributed Computing},
+  1999(59):252--279, 1999.
+
+\bibitem{Bhat03}
+P.~B. Bhat, C.S. Raghavendra, and V.K. Prasanna.
+\newblock Efficient collective communication in distributed heterogeneous
+  systems.
+\newblock {\em Journal of Parallel and Distributed Computing},
+  2003(63):251--279, 2003.
+
+\bibitem{ISISxOSPF}
+Manav Bhatia, Vishwas Manral, and Yasuhiro Ohara.
+\newblock {IS-IS and OSPF Difference Discussion}.
+\newblock IETF Internet Draft, January 2006.
+
+\bibitem{Bonomi2012}
+Flavio Bonomi, Rodolfo Milito, Jiang Zhu, and Sateesh Addepalli.
+\newblock Fog computing and its role in the internet of things.
+\newblock In {\em Proceedings of the 1st MCC Workshop on Mobile Cloud
+  Computing}, MCC '12, pages 13--16, New York, NY, USA, 2012. ACM.
+
+\bibitem{Brinksma1998}
+E.~J. Brinksma, Y.~J. Meijer, B.~J. Connor, G.~L. Manney, J.~B. Bergwerff,
+  G.~E. Bodeker, I.~S. Boyd, J.~B. Liley, W.~Hogervorst, J.~W. Hovenier, N.~J.
+  Livesey, and D.~P.~J. Swart.
+\newblock Analysis of record-low ozone values during the 1997 winter over
+  lauder, new zealand.
+\newblock {\em Geophysical Research Letters}, 25(15):2785--2788, 1998.
+
+\bibitem{Bruck97b}
+Jehoshua Bruck, Ching-Tien Ho, Shlomo Kipnis, Eli Upfal, and Derrick
+  Weathersby.
+\newblock Efficient algorithms for all-to-all communications in multiport
+  message-passing systems.
+\newblock {\em IEEE Transactions on Parallel and Distributed Systems},
+  8(11):1143--1156, November 1997.
+
+\bibitem{Capit2005}
+N.~Capit, G.~da~Costa, Y.~Georgiou, G.~Huard, C.~Martin, G.~Mounie, P.~Neyron,
+  and O.~Richard.
+\newblock A batch scheduler with high level components.
+\newblock In {\em May}, volume~2, pages 776--783, 2005.
+
+\bibitem{Casanova05}
+Henri Casanova.
+\newblock Network modeling issues for grid application scheduling.
+\newblock {\em International Journal of Foundations of Computer Science},
+  16(2):145--162, 2005.
+
+\bibitem{Casiccia2008}
+Claudio Casiccia, Felix Zamorano, and A.~Hernandez.
+\newblock Erythemal irradiance at the magellan's region and antarctic ozone
+  hole 1999-2005.
+\newblock {\em Atmosfera}, 21(1):2--12, 2008.
+
+\bibitem{UBICOMM2014}
+Guilherme~W. Cassales, Andrea~S. Charao, Manuele~Kirsch Pinheiro, Carine
+  Souveyet, and Luiz~A. Steffenel.
+\newblock Bringing context to apache hadoop.
+\newblock In {\em 8th International Conference on Mobile Ubiquitous Computing},
+  Rome, Italy, 2014.
+
+\bibitem{Castro2002}
+M.~Castro, P.~Druschel, A-M. Kermarrec, and A.~Rowstron.
+\newblock One ring to rule them all: Service discovery and binding in
+  structured peer-to-peer overlay networks.
+\newblock In {\em SIGOPS European Workshop}, France, Sep 2002.
+
+\bibitem{Cavallo2015}
+Marco Cavallo, Lorenzo Cusma, Giuseppe~Di Modica, Carmelo Polito, and Orazio
+  Tomarchio.
+\newblock A scheduling strategy to run hadoop jobs on geodistributed data.
+\newblock In {\em 3rd Workshop on CLoud for IoT (CLIoT 2015), in conjunction
+  with the European Conference on Service-Oriented and Cloud Computing (ESOCC
+  2015)}, 2015.
+
+\bibitem{Chalopin06}
+J{\'e}r{\'e}mie Chalopin, Emmanuel Godard, Yves M{\'e}tivier, and Rodrigue
+  Ossamy.
+\newblock {Mobile agent algorithms versus message passing algorithms}.
+\newblock In {\em {Principle of distributed systems}}, volume 4305 of {\em
+  LNCS}, pages 185--199, France, 2006. Springer.
+
+\bibitem{Chandra96}
+Tushar~Deepak Chandra and Sam Toueg.
+\newblock Unreliable failure detectors for reliable distributed systems.
+\newblock {\em Journal of the ACM}, 43(2):225--267, 1996.
+
+\bibitem{Chen}
+Quan Chen, Daqiang Zhang, Minyi Guo, Qianni Deng, and Song Guo.
+\newblock Samr: A self-adaptive mapreduce scheduling algorithm in heterogeneous
+  environment.
+\newblock In {\em Proceedings of the 2010 10th IEEE International Conference on
+  Computer and Information Technology}, CIT '10, pages 2736--2743, Washington,
+  DC, USA, 2010. IEEE Computer Society.
+
+\bibitem{Chen2001b}
+Y.~Z. Chen and C.~Y. Ung.
+\newblock Prediction of potential toxicity and side effect protein targets of a
+  small molecule by a ligand--protein inverse docking approach.
+\newblock {\em Journal of Molecular Graphics and Modelling}, 20(3):199--218,
+  2001.
+
+\bibitem{Chen2001}
+Y.~Z. Chen and D.~G. Zhi.
+\newblock Ligand--protein inverse docking and its potential use in the computer
+  search of protein targets of a small molecule.
+\newblock {\em Proteins : Structure, Function, and Bioinformatics},
+  43(2):217--226, 2001.
+
+\bibitem{Christara99}
+Christina Christara, Xiaoliang Ding, and Ken Jackson.
+\newblock An efficient transposition algorithm for distributed memory
+  computers.
+\newblock In {\em Proceedings of the High Performance Computing Systems and
+  Applications}, pages 349--368, 1999.
+
+\bibitem{Chun01}
+Anthony Tam~Tat Chun.
+\newblock {\em Performance Studies of High-Speed Communication on Commodity
+  Cluster}.
+\newblock PhD thesis, University of Hong Kong, 2001.
+
+\bibitem{IOx2017}
+Cisco.
+\newblock Cisco iox.
+
+\bibitem{FogCISCO}
+{Cisco Research Center Requests for Proposals (RFPs)}.
+\newblock Fog computing, ecosystem, architecture and applications.
+\newblock
+  \url{http://www.cisco.com/web/about/ac50/ac207/crc_new/university/RFP/rfp13078.html}.
+
+\bibitem{Clement96}
+Mark Clement, Michael Steed, and Phyllis Crandall.
+\newblock Network performance modelling for {PM} clusters.
+\newblock In {\em Proceedings of Supercomputing}, 1996.
+
+\bibitem{Culler96}
+David Culler, Richard Karp, David Patterson, Abhijit Sahay, Klaus~Erik
+  Schauser, Eunice Santos, Ramesh Subramonian, and Thorsten von Eicken.
+\newblock {LogP} - a practical model of parallel computing.
+\newblock {\em Communication of the ACM}, 39(11):78--85, 1996.
+
+\bibitem{Supinski99}
+Bronis~R. de~Supinski and Nicholas~T. Karonis.
+\newblock Accurately measuring {MPI} broadcasts in a computational grid.
+\newblock In {\em Proceedings of the IEEE International Symposium on High
+  Performance Distributed Computing (HPDC'99)}, August 1999.
+
+\bibitem{Dean2008}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock Mapreduce: Simplified data processing on large clusters.
+\newblock {\em Commun. ACM}, 51(1):107--113, January 2008.
+
+\bibitem{Dey2013}
+Swarnava Dey, Arijit Mukherjee, Himadri~Sekhar Paul, and Arpan Pal.
+\newblock Challenges of using edge devices in iot computation grids.
+\newblock In {\em Int. Conf. on Parallel and Distributed Systems}, pages
+  564--569, 2013.
+
+\bibitem{Dij74}
+EW. Dijkstra.
+\newblock Self stabilizing systems in spite of distributed control.
+\newblock {\em Communications of the ACM}, 17:643--644, 1974.
+
+\bibitem{Elkhatib2017}
+Yehia Elkhatib, Barry Porter, Heverson~B. Ribeiro, Mohamed~Faten Zhani, Junaid
+  Qadir, and Etienne Rivi{\`e}re.
+\newblock On using micro-clouds to deliver the fog.
+\newblock {\em IEEE Internet Computing}, 21(2):8--15, 2017.
+
+\bibitem{MEC}
+ETSI.
+\newblock Mobile-edge computing - introductory technical white paper.
+\newblock
+  \url{https://portal.etsi.org/Portals/0/TBpages/MEC/Docs/Mobile-edge_Computing_-_Introductory_Technical_White_Paper_V1%2018-09-14.pdf}.
+
+\bibitem{Farman1985}
+J.C. Farman, G.G. Gardiner, and J.D. Shanklin.
+\newblock Large losses of total ozone in antarctica reveal seasonal clox/nox
+  interaction.
+\newblock {\em Nature}, 315:207--210, 1985.
+
+\bibitem{Fazio2015}
+M.~Fazio, A.~Celesti, A.~Puliafito, and M.~Villari.
+\newblock Big data storage in the cloud for smart environment monitoring.
+\newblock {\em Procedia Computer Science}, 52:500 -- 506, 2015.
+\newblock The 6th International Conference on Ambient Systems, Networks and
+  Technologies (ANT-2015).
+
+\bibitem{Steffenel12a}
+O.~Flauzac, F.~Nolot, C.~Rabat, and L.A. Steffenel.
+\newblock Grid of security : a decentralized enforcement of the network
+  security.
+\newblock In IGI Global, editor, {\em Threats, Countermeasures and Advances in
+  Applied Information Security}, pages 426--443. Manish Gupta, John Walp, and
+  Raj Sharman (Eds.), April 2012.
+
+\bibitem{Flauzac10}
+Oliver Flauzac, Michael Krajecki, and Luiz-Angelo Steffenel.
+\newblock Confiit: a middleware for peer-to-peer computing.
+\newblock {\em The Journal of Supercomputing}, 53:86--102, 2010.
+
+\bibitem{FKF03}
+Olivier Flauzac, Micha\"el Krajecki, and Jean Fug\`ere.
+\newblock {CONFIIT}: a middleware for peer to peer computing.
+\newblock In M.L. Gravilova, C.J.K. Tan, and P.~L'Ecuyer, editors, {\em The
+  2003 International Conference on Computational Science and its Applications
+  (ICCSA 2003)}, volume 2669~(III) of {\em Lecture Notes in Computer Science},
+  pages 69--78. Springer-Verlag, Montr\'eal, Qu\'ebec, June 2003.
+
+\bibitem{Gabriel98}
+E.~Gabriel, M.~Resch, T.~Beisel, and R.~Keller.
+\newblock Distributed computing in a heterogeneous computing environment.
+\newblock In {\em Proc. of the Euro PVM/MPI 1998}, LNCS 1497, pages 180--187.
+  Springer, 1998.
+
+\bibitem{Lopez2015}
+Pedro Garcia~Lopez, Alberto Montresor, Dick Epema, Anwitaman Datta, Teruo
+  Higashino, Adriana Iamnitchi, Marinho Barcellos, Pascal Felber, and Etienne
+  Riviere.
+\newblock Edge-centric computing: Vision and challenges.
+\newblock {\em SIGCOMM Comput. Commun. Rev.}, 45(5):37--42, September 2015.
+
+\bibitem{Ghersi2009}
+D.~Ghersi and R.~Sanchez.
+\newblock Improving accuracy and efficiency of blind protein-ligand docking by
+  focusing on predicted binding sites.
+\newblock {\em Proteins : Structure, Function and Bioinformatics},
+  74(2):417--424, 2009.
+
+\bibitem{Giganti2010}
+D.~Giganti, H.~Guillemain, J.-L. Spadoni, M.~Nilges, J.-F. Zagury, and
+  M.~Montes.
+\newblock Comparative evaluation of 3d virtual ligand screening methods: Impact
+  of the molecular alignment on enrichment.
+\newblock {\em J. Chem. Inf. Model.}, 50(6):992‐--1004, 2010.
+
+\bibitem{g5k}
+{Grid'5000}.
+\newblock Grid 5000, 2013.
+\newblock \url{https://www.grid5000.fr/}, Last access: July 2014.
+
+\bibitem{Grove03}
+Duncan Grove.
+\newblock {\em Performance Modelling of Message-Passing Parallel Programs}.
+\newblock PhD thesis, University of Adelaide, 2003.
+
+\bibitem{Guarnieri2004}
+R.A Guarnieri, L.F Padilha, F.L Guarnieri, E~Echer, K~Makita, D.K Pinheiro,
+  A.M.P Schuch, L.S Boeira, and N.J Schuch.
+\newblock A study of the anticorrelations between ozone and uv-b radiation
+  using linear and exponential fits in southern brazil.
+\newblock {\em Advances in Space Research}, 34(4):764 -- 76, 2004.
+
+\bibitem{Gubbi2013}
+Jayavardhana Gubbi, Rajkumar Buyya, Slaven Marusic, and Marimuthu Palaniswami.
+\newblock Internet of things (iot): A vision, architectural elements, and
+  future directions.
+\newblock {\em Future Generation Computer Systems}, 29(7):1645 -- 1660, 2013.
+
+\bibitem{Guilloux09a}
+V.~Le Guilloux, P.~Schmidtke, and P.~Tuffery.
+\newblock Fpocket: An open source platform for ligand pocket detection.
+\newblock {\em BMC Bioinformatics}, 10(1):168, 2009.
+
+\bibitem{TeraSort2008}
+James Hamilton.
+\newblock Hadoop wins terasort, Jul 2008.
+\newblock \url{http://perspectives.mvdirona.com/2008/07/hadoop-wins-terasort/},
+  Last access: Sep 2015.
+
+\bibitem{Hao2017}
+Zijiang Hao, Ed~Novak, Shanhe Yi, and Qun Li.
+\newblock Challenges and software architecture for fog computing.
+\newblock {\em IEEE Internet Computing}, 21(2):44--53, 2017.
+
+\bibitem{Henderson95}
+Robert~L Henderson.
+\newblock Job scheduling under the portable batch scheduler.
+\newblock In {\em Proceedings of the IPPS'95 workshop}, LNCS Vol. 949, pages
+  279--294, 1995.
+
+\bibitem{Hetenyi2011}
+C.~Hetenyi and D.~van~der Spoel.
+\newblock Toward prediction of functional protein pockets using blind docking
+  and pocket search algorithms.
+\newblock {\em Protein Science}, (20):880--893, 2011.
+
+\bibitem{Hockney94}
+R.W. Hockney.
+\newblock The communication challenge for {MPP}: Intel {P}aragon and {M}eiko
+  {CS-2}.
+\newblock {\em Parallel Computing}, 20:389--398, 1994.
+
+\bibitem{HiBench}
+Shengsheng Huang, Jie Huang, Jinquan Dai, Tao Xie, and Bo~Huang.
+\newblock The hibench benchmark suite: Characterization of the mapreduce-based
+  data analysis.
+\newblock In {\em Data Engineering Workshops (ICDEW), 2010 IEEE 26th
+  International Conference on}, pages 41--51, March 2010.
+
+\bibitem{Hunt2010}
+Patrick Hunt, Mahadev Konar, Flavio~P. Junqueira, and Benjamin Reed.
+\newblock Zookeeper: Wait-free coordination for internet-scale systems.
+\newblock In {\em Proceedings of the USENIX Annual Technical Conference}, pages
+  11--11, Boston, MA, 2010. USENIX Association.
+
+\bibitem{Huse99}
+Lars~Paul Huse.
+\newblock Collective communication on dedicated clusters of workstations.
+\newblock In {\em Proceedings of the European PVM/MPI Users' Group Meeting},
+  pages 469--476, 1999.
+
+\bibitem{Irwin2005}
+J.~J. Irwin and B.~K. Shoichet.
+\newblock Zinc-a free database of commercially available compounds for virtual
+  screening.
+\newblock {\em J. Chem. Inf. Model.}, 45(1):177--182, 2005.
+
+\bibitem{Isard2009}
+Michael Isard, Vijayan Prabhakaran, Jon Currey, Udi Wieder, Kunal Talwar, and
+  Andrew Goldberg.
+\newblock Quincy: fair scheduling for distributed computing clusters.
+\newblock In {\em Proceedings of the ACM SIGOPS 22nd symposium on Operating
+  systems principles}, SOSP '09, pages 261--276, New York, NY, USA, 2009. ACM.
+
+\bibitem{JK04}
+C.~Jaillet and M.~Krajecki.
+\newblock Solving the langford problem in parallel.
+\newblock In {\em Proceedings of {ISPDC'04}, {I}nternational {S}ymposium on
+  {D}istributed and {P}arallel {C}omputing}, Cork (Ireland), 2004.
+
+\bibitem{Steffenel07c}
+Emmanuel Jeannot and Luiz~Angelo Steffenel.
+\newblock Fast and efficient total exchange on two clusters.
+\newblock In {\em EuroPar'07 - 13th International Euro-Par Conference European
+  Conference on Parallel and Distributed Computing}, LNCS 4631, pages 832--841,
+  Rennes, France, September 2007. Springer.
+
+\bibitem{Johnen2011}
+Colette Johnen and Fouzi Mekhaldi.
+\newblock Self-stabilization versus robust self-stabilization for clustering in
+  ad-hoc network.
+\newblock In {\em Proceedings of the 17th International Conference on Parallel
+  Processing - Volume Part I}, Euro-Par'11, pages 117--129. Springer, 2011.
+
+\bibitem{Johnsson89}
+S.~Lenart Johnssonn and Ching-Tien Ho.
+\newblock Optimum broadcasting and personalized communication in hypercubes.
+\newblock {\em IEEE Transactions on Computers}, 38(9):1249--1268, Sep 1989.
+
+\bibitem{Jones2014}
+Michelle Jones.
+\newblock Internet of things: Shifting from proprietary to standard.
+\newblock \url{http://www.valuewalk.com/2014/07/internet-of-things-iot/}.
+
+\bibitem{Kielmann01}
+Thilo Kielmann, Henri Bal, Sergey Gorlatch, Kees Verstoep, and Rutger Hofman.
+\newblock Network performance-aware collective communication for clustered wide
+  area systems.
+\newblock {\em Parallel Computing}, 27(11):1431--1456, 2001.
+
+\bibitem{Kielmann00}
+Thilo Kielmann, Henri Bal, and Kees Verstoep.
+\newblock Fast measurement of {LogP} parameters for message passing platforms.
+\newblock In {\em Proceedings of the 4th Workshop on Runtime Systems for
+  Parallel Programming}, LNCS Vol. 1800, pages 1176--1183, 2000.
+
+\bibitem{Kirchhoff1997}
+V.~W. J.~H. Kirchhoff, Y.~Sahai, C.~A. R.~S. Casiccia, B.~F. Zamorano, and
+  V.~V. Valderrama.
+\newblock Observations of the 1995 ozone hole over punta arenas, chile.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  102(D13):16109--16120, 1997.
+
+\bibitem{Kirschhoff1996}
+V.~W. J.~H. Kirchhoff, N.J. Schuch, D.K. Pinheiro, and J.M. Harris.
+\newblock Evidence for an ozone hole perturbation at 30º south.
+\newblock {\em Athmospheric Environment}, 33(9):1481--1488, 1996.
+
+\bibitem{Klebe2006}
+G.~Klebe.
+\newblock Virtual ligand screening: strategies, perspectives and limitations.
+\newblock {\em Drug Discov. Today}, 11(13-14):580--594, 2006.
+
+\bibitem{Kraj99}
+Micha\"el Krajecki.
+\newblock An object oriented environment to manage the parallelism of the
+  {FIIT} applications.
+\newblock In V.~Malyshkin, editor, {\em Parallel Computing Technologies, 5th
+  International Conference, PaCT-99}, volume 1662 of {\em Lecture Notes in
+  Computer Science}, pages 229--234. Springer-Verlag, St. Petersburg, Russia,
+  September 1999.
+
+\bibitem{Kumar2012}
+K.~Arun Kumar, Vamshi~Krishna Konishetty, Kaladhar Voruganti, and
+  G.~V.~Prabhakara Rao.
+\newblock Cash: context aware scheduler for hadoop.
+\newblock In {\em Proceedings of the International Conference on Advances in
+  Computing, Communications and Informatics}, ICACCI '12, pages 52--61, New
+  York, NY, USA, 2012.
+
+\bibitem{Labarta96}
+Jess Labarta, Sergi Girona, Vincent Pillet, Toni Cortes, and Luis Gregoris.
+\newblock {DiP}: A parallel program development environment.
+\newblock In {\em Proceedings of the 2nd Euro-Par Conference}, volume~2, pages
+  665--674, 1996.
+
+\bibitem{Lauro2012}
+G.~Lauro, M.~Masullo, S.~Piacente, R.~Riccio, and G.~Bifulco.
+\newblock Inverse virtual screening allows the discovery of the biological
+  activity of natural compounds.
+\newblock {\em Bioorganic and Medicinal Chemistry}, 20(11):3596--3602, 2012.
+
+\bibitem{Lauro2011}
+G.~Lauro, A.~Romano, R.~Riccio, and G.~Bifulco.
+\newblock Inverse virtual screening of antitumor targets : Pilot study on a
+  small database of natural bioactive compounds.
+\newblock {\em Journal of Natural Products}, 74(6):1401--1407, 2011.
+
+\bibitem{Li2006}
+H.~Li, Z.~Gao, L.~Kang, H.~Zhang, K.~Yang, K.~Yu, X.~Luo, W.~Zhu, K.~Chen,
+  J.~Shen, X.~Wang, and H.~Jiang.
+\newblock Tarfisdock : a web server for identifying drug targets with docking
+  approach.
+\newblock {\em Nucleic Acids Research}, 34(web):219--224, 2006.
+
+\bibitem{Benchmarks}
+J.~Li, Qingyang Wang, D.~Jayasinghe, Junhee Park, Tao Zhu, and C.~Pu.
+\newblock Performance overhead among three hypervisors: An experimental study
+  using hadoop benchmarks.
+\newblock In {\em Big Data (BigData Congress), 2013 IEEE International Congress
+  on}, pages 9--16, June 2013.
+
+\bibitem{PangfengLiu00b}
+Pangfeng Liu and Tzu-Hao Sheng.
+\newblock Broadcast scheduling optimization for heterogeneous cluster systems.
+\newblock In {\em Proceedings of 12th SPAA}, pages 129--136, 2000.
+
+\bibitem{Lyn96}
+N.~Lynch.
+\newblock {\em Distributed algorithms}.
+\newblock Morgan Kaufman, 1996.
+
+\bibitem{Maamar}
+Zakaria Maamar, Djamal Benslimane, and Nanjangud~C. Narendra.
+\newblock What can context do for web services?
+\newblock {\em Commun. ACM}, 49(12):98--103, December 2006.
+
+\bibitem{Manney1994}
+G.~L. Manney, R.~W. Zurek, A.~O'Neill, and R.~Swinbank.
+\newblock On the motion of air through the stratospheric polar vortex.
+\newblock {\em Jounal of the Atmospheric Sciences}, 51:2973--2994, Oct 1994.
+
+\bibitem{Marchand2005}
+M.~Marchand, S.~Bekki, A.~Pazmino, F.~Lef\`{e}vre, S.~Godin-Beekmann, and
+  A.~Hauchecorne.
+\newblock Model simulations of the impact of the 2002 antarctic ozone hole on
+  the midlatitudes.
+\newblock {\em Jounal of the Atmospheric Sciences}, 62:871--884, Mar 2005.
+
+\bibitem{Marozzo2012}
+Fabrizio Marozzo, Domenico Talia, and Paolo Trunfio.
+\newblock P2p-mapreduce: Parallel data processing in dynamic cloud
+  environments.
+\newblock {\em J. Comput. Syst. Sci.}, 78(5):1382--1402, September 2012.
+
+\bibitem{Mateescu05}
+Gabriel Mateescu.
+\newblock A method for {MPI} broadcast in computational grids.
+\newblock In {\em Proceedings of the International Parallel and Distributed
+  Processing Symposium (IPDPS 2005)}, 2005.
+
+\bibitem{Miorandi2012}
+Daniele Miorandi, Sabrina Sicari, Francesco~De Pellegrini, and Imrich Chlamtac.
+\newblock Internet of things: Vision, applications and research challenges.
+\newblock {\em Ad Hoc Networks}, 10(7):1497 -- 1516, 2012.
+
+\bibitem{rfc2328}
+J.~Moy.
+\newblock {OSPF Version 2}.
+\newblock RFC 2328 (INTERNET STANDARD), April 1998.
+\newblock Updated by RFCs 5709, 6549, 6845, 6860.
+
+\bibitem{Najar2015}
+Salma Najar, Manuele Kirsch~Pinheiro, and Carine Souveyet.
+\newblock Service discovery and prediction on pervasive information system.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing},
+  6(4):407--423, 2015.
+
+\bibitem{Oracle}
+Oracle.
+\newblock Overview of java se monitoring and management, 2014.
+\newblock
+  \url{http://docs.oracle.com/javase/7/docs/technotes/guides/management/overview.html},
+  Last access: July 2014.
+
+\bibitem{rfc1142}
+D.~Oran.
+\newblock {OSI IS-IS Intra-domain Routing Protocol}.
+\newblock RFC 1142 (Informational), February 1990.
+
+\bibitem{Parashar2010}
+M.~Parashar and J.-M. Pierson.
+\newblock Pervasive grids: Challenges and opportunities.
+\newblock In K.~Li, C.~Hsu, L.~Yang, J.~Dongarra, and H.~Zima, editors, {\em
+  Handbook of Research on Scalable Computing Technologies}, pages 14--30. IGI
+  Global, 2010.
+
+\bibitem{Peres2013}
+Lucas~Vaz Peres.
+\newblock {\em Efeito Secund\'{a}rio do Buraco de Oz\^{o}nio Ant\'{a}rtico
+  Sobre o Sul do Brasil}.
+\newblock Msc in Meteorology. Universidade Federal de Santa Maria, Brazil,
+  2013.
+
+\bibitem{Peterson81}
+James~Lyle Peterson.
+\newblock {\em Petri Net Theory and Modeling of Systems}.
+\newblock Prentice-Hall, Englewood-Cliffs, New Jersey, 1981.
+
+\bibitem{Pinheiro2011}
+D.K. Pinheiro, N.P. Leme, L.V. Peres, and E.~Kall.
+\newblock {\em Influence of the Antarctic ozone hole over South of Brazil in
+  2008 and 2009}, volume~1, pages 33--37.
+\newblock National Institute of Science and Technology, 2011.
+
+\bibitem{Pjesivac-Grbovic05}
+Jelena Pjesivac-Grbovic, Thara Angskun, George Bosilca, Graham~E. Fagg, Edgar
+  Gabriel, and Jack~J. Dongarra.
+\newblock Performance analysis of {MPI} collective operations.
+\newblock In {\em Proceedings of the Wokshop on Performance Modeling,
+  Evaluation and Optimisation for Parallel and Distributed Systems (PMEO), in
+  IPDPS 2005}, 2005.
+
+\bibitem{Prather1990}
+Michael Prather and Andrew~H. Jaffe.
+\newblock Global impact of the antarctic ozone hole: Chemical propagation.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  95(D4):3473--3492, 1990.
+
+\bibitem{Ramakrishnan2014}
+Arun Ramakrishnan, Davy Preuveneers, and Yolande Berbers.
+\newblock Enabling self-learning in dynamic and open {I}o{T} environments.
+\newblock In Elhadi Shakshuki and Ansar Yasar, editors, {\em The 5th
+  International Conference on Ambient Systems, Networks and Technologies
+  (ANT-2014), the 4th International Conference on Sustainable Energy
+  Information Technology (SEIT-2014)}, volume~32, pages 207--214, 2014.
+
+\bibitem{Rasooli2012}
+Aysan Rasooli and Douglas~G. Down.
+\newblock Coshh: A classification and optimization based scheduler for
+  heterogeneous hadoop systems.
+\newblock In {\em Proceedings of the 2012 SC Companion: High Performance
+  Computing, Networking Storage and Analysis}, SCC '12, pages 1284--1291,
+  Washington, DC, USA, 2012. IEEE Computer Society.
+
+\bibitem{PDB}
+RCBS.
+\newblock Rcsb protein data bank.
+
+\bibitem{Rottenberg2012}
+Sam Rottenberg, S{\'e}bastien Leriche, Claire Lecocq, and Chantal Taconet.
+\newblock Vers une d\'{e}finition d'un syst\`{e}me r\'{e}parti
+  multi-\'{e}chelle.
+\newblock In {\em UBIMOB'12 - 8\`{e}mes Journ\'{e}es Francophones Mobilit\'{e}
+  et Ubiquit\'{e}}, pages 178--183, 2012.
+
+\bibitem{Rottenberg2014}
+Sam Rottenberg, S{\'{e}}bastien Leriche, Chantal Taconet, Claire Lecocq, and
+  Thierry Desprats.
+\newblock Musca: {A} multiscale characterization framework for complex
+  distributed systems.
+\newblock In {\em Proceedings of the 2014 Federated Conference on Computer
+  Science and Information Systems}, pages 1657--1665, 2014.
+
+\bibitem{Rowstron2001b}
+A.~Rowstron and P.~Druschel.
+\newblock Storage management and caching in past, a large-scale, persistent
+  peer-to-peer storage utility.
+\newblock In {\em ACM Symposium on Operating Systems Principles (SOSP'01)},
+  Banff, Canada, October 2001.
+
+\bibitem{Pastry01}
+Antony Rowstron and Peter Druschel.
+\newblock Pastry: {Scalable,} distributed object location and routing for
+  large-scale peer-to-peer systems.
+\newblock In {\em IFIP/ACM International Conference on Distributed Systems
+  Platforms (Middleware)}, pages 329--350, November 2001.
+
+\bibitem{Salby2012}
+Murry~L. Salby, Evgenia~A. Titova, and Lilia Deschamps.
+\newblock Changes of the antarctic ozone hole: Controlling mechanisms, seasonal
+  predictability, and evolution.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  117(D10):n/a--n/a, 2012.
+\newblock D10111.
+
+\bibitem{Sandholm2010}
+Thomas Sandholm and Kevin Lai.
+\newblock Dynamic proportional share scheduling in hadoop.
+\newblock In {\em Proceedings of the 15th International Conference on Job
+  Scheduling Strategies for Parallel Processing}, JSSPP'10, pages 110--131,
+  Berlin, Heidelberg, 2010.
+
+\bibitem{Satyanarayanan09}
+Mahadev Satyanarayanan, P.~Bahl, R.~Caceres, and N.~Davies.
+\newblock The case for vm-based cloudlets in mobile computing.
+\newblock {\em IEEE Pervasive Computing}, 8(4):14--23, December 2009.
+
+\bibitem{Seg83}
+A.~Segall.
+\newblock Distributed network protocols.
+\newblock {\em Transaction on Information Theory}, (29):23--35, 1983.
+
+\bibitem{Semane2006}
+N~Semane, H.~Bencherif, B.~Morel, A.~Hauchecorne, and R.D. Diab.
+\newblock An unusual stratospheric ozone decrease in southern hemisphere
+  subtropics linked to isentropic air-mass transport as observed over irene
+  (25.5º s, 28.1º e) in mid-may 2002.
+\newblock {\em Atmospheric Chemistry and Physics}, 6:1927--1936, 2006.
+
+\bibitem{Serrano2013}
+Martin Serrano, Danh Le-Phuoc, Maciej Zaremba, Alex Galis, Sami Bhiri, and
+  Manfred Hauswirth.
+\newblock Resource optimisation in iot cloud systems by using matchmaking and
+  self-management principles.
+\newblock In {\em The Future Internet}, volume 7858 of {\em LNCS}, pages
+  127--140. Springer, 2013.
+
+\bibitem{Sivakumar2007}
+V.~Sivakumar, T.~Portafaix, H.~Bencherif, S.~Godin-Beekmann, and S.~Baldy.
+\newblock Stratospheric ozone climatology and variability over a southern
+  subtropical site: Reunion island (21$\,^{\circ}$s; 55$\,^{\circ}$e).
+\newblock {\em Annales Geophysicae}, 25:2321--2334, 2007.
+
+\bibitem{Solomon1999}
+Susan Solomon.
+\newblock Stratospheric ozone depletion: A review of concepts and history.
+\newblock {\em Reviews of Geophysics}, 37(3):275--316, 1999.
+
+\bibitem{Steffen07}
+A.~Steffen, C.~Thiele, S.~Tietze, C.~Strassnig, A.~K{\"a}mper, T.~Lengauer,
+  G.~Wenz, and J.~Apostolakis.
+\newblock mproved cyclodextrin-based receptors for camptothecin by inverse
+  virtual screening.
+\newblock {\em Chemistry - A European Journal}, 13(24):6801--6809, 2007.
+
+\bibitem{Steffenel13b}
+L.A. Steffenel, O.~Flauzac, A.~Schwertner Charao, P.~Pitthan Barcelos,
+  B.~Stein, S.~Nesmachnow, M.~Kirsch Pinheiro, and D.~Diaz.
+\newblock Per-mare: Adaptive deployment of mapreduce over pervasive grids.
+\newblock In {\em Proceedings of the 8th International Conference on P2P,
+  Parallel, Grid, Cloud and Internet Computing (3PGCIC'13)}, Compiegne, France,
+  Oct 2013.
+
+\bibitem{Steffenel06b}
+Luiz~Angelo Steffenel.
+\newblock Modeling network contention effects on alltoall operations.
+\newblock In {\em Proceedings of the IEEE Conference on Cluster Computing
+  (CLUSTER 2006)}, Barcelona, Spain, September 2006. IEEE Computer Society.
+
+\bibitem{3PGCIC}
+Luiz~Angelo Steffenel, Olivier Flauzac, Andrea~Schwertner Char\~ao,
+  Patricia~Pitthan Barcelos, Benhur Stein, Sergio Nesmachnow, Manuele
+  Kirsch~Pinheiro, and Daniel Diaz.
+\newblock Per-mare: Adaptive deployment of mapreduce over pervasive grids.
+\newblock In {\em Proceedings of the 2013 Eighth International Conference on
+  P2P, Parallel, Grid, Cloud and Internet Computing}, 3PGCIC '13, pages 17--24,
+  Washington, DC, USA, 2013. IEEE Computer Society.
+
+\bibitem{Steffenel15Taormina}
+Luiz~Angelo Steffenel and Manuele Kirsch-Pinheiro.
+\newblock {CloudFIT}, a {PaaS} platform for {IoT} applications over pervasive
+  networks.
+\newblock In {\em 3rd International Workshop on Cloud for IoT (CLIoT 2015)},
+  Taormina, Italy, September 2015.
+
+\bibitem{Steffenel20151034}
+Luiz~Angelo Steffenel and Manuele Kirsch~Pinheiro.
+\newblock Leveraging data intensive applications on a pervasive computing
+  platform: The case of mapreduce.
+\newblock {\em Procedia Computer Science}, 52:1034 -- 1039, 2015.
+\newblock The 6th International Conference on Ambient Systems, Networks and
+  Technologies (ANT-2015), the 5th International Conference on Sustainable
+  Energy Information Technology (SEIT-2015).
+
+\bibitem{Steffenel2015Roma}
+Luiz~Angelo Steffenel and Manuele Kirsch-Pinheiro.
+\newblock When the cloud goes pervasive: approaches for {IoT PaaS} on a
+  mobiquitous world.
+\newblock In {\em EAI International Conference on Cloud, Networking for IoT
+  systems (CN4IoT 2015)}, Rome, Italy, October 2015.
+
+\bibitem{PER-MARE}
+{STIC-AmSud}.
+\newblock {PER-MARE} project, 2014.
+\newblock \url{http://cosy.univ-reims.fr/PER-MARE}, Last access: July 2014.
+
+\bibitem{ApacheStorm}
+Apache Storm.
+
+\bibitem{LAM04}
+LAM-MPI Team.
+\newblock Lam/mpi version 7.
+\newblock http://www.lam-mpi.org, 2004.
+
+\bibitem{Thakur03}
+Rajeev Thakur and William Gropp.
+\newblock Improving the performance of collective operations in {MPICH}.
+\newblock In {\em Proceedings of the Euro PVM/MPI 2003}, LNCS Vol. 2840, pages
+  257--267. Springer-Verlag, 2003.
+
+\bibitem{Tian2009}
+Chao Tian, Haojie Zhou, Yongqiang He, and Li~Zha.
+\newblock A dynamic mapreduce scheduler for heterogeneous workloads.
+\newblock In {\em Proceedings of the 2009 Eighth International Conference on
+  Grid and Cooperative Computing}, GCC '09, pages 218--224, Washington, DC,
+  USA, 2009. IEEE Computer Society.
+
+\bibitem{toihir2015}
+Abdoulwahab~Mohamed Toihir, Hassan Bencherif, V~Sivakumar, Laaziz El~Amraoui,
+  Thierry Portafaix, and N~Mbatha.
+\newblock {Comparison of total column ozone obtained by the IASI-MetOp
+  satellite with ground-based and OMI satellite observations in the southern
+  tropics and subtropics}.
+\newblock {\em {Annales Geophysicae}}, September 2015.
+
+\bibitem{Vadhiyar00}
+Sathish Vadhiyar, Graham Fagg, and Jack Dongarra.
+\newblock Automatically tuned collective communications.
+\newblock In {\em Proceedings of the Supercomputing 2000}. IEEE Computer
+  Society, 2000.
+
+\bibitem{Valiant90}
+Leslie~G. Valiant.
+\newblock A bridging model for parallel computation.
+\newblock {\em Communications of the ACM}, 33(8):103--111, 1990.
+
+\bibitem{Vermesan}
+Ovidiu Vermesan, Peter Friess, Patrick Guillemin, Raffaele Giaffreda, Hanne
+  Grindvoll, Markus Eisenhauer, Martin Serrano, Klaus Moessner, Maurizio
+  Spirito, Lars-Cyril Blystad, and Elias~Z. Tragos.
+\newblock Internet of things beyond the hype: Research, innovation and
+  deployment.
+\newblock In {\em Internet of Things - From Research and Innovation to Market
+  Deployment}. River Publishers, 2014.
+
+\bibitem{Villari2016}
+M.~Villari, M.~Fazio, S.~Dustdar, O.~Rana, and R.~Ranjan.
+\newblock Osmotic computing: A new paradigm for edge/cloud integration.
+\newblock {\em IEEE Cloud Computing}, 3(6):76--83, Nov 2016.
+
+\bibitem{Wang2004}
+R.~Wang, X.~Fang, Y.~Lu, and S.~Wang.
+\newblock The pdbbind database: Collection of binding affinities for
+  protein−ligand complexes with known three-dimensional structures.
+\newblock {\em J. Med. Chem}, 47(12):2977--2980, 2004.
+
+\bibitem{Wang2005}
+R.~Wang, X.~Fang, Y.~Lu, C.-Y. Yang, and S.~Wang.
+\newblock The pdbbind database: Methodologies and updates.
+\newblock {\em J. Med. Chem.}, 48(12):4111--4119, 2005.
+
+\bibitem{Waugh1994}
+D.~W. Waugh, R.~A. Plumb, R.~J. Atkinson, M.~R. Schoeberl, L.~R. Lait, P.~A.
+  Newman, M.~Loewenstein, D.~W. Toohey, L.~M. Avallone, C.~R. Webster, and
+  R.~D. May.
+\newblock Transport out of the lower stratospheric arctic vortex by rossby wave
+  breaking.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  99(D1):1071--1088, 1994.
+
+\bibitem{Willis2014}
+D.~F. Willis, A.~Dasgupt, and S.~Banerjee.
+\newblock Paradrop: a multi-tenant platform for dynamically installed third
+  party services on home gate- ways.
+\newblock In {\em ACM SIGCOMM workshop on Distributed cloud computing}, 2014.
+
+\bibitem{Wolski97}
+Rich Wolski, Neil Spring, and Chris Peterson.
+\newblock Implementing a performance forecasting system for metacomputing: The
+  network weather service.
+\newblock In {\em Proceedings of the Supercomputing}, 1997.
+
+\bibitem{Wu2005}
+Di~Wu, Ye~Tian, and Kam-Wing Ng.
+\newblock Aurelia: Building locality-preserving overlay network over
+  heterogeneous p2p environments.
+\newblock In {\em Proc. of the International Conference on Parallel and
+  Distributed Processing and Applications}, ISPA'05, pages 1--8. Springer,
+  2005.
+
+\bibitem{PangfengLiu04}
+Jan-Jan Wu, Shih-Hsien Yeh, and Pangfeng Liu.
+\newblock Efficient multiple multicast on heterogeneous network of
+  workstations.
+\newblock {\em Journal of Supercomputing}, 29(1):59--88, 2004.
+
+\bibitem{Xie2010}
+Jiong Xie, Xiaojun Ruan, Zhiyang Ding, Yun Tian, James Majors, Adam Manzanares,
+  Shu Yin, and Xiao Qin.
+\newblock Improving mapreduce performance through data placement in
+  heterogeneous hadoop clusters.
+\newblock In {\em Parallel and Distributed Processing, Workshops and Phd Forum
+  (IPDPSW)}, 2010.
+
+\bibitem{Yi2015}
+Shanhe Yi, Zijiang Hao, Zhengrui Qin, and Qun Li.
+\newblock Fog computing: Platform and applications.
+\newblock In IEEE, editor, {\em Third IEEE Workshop on Hot Topics in Web
+  Systems and Technologies}, pages 73--78, 2015.
+
+\bibitem{Yoo2003}
+A.~B. Yoo, M.~A. Jette, and M.~Grondona.
+\newblock Slurm: Simple linux utility for resource management.
+\newblock In {\em Workshop on Job Scheduling Strategies for Parallel
+  Processing}, pages 44--60, 2003.
+
+\bibitem{Zaharia2008}
+Matei Zaharia, Andy Konwinski, Anthony~D. Joseph, Randy Katz, and Ion Stoica.
+\newblock Improving mapreduce performance in heterogeneous environments.
+\newblock In {\em Proceedings of the 8th USENIX conference on Operating systems
+  design and implementation}, OSDI'08, pages 29--42, Berkeley, CA, USA, 2008.
+  USENIX Association.
+
+\end{thebibliography}

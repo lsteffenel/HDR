@@ -49,6 +49,7 @@
 
 \floatname{algorithm}{Algorithme}
 \renewcommand{\listalgorithmname}{Liste des algorithmes}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newtheorem{definition}{Définition}
@@ -81,30 +82,35 @@
 %\pagestyle{myheadings}
 \renewcommand{\soutname}{Soutenue publiquement le }
 
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
 
 \usepackage{pstricks}
 \usepackage{colortab}
+\usepackage{verbatim}
+\usepackage{verbatimbox}
 
 \begin{document}
 
 \title{Contributions à la Gestion de l'Hétérogénéité dans les Environnements Distribués \\et Pervasifs}
 \author{Luiz Angelo STEFFENEL}
-\date{xx septembre 2016}
+\date{8 décembre 2017}
 
 \jury{
      {\em Président du jury} :                
-%                                        & Franck \fsc{Cappello} &
-%                                        Directeur de Recherche INRIA Futurs\\
-{\em Rapporteurs} :               % &  Pascal \fsc{Felber} &
-%                                        Professeur à l'Université de Neuchâtel, Suisse\\
-%                                        &  Hervé \fsc{Guyennet} & 
-%					Professeur à l'Université de Franche-Comté\\
-%                                        & Ivan \fsc{Lavallée}   &
-%					Professeur à l'Université Paris VIII\\
-      {\em Examinateurs} : %             & Vincent \fsc{Villain} &
-                                        %Professeur à l'Université de Picardie Jules Verne\\
-	{\em Directeur} :             %    & Alain \fsc{Bui}        & 
-                                        %Professeur à l'Université de Reims Champagne-Ardenne\\
+                                        & Carine \fsc{Souveyet} &
+                                        Professeur à l'Université Paris 1 Panthéon-Sorbonne\\
+{\em Rapporteurs} :          &  Christophe \fsc{Cérin} &
+                                        Professeur à l'Université Paris 13 - IUT Villetaneuse\\
+                                        &  Emmanuel \fsc{Jeannot} & 
+										Directeur de Recherche, INRIA Bordeaux Sud-Ouest\\
+                                        & Philippe \fsc{Roose}   &
+										Maître de Conférences HDR à l'Université de Bayonne\\
+{\em Examinateurs}:         & Massimo \fsc{Villari} &
+                                        Professeur à l'Università degli Studi di Messina, Italie\\
+                                         & Michaël \fsc{Krajecki}   &
+                                        Professeur à l'Université de Reims Champagne-Ardenne\\
+	{\em Directeur} :           & Olivier \fsc{Flauzac}        & 
+                                        Professeur à l'Université de Reims Champagne-Ardenne\\
                                         }
 \maketitle
 
@@ -162,20 +168,22 @@
 
 \input{context}
 
-\chapter{CloudFIT : un intergiciel pour le \textit{edge-computing} et les réseaux IoT}
+\chapter{CloudFIT : un intergiciel pour le \textit{Fog Computing} et l'Internet des Objets\label{chap:CloudFIT}}
 
 \input{cloudfit}
 
 
 \Bigchapter{Conclusion et perspectives}
 
-%\input{conclusion}
+\input{conclusion}
 
 \Bigchapter{Publications personnelles}
 
 \section*{Articles dans des revues avec comité de lecture}
 
 \subsection*{Internationales}
+
+Steffenel, L.A., Kirsch-Pinheiro, M., Vaz Peres, L., Kirsch Pinheiro, D. "Strategies to implement Edge Computing in a P2P Pervasive Grid", International Journal of Information Technologies and Systems Approach (IJITSA), IGI Global, (accepted, to be published). 
 
 Cassales, G. W., Charao, A., Kirsch-Pinheiro, M., Souveyet, C., Steffenel, L.A. "Improving the Performance of Apache Hadoop on Pervasive Environments through Context-Aware Scheduling ", Journal of Ambient Intelligence and Humanized Computing, Springer, 7(3), pp. 333-345, 2016. doi:10.1007/s12652-016-0361-8. 
 
@@ -219,11 +227,19 @@ Steffenel, L.A., Mounié, G. "A Framework for Adaptive Collective Communications
 
 \subsection*{Nationales}
 
+Vaz Peres, L., Kirsch Pinheiro, D., Steffenel, L.A., Mendes, D., Valentin Bageston, J., Dornelles Bittencourt, G., Passáglia Schuch, A., Anabor, V., Paes Leme, N.M., Schuch, N.J. "Monitoramento de Longo Prazo e Climatologia de Campos Estratosféricos quando da Ocorrência dos Eventos de Influência do Buraco de Ozônio Antártico sobre o Sul do Brasil", Revista Brasileira de Meteorologia, SBMET/Thomson-Reuters, 2017.
+
 Flauzac, O., Steffenel, L.A., Diallo, T.H., Niang, I., Ndiaye, S. "GRAPP\&S Data Grid : Une approche de type grille et système pair-à-pair pour le stockage de données". Revue URED (Université-Recherche-Développement), Presses Universitaires de l'Université Gaston Berger de Saint-Louis du Sénégal, 2012.
 
 \section*{Communications avec actes et comité de sélection}
 
 \subsection*{Internationales}
+
+Beserra, D., Kirsch-Pinheiro, M., Steffenel, L.A.,  Moreno, E.D., "Comparing the Performance of OS-level Virtualization Tools in SoC-based Systems: The Case of I/O-bound Applications", The 22nd IEEE Symposium on Computers and Communications (ISCC 2017), Heraklion, Greece, July 3-6, 2017.
+
+Charao, A., Hoffmann, G., Steffenel, L.A, Kirsch-Pinheiro, M., Stein, B., "Performance Evaluation of Cloud-based RDBMS through a Cloud Scripting Language", 19th International Conference on Enterprise Information Systems (ICEIS), Porto, Portugal, April 26-29, 2017.
+
+Beserra, D., Kirsch-Pinheiro, M., Steffenel, L.A., Souveyet, C., Moreno, E.D., "Performance Evaluation of OS-level Virtualization Solutions for HPC Purposes on SoC-based Systems", IEEE International Conference on  Advanced Information Networking and Applications (AINA), Taipei, Taiwan, March 27-29, 2017.
 
 Steffenel, L.A., Kirsch-Pinheiro, M., Kirsch-Pinheiro, D., Vaz Peres, L., "Using a Pervasive Computing Environment to Identify Secondary Effects of the Antarctic Ozone Hole", 2nd Workshop on Big Data and Data Mining Challenges on IoT and Pervasive (Big2DM) , Madrid, Spain, May 23 - 26, 2016. Procedia Computer Science, v 83, pp. 1007-1012, Elsevier. 
 
@@ -305,6 +321,10 @@ Barchet-Steffenel, L. A.; Jansch-Pôrto, I. "On the Evaluation of heartbeat-like
 
 \subsection*{Nationales}
 
+Nesi, L., Koslovski, G., Charão, A., Pinheiro, D., Steffenel, L.A., "Paralelização de Cálculos Estatísticos sobre Dados de Monitoramento da Camada de Ozônio: um Estudo com GPU". Fórum de iniciação científica Escola Regional de Alto Desempenho (ERAD/RS), April 5-7, 2017, Ijui, Brazil.
+
+Muenchen, B., Siqueira, T., Nesi, L., Koslovski, G., Charão, A., Pinheiro, D., Steffenel, L.A., "Análise de Dados Observacionais sobre a Camada de Ozônio: uma Abordagem Usando MPI e OpenMP". Fórum de iniciação científica Escola Regional de Alto Desempenho (ERAD/RS), April 5-7, 2017, Ijui, Brazil.
+
 Steffenel, L.A., Kirsch-Pinheiro, M., "Stratégies Multi-Échelle pour les Environnements Pervasifs et l’Internet des Objets". Proceedings of 11èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2016), July 5, Lorient, France.
 
 Diallo, T.H., Flauzac, O., Steffenel, L.A., Ndiaye, S., "Routage Préfixé dans GRAPP\&S". Proceedings of Colloque Africain sur la Recherche en Informatique et en Mathématiques Appliquées (CARI'2014), October 20-23, 2014, Saint Louis, Sénégal.
@@ -366,6 +386,10 @@ Vasseur, R., Baud, S., Steffenel, L.A., Vigouroux, N., Martiny, L., Krajecki, M.
 Barchet-Steffenel, L. A.; Ceretta-Nunes, R. "Implementação de uma Situação de Corrida Crítica em Java" (Implementation of a Critical Run Situation in Java), Proceedings of the II Ciclo de Palestras do Curso de Informática, UFSM, Santa Maria, Brazil, october 1997
 
 \section*{Conférences invitées}
+
+Latin America High Performance Computing Conference (CARLA 2017)
+Keynote "Harvesting the mist: expanding HPC with the help of surrounding resources". 21 september 2017.
+Buenos Aires, Argentina
 
 CLIoT/CloudWay workshops joint panel "Migrating to Cloud and IoT Solutions: Challenges and Perspectives" , 15 septembre 2015
 Moderator: Nabor Mendonça, University of Fortaleza, Brazil
@@ -441,7 +465,7 @@ Steffenel, L. A. "Detectores de Defeitos não Confiáveis" (Unreliable Failure D
 
 
 \bibliographystyle{plain}
-\bibliography{Angelo-Bibdesk}
+\bibliography{/Users/steffenel/Documents/Angelo-bibdesk}
 
 
 \end{document}
