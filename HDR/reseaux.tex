@@ -1,3 +1,4 @@
+% !TeX spellcheck = fr_FR
 \begin{resume}
 Dans l'ensemble des éléments qui composent les systèmes informatiques, le réseau d'interconnexion est parmi les éléments qui sont les plus exposés et impactés par l'hétérogénéité. Cette hétérogénéité peut se présenter sous différentes formes : diversité d'équipements et de technologies, variations de performance et disponibilité (volatilité), limitations liées aux caractéristiques physiques ou à la capacité des ressources, etc. 
 
@@ -125,101 +126,6 @@ Dans notre cas spécifique, nous voulons explorer le modèle à passage de messa
 représentation fidèle du comportement des communications mais aussi une 
 utilisation simple, capable d'être appliquée sur des environnements hétérogènes.
 
-%\subsection{Hockney}
-%
-%Le modèle de Hockney \cite{Hockney94} est un des plus utilisés pour
-%décrire la communication point-à-point dans les machines parallèles
-%à mémoire distribuée. Selon ce modèle, une communication entre deux
-%noeuds est décrite par : 
-%
-%\[
-%t=t_{0}+\frac{m}{r_{\infty}}\]
-%
-%
-%où $t_{0}$ représente le temps nécessaire à l'envoi d'un message
-%de taille zéro, \emph{m} est la taille du message (en octets) et $r_{\infty}$
-%est le débit asymptotique en Moctets/s, i.e., le débit maximal obtenu
-%quand la taille du message s'approche de l'infini. Dans ce raisonnement,
-%$m/r_{\infty}$ représente le délai de transmission d'un message de
-%\emph{m} octets à travers un réseau avec un débit asymptotique de
-%$r_{\infty}$ Moctets/s.
-%
-%Ce modèle est souvent transformé dans l'équation affine 
-%
-%\[
-%t=\alpha+\beta m\]
-%
-%
-%où $\alpha$ correspond à la latence de transmission et $\beta$ est
-%le temps de transfert d'un octet sur ce réseau \cite{Pjesivac-Grbovic05}.
-%L'obtention des paramètres $\alpha$ et $\beta$ peut se faire à travers
-%l'utilisation de certains outils comme NWS \cite{Wolski97}. 
-%
-%Toutefois, un inconvénient de ce modèle est qu'il assume que le temps
-%de transfert est proportionnel à la taille du message. Dans des situations
-%réelles, certains facteurs comme la taille de la mémoire tampon et
-%la segmentation des messages en paquets font varier le temps de transfert
-%$\beta$ selon la taille du message. 
-%
-%\subsection{Postal}
-%
-%À partir de l'observation qu'un des principaux paramètres pour la
-%modélisation des algorithmes parallèles est le coût de communication
-%entre les processus, Bar-Noy et Kipnis ont proposé le modèle Postal
-%\cite{Bar-Noy94}. Le modèle Postal est fondé sur un paramètre $\lambda=t_{u}/t_{snd}$,
-%où $t_{snd}$ est le temps nécessaire à un processus pour envoyer
-%un message (la latence d'envoi), alors que $t_{u}$ représente le
-%temps total nécessaire à la réception du message par le processus
-%destinataire. Une des innovations du modèle Postal par rapport à ses
-%prédécesseurs est que ce modèle permet des situations où un processus
-%peut émettre plusieurs messages avant que le premier récepteur a reçu
-%son message : cela est dû à une analogie avec l'envoi de lettres par
-%la poste. 
-%
-%Prenons par exemple le cas d'une diffusion ou \emph{broadcast}. Par
-%simplicité, il est considéré que $\lambda$ est une valeur entière
-%et que le temps est mesuré en cycles, dont la durée est équivalente
-%à la latence d'envoi d'un message. Dans le cas du \emph{Broadcast},
-%la valeur de $\lambda$ influence la forme de l'arbre de diffusion
-%qui permet la meilleure performance. C'est ainsi que la Figure \ref{Figure:Postal Model}
-%compare deux arbres de diffusion différents, chacun contenant huit
-%noeuds et $\lambda=2$. On observe que l'arbre binomial, (Figure \ref{Figure:Postal Model}a),
-%malgré son optimalité quand $\lambda=1$, nécessite six étapes de
-%communication pour compléter l'opération, alors que l'arbre représenté
-%dans la Figure \ref{Figure:Postal Model}b nécessite seulement cinq
-%étapes. En effet, la construction de l'arbre de diffusion pour \emph{P}
-%processus avec le modèle Postal (un arbre-$\lambda$) est fondée sur
-%la fonction de Fibonacci généralisée :
-%
-%\[
-%N_{\lambda}(t)=\left\{ \begin{array}{c}
-%\begin{array}{cc}
-%N_{\lambda}(t-1)+N_{\lambda}(t-\lambda) & \:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\: si\: t\geq\lambda,\\
-%1 & dans\: le\: cas\: contraire\end{array}\end{array}\right.\]
-%
-%
-%Dans ce cas, $N_{\lambda}(t)$ représente le nombre maximum de noeuds
-%qui peuvent être contactés à l'instant \emph{t} sur une architecture
-%réseau \emph{1-port}. Si $t<\lambda$, seul le noeud source peut détenir
-%le message à l'instant \emph{t}. Par contre, si $t\geq\lambda$, le
-%nombre de noeuds contactés est la somme de deux éléments. Le premier
-%élément, $N_{\lambda}(t-1)$, indique le nombre de noeuds qui ont
-%été contactés jusqu'à l'instant précédent. Le deuxième facteur, $N_{\lambda}(t-\lambda)$,
-%indique le nombre maximum de noeuds qui peuvent être contactés à l'instant
-%\emph{t}. 
-%
-%%
-%\begin{figure}[h]
-%\begin{centering}
-%\includegraphics[width=0.85\linewidth]{images/p2p/postal-bcast}
-%\par\end{centering}
-%
-%\caption{\label{Figure:Postal Model}Broadcast avec $\lambda=2$:arbre binomial
-%et arbre-$\lambda$}
-%
-%\end{figure}
-%
-
 
 \subsection{Modélisation des Communications}
 
@@ -234,7 +140,7 @@ les différents processeurs est l'un des plus importants obstacles.
 Le modèle de Hockney \cite{Hockney94} est un des plus utilisés pour
 décrire la communication point-à-point dans les machines parallèles
 à mémoire distribuée. Selon ce modèle, une communication entre deux
-noeuds est décrite par : 
+n{\oe}uds est décrite par : 
 
 \[
 t=t_{0}+\frac{m}{r_{\infty}}\]
@@ -274,7 +180,7 @@ un message (la latence d'envoi), alors que $t_{u}$ représente le
 temps total nécessaire à la réception du message par le processus
 destinataire. Une des innovations du modèle Postal par rapport à ses
 prédécesseurs est que ce modèle permet des situations où un processus
-peut émettre plusieurs messages avant que le premier récepteur a reçu
+peut émettre plusieurs messages avant que le premier récepteur ait reçu
 son message : cela est dû à une analogie avec l'envoi de lettres par
 la poste. 
 
@@ -287,16 +193,6 @@ est normalement très significatif pour la performance d'un système.
 L'importance de ce paramètre est notamment observée sur des expériences
 en machines réelles et, surtout, dans le cas des clusters (clusters d'ordinateurs). 
 
-%Une autre caractéristique du modèle LogP est son comportement asynchrone. En effet, le modèle LogP ne
-%requiert ni barrière de synchronisation, ni super-pas. Quand un processus
-%finit l'exécution d'un groupe de tâches et de communications, il peut
-%automatiquement avancer vers le prochain groupe de tâches, même s'ils
-%existent encore des processeurs travaillant sur une tâche précédente.
-%En contraste, le modèle BSP forçait le processeur à rester à l'attente
-%de la barrière de synchronisation. Ainsi, ce comportement asynchrone
-%du modèle LogP peut être considéré comme un avantage, notamment si
-%l'application permet l'avancement asynchrone des différentes lignes
-%d'exécution. 
 
 Bien sûr, LogP reste un modèle simplifié des architectures parallèles,
 dont certains aspects de la topologie du réseau, comme par exemple
@@ -308,7 +204,7 @@ la communication entre les processus sont les suivants :
 distincts,
 \item [{o}] - le surcoût d'initialisation associée à l'envoi/réception
 d'un message,
-\item [{g}] - aussi appellé "\textit{gap}", cette valeur correspond au temps minimal nécessaire entre deux événements consécutifs
+\item [{g}] - aussi appelé "\textit{gap}", cette valeur correspond au temps minimal nécessaire entre deux événements consécutifs
 d'envoi ou de réception,
 \item [{P}] - le nombre de processus.
 \end{description}
@@ -321,55 +217,7 @@ d'un réseau est la distance moyenne asymptotique entre les processus
 ; toutefois, dans le cas des réseaux fortement hétérogènes, la définition
 de ces limites est bien plus complexe. 
 
-%Pour mieux illustrer l'utilisation des paramètres définis par LogP,
-%nous présentons dans la Figure \ref{Figure: logp_culler} l'exemple
-%proposé par Culler où LogP est utilisé pour décrire le broadcast optimal
-%sur un réseau avec $P=8$, $L=6$, $g=4$ et $o=2$. Dans cet exemple,
-%nous observons qu'une communication isolée nécessite $o+L+o$ unités
-%de temps pour être reçue; cependant, la transmission consécutive de
-%deux messages implique un surcoût équivalent à $(g-o)$, car on n'est
-%pas autorisé à transmettre deux messages consécutives en moins de
-%$g$ unités de temps. En effet, le temps $o$ correspond au temps
-%nécessaire au traitement du message pour la transmission (encapsulation,
-%mise en mémoire tampon, etc.), alors que le gap $g$ correspond à
-%l'intervalle où le réseau reste occupé par la transmission du message.
-%
-%%
-%\begin{figure}[h]
-%\begin{centering}
-%\includegraphics[width=0.6\linewidth]{images/p2p/LogP-optimal}
-%\par\end{centering}
-%
-%\caption{\label{Figure: logp_culler}Diffusion en LogP avec P=8, L=6, g=4 et
-%0=2 \cite{Culler96}}
-%
-%\end{figure}
-%
 
-
-%\subsection{LogGP}
-%
-%Comme le comportement asynchrone de plusieurs machines parallèles
-%et le surcoût de communication sont représentés par le modèle LogP,
-%ce modèle est bien plus complet que les modèles précédents. Cependant,
-%la faiblesse de ce modèle est que ses paramètres sont établis de façon
-%absolue : les valeurs de \emph{g} et \emph{o} sont les mêmes pour
-%n'importe quelle taille de message envoyé. Des expériences pratiques
-%démontrent que l'utilisation de LogP n'est précise que pour des messages
-%de petite taille, dont \emph{g} et \emph{o} ne varient pas trop.
-%
-%Pour permettre l'utilisation du modèle LogP avec des messages plus
-%grands, Alexandrov \emph{et al.} \cite{Alexandrov95} ont présenté
-%LogGP, une extension du modèle LogP qui établit le paramètre \emph{G},
-%qui représente une valeur de \emph{gap} par octet transmis. À travers
-%ce nouveau paramètre, LogGP permet la prédiction du temps de transmission
-%d'un message de taille \emph{m} entre deux noeuds avec l'expression
-%:
-%
-%\[
-%L+2\times o+(m-1)\times G\]
-%
-%
 
 \subsection*{pLogP}
 
@@ -496,8 +344,6 @@ en Chaîne, qui exécute $P-1$ communications en série.
 		\hline 
 		{\small Arbre Plat} & {\small $L+(P-1)\times g(m)$}\tabularnewline
 		\hline 
-		{\small Arbre Plat Rendez-vous} & {\small $3\times L+(P-1)\times g(m)+2\times g(1)$}\tabularnewline
-		\hline 
 		{\small Chaîne} & {\small $(P-1)\times(g(m)+L)$}\tabularnewline
 		\hline 
 		{\small Arbre Binaire} & {\small $\leq\lceil log_{2}P\rceil\times(2\times g(m)+L)$}\tabularnewline
@@ -512,7 +358,6 @@ en Chaîne, qui exécute $P-1$ communications en série.
 	
 \end{table}
 
-%\subsubsection{\label{sub: approches par segmentation}Approches par segmentation}
 
 Une autre possibilité de construire un \emph{Broadcast} est la composition
 des chaînes de retransmission \cite{Barnett96}. Cette stratégie,
@@ -538,7 +383,7 @@ dans le Tableau \ref{table:bcast_models_seg}. D'abord, on cherche
 une taille de segment \emph{s} qui minimise le temps de communication
 parmi $s=m/2^{i}\;\mathrm{pour}\; i\in[0\ldots log_{2}m]$. Ensuite,
 on peut affiner la recherche de la taille optimale avec l'aide d'heuristiques
-comme le \emph{\og local hill-climbing} \fg{} \cite{Kielmann01}.
+comme le "local hill-climbing" \cite{Kielmann01}.
 
 %
 \begin{table}
@@ -573,7 +418,7 @@ illustrer notre approche, nous avons comparé des implémentations de
 MPI\_Bcast selon les stratégies Arbre Plat, Arbre Binomial et Chaîne
 Segmentée. Ainsi, les Figures \ref{Figure:Comparison-Bcast_Flat_FEth}
 et \ref{Figure:Comparison-Bcast-Chain_FEth},
-illustrent les valeurs mésurées expérimentalement des trois stratégies d'implémentation, qui suivent presque
+illustrent les valeurs mesurées expérimentalement des trois stratégies d'implémentation, qui suivent presque
 fidèlement les prédictions des modèles.
 %Dans les prochaines pages nous présentons l'analyse des
 %expérimentations effectuées sur chaque plate-forme réseau différente. 
@@ -633,7 +478,7 @@ Bhat \cite{Bhat99,Bhat03} ou Mateescu \cite{Mateescu05}.
 
 Cependant, l'environnement de type grid est normalement caractérisé
 par un grand nombre de processus communicants, résultat de l'association
-des différentes clusters. Dans ce cas, la complexité de la
+des différents clusters. Dans ce cas, la complexité de la
 tâche d'optimisation est bien plus importante, et des simplifications
 s'imposent afin de permettre l'utilisation de telles méthodes dans
 la pratique. Une de ces simplifications est le regroupement des processus
@@ -653,14 +498,14 @@ cela est encore vrai en ce qui concerne la latence entre les n{\oe}uds,
 il n'est plus exact pour le débit d'un lien de longue distance. D'autre
 part, le faible coût du matériel informatique permet aujourd'hui que
 les  clusters regroupent des centaines de n{\oe}uds. Or, plus le coût de
-diffusion \og intra- clusters \fg{} devient important, plus son influence
+diffusion "intra- clusters" devient important, plus son influence
 sur la performance sera importante au moment de définir l'ordonnancement
 des communications.
 
 C'est exactement ce qui différencie les heuristiques traitant (ou
 ne traitant pas) la communication à l'intérieur des groupes : les
-heuristiques \og traditionnelles \fg{} et celle appelées \og heuristiques
-sensibles au contexte des grids \fg{} (\og \emph{grid-aware} \fg{}
+heuristiques "traditionnelles" et celle appelées "heuristiques
+sensibles au contexte des grids" ("\emph{grid-aware}"
 en anglais). Dans le premier cas, l'optimisation ne tient compte que
 des communications entre les différents coordinateurs, alors que le
 deuxième cas s'occupe aussi de la diffusion à l'intérieur des  clusters. 
@@ -680,7 +525,7 @@ messages à l'intérieur des  clusters.
 
 Pour décrire les heuristiques présentées dans cette section, nous
 utilisons un formalisme de groupes similaire à celui de Bhat \cite{Bhat03}.
-Dans ce formalisme, les  clusters sont séparées en deux groupes, \textbf{A}
+Dans ce formalisme, les  clusters sont séparés en deux groupes, \textbf{A}
 et \textbf{B}. Le groupe \textbf{A} contient les  clusters qui ont déjà
 reçu le message (la réception du message par le coordinateur du
  cluster est suffisante). Le groupe \textbf{B} contient les  clusters
@@ -709,11 +554,11 @@ L'heuristique en \emph{Arbre Plat}, découpe la communication en deux niveaux, \
 et \emph{intra- clusters}. 
 
 Dans le premier niveau, le processus \emph{racine} envoie le message
-à tous les coordinateurs des différentes  clusters. L'ordre d'envoi
-suit le \og rang \fg{} des différentes  clusters, prédéfini à l'initialisation.
+à tous les coordinateurs des différents clusters. L'ordre d'envoi
+suit le "rang" des différents clusters, prédéfini à l'initialisation.
 Formellement, cela veut dire qu'à chaque étape, le processus \emph{racine}
 choisi comme récepteur le premier  cluster du groupe \textbf{B}. Dans
-cette \og heuristique \fg{}, le processus émetteur est toujours
+cette "heuristique", le processus émetteur est toujours
 le même (le processus \emph{racine}), malgré le fait que les  clusters
 qui ont déjà reçu le message font désormais partie du groupe \textbf{A}.
 Dans le deuxième niveau de diffusion, exécuté à l'intérieur de chaque
@@ -896,7 +741,7 @@ la description séparée \emph{L}, \emph{g} et \emph{T}, afin
 de permettre une identification plus facile des facteurs évalués.
 
 Dans ce sens, nous présentons deux nouvelles stratégies d'évaluation
-dites \og sensibles au contexte des grids\fg{}, où
+dites "sensibles au contexte des grids", où
 le temps de diffusion \emph{intra-cluster} est aussi considéré lors
 de la construction des arbres de diffusion. Pour mieux analyser l'efficacité
 de ces stratégies, nous avons aussi développé une version de l'heuristique
@@ -913,7 +758,7 @@ ECEF-LA où nous utilisons une fonction de \emph{lookahead} adaptée
 
 Ainsi, l'heuristique ECEF-LA\emph{t} cherche à minimiser le coût total
 de transmission et le temps nécessaire à la diffusion d'un message
-dans un  cluster distant (en effet, le \og petit \emph{t} \fg{}
+dans un  cluster distant (en effet, le "petit \emph{t}"
 du nom de cette heuristique indique qu'on cherche le minimum des temps).
 Pour cela, elle utilise une fonction d'évaluation :
 
@@ -1064,18 +909,15 @@ dépendante de la configuration du réseau, de l'ordre de représentation
 des clusters et du processus racine.
 %
 \begin{figure}[h]
-	\begin{centering}
+	\centering
 		\includegraphics[width=0.7\linewidth]{images/Grid/Bcast/case1/comp}
-		\par\end{centering}
 	\caption{\label{Figure: Bcast - Case1 - Mesure}Performance du Broadcast sur
 		un grid de 88 machines }	
 \end{figure}
 
 \begin{figure}[h]
-	\begin{centering}
-		\includegraphics[width=0.7\linewidth]{images/Grid/Bcast/case1/simul}
-		\par\end{centering}
-	
+	\centering
+		\includegraphics[width=0.7\linewidth]{images/Grid/Bcast/case1/simul}	
 	\caption{\label{Figure: Bcastcase1predictions}Prédictions pour un grid
 		avec 88 machines}
 	
@@ -1126,7 +968,7 @@ ECEFLA-T, offre le meilleur rapport coût-bénéfice-robustesse.
 
 \section{Amélioration de la performance de MPI\_AlltoAll sur un grid}
 
-Si les stratégies présentés dans les sections précédentes permettent l'optimisation des communications dans le cadre d'une diffusion MPI\_Bcast, d'autres patrons de communication encore plus couteux sont utilisées par les applications scientifiques. L'une de ces patrons, le \textit{many-to-many}, représente un \emph{échange total} d'informations entre les n{\oe}uds \cite{Christara99}. Plus exactement, chaque processus détient $n$ itens de données différentes de taille $m$, lesquels doivent être distribués entre $n$ processus (le processus inclus).  
+Si les stratégies présentées dans les sections précédentes permettent l'optimisation des communications dans le cadre d'une diffusion MPI\_Bcast, d'autres patrons de communication encore plus couteux sont utilisés par les applications scientifiques. L'une de ces patrons, le \textit{many-to-many}, représente un \emph{échange total} d'informations entre les n{\oe}uds \cite{Christara99}. Plus exactement, chaque processus détient $n$ items de données différentes de taille $m$, lesquels doivent être distribués entre $n$ processus (le processus inclus).  
 
 Vu la complexité de l'opération, les implémentations MPI de All-to-All généralement utilisent des envois directs entre les processus, ce qui peut occasionner la surcharge des communications et des problèmes liés à la congestion du réseau. De surcroît, l'utilisation de cette approche dans un environnement de type grille doit aussi faire face à l'hétérogénéité des temps de communication entre les n{\oe}uds proches et distants.
 
@@ -1136,19 +978,19 @@ Soit deux clusters ${\mathcal C}_1$
 et ${\mathcal C}_2$ avec respectivement $n_1$ n{\oe}uds et $n_2$ n{\oe}uds.
 Un réseau, appelé \textit{backbone}, interconnecte les deux clusters. Nous assumons aussi que l'interface réseau utilisée pour la communication avec un réseau distant est la même utilisée pour la communication avec le réseau local. De ce fait et de la topologie du réseau, les communications inter-cluster ne seront jamais plus rapides que celles effectuées à l'intérieur d'un cluster.
 
-Maintenant supposons qu'une application doit échanger des données entre les machines dans ${\mathcal C}_1$ et ${\mathcal C}_2$ et que pour chaque source, les données à destination des autres machines ne sont pas identiques (mais ont toutes une taille $m$).  Comme résultat, nous devons transmettre l'équivalent à $(n_1+ n_2)^2$ messages différents. Alors que plusieurs bibliothèques MPI libraries  (OpenMPI, MPICH2, etc.) implémentent l'opération \textit{MPI\_AllltoAll} en supposant que les n{\oe}uds se trouvent dans le même réseau et donc que les communications ont le même coût, dans notre cas certains messages sont envoyés entre n{\oe}uds d'un même cluster et d'autres entre n{\oe}uds de réseaux différents. Dans le premier cas, la latence des communications est plus favorables que dans le deuxième, et souvent le même principe s'applique pour le débit du réseau.
+Maintenant supposons qu'une application doit échanger des données entre les machines dans ${\mathcal C}_1$ et ${\mathcal C}_2$ et que pour chaque source, les données à destination des autres machines ne sont pas identiques (mais ont toutes une taille $m$).  Comme résultat, nous devons transmettre l'équivalent à $(n_1+ n_2)^2$ messages différents. Alors que plusieurs bibliothèques MPI  (OpenMPI, MPICH2, etc.) implémentent l'opération \textit{MPI\_AllltoAll} en supposant que les n{\oe}uds se trouvent dans le même réseau et donc que les communications ont le même coût, dans notre cas certains messages sont envoyés entre n{\oe}uds d'un même cluster et d'autres entre n{\oe}uds de réseaux différents. Dans le premier cas, la latence des communications est plus favorable que dans le deuxième, et souvent le même principe s'applique pour le débit du réseau.
 
 
 \subsection{\label{cluster}Modélisation de la congestion du réseau}
 
 La communication intensive engendrée par les opérations de type \textit{alltoall} peut facilement saturer le réseau ou les destinataires, dégradant ainsi la performance globale de l'opération. Chun \cite{Chun01} a démontré que le coût des communications collectives est souvent dominé par le coût de la congestion du réseau et des subséquentes pertes de paquets.
 
-Malheureusement, plusieurs modèles de communication tels que \cite{Christara99} ou \cite{Pjesivac-Grbovic05} ne prennent pas en compte les impacts potentiels de la congestion. En effet, ces travaux considèrent que l'opération All-to-All n'est qu'une exécution parallèle de plusieurs opérations de type \emph{personalized one-to-many} \cite{Johnsson89}. Cela s'exprime par le modèle de performances linéaire représenté en Equation \ref{eq:1}, où $\alpha$ correspond à la latence de communication entre les processus, $\frac{1}{\beta}$ correspond au débit du lien, $m$ représente la taille des messages en octets et  $n$ correspond au nombre de processus:
+Malheureusement, plusieurs modèles de communication tels que \cite{Christara99} ou \cite{Pjesivac-Grbovic05} ne prennent pas en compte les impacts potentiels de la congestion. En effet, ces travaux considèrent que l'opération All-to-All n'est qu'une exécution parallèle de plusieurs opérations de type \emph{personalized one-to-many} \cite{Johnsson89}. Cela s'exprime par le modèle de performances linéaire représenté en Equation \ref{eq:1}, où $\alpha$ correspond à la latence de communication entre les processus, $\frac{1}{\beta}$ correspond au débit du lien, $m$ représente la taille des messages en octets et  $n$ correspond au nombre de processus :
 \begin{equation}
 T=(n-1)\times(\alpha+\beta m)\label{eq:1}
 \end{equation}
 
-Comme ce modèle linéaire n'est pas capable de prendre en compte la congestion des communications, certains auteurs tels que Bruck \cite{Bruck97b} et Clement \emph{et al.} \cite{Clement96} suggèrent l'utilisation d'un facteur de ralentissement ()\emph{slowdown factor}) proportionnel au nombre de processus communicants.  Labarta et \emph{al.} \cite{Labarta96} aussi suggère l'utilisation d'un facteur de ralentissement basé sur le nombre de messages en transit car, selon eux, si \emph{m} messages sont prêts à être transmis mais seulement \emph{b} canaux sont disponibles, alors les transmissions sont sérialisées en $\left\lceil \frac{m}{b}\right\rceil $ vagues de communication. 
+Comme ce modèle linéaire n'est pas capable de prendre en compte la congestion des communications, certains auteurs tels que Bruck \cite{Bruck97b} et Clement \emph{et al.} \cite{Clement96} suggèrent l'utilisation d'un facteur de ralentissement (\emph{slowdown factor}) proportionnel au nombre de processus communicants.  Labarta et \emph{al.} \cite{Labarta96} aussi suggère l'utilisation d'un facteur de ralentissement basé sur le nombre de messages en transit car, selon eux, si \emph{m} messages sont prêts à être transmis mais seulement \emph{b} canaux sont disponibles, alors les transmissions sont sérialisées en $\left\lceil \frac{m}{b}\right\rceil $ vagues de communication. 
 
 Une approche légèrement différente a été proposée par Chun \cite{Chun01}, qui associe la congestion à la latence et donc utilise différentes valeurs de latence selon la taille des messages. Cependant, ce modèle ignore le nombre de messages circulant sur un réseau ou un lien, alors et ceci est directement lié au phénomène de la congestion. 
 
@@ -1156,15 +998,16 @@ Une approche légèrement différente a été proposée par Chun \cite{Chun01}, 
 
 Afin de mieux comprendre l'impact de la congestion sur les communications collectives de type All-to-All dans les clusters, nous avons proposé en \cite{Steffenel06b} un modèle où la congestion du réseau est dépendant des caractéristiques de l'environnement physique (interfaces réseaux, liens, switches) mais aussi de la taille des messages. En effet, nous avons observé expérimentalement que les temps de communication varient selon la taille des messages,  et que le facteur de contention  $\gamma$ doit aussi prendre cela en compte. 
 
-Ainsi, notre modèle associe le facteur de contention $\gamma$ de Clement et \textit{al.} \cite{Clement96} avec un nouveau paramètre $\delta$, ce dernier dépendant du nombre de processus et de la taille des messages, comme indiqué ci-dessous. Comme résultat, nous associons deux équations (l'une linéaire, l'autre affine) afin de mieux représenter la performance de communication de MPI\_Alltoall dans un réseau donnée, comme illustré en Figure \ref{Figure: local}.
+Ainsi, notre modèle associe le facteur de contention $\gamma$ de Clement et \textit{al.} \cite{Clement96} avec un nouveau paramètre $\delta$, ce dernier dépendant du nombre de processus et de la taille des messages, comme indiqué ci-dessous. Comme résultat, nous associons deux équations (l'une linéaire, l'autre affine) afin de mieux représenter la performance de communication de MPI\_Alltoall dans un réseau donné, comme illustré en Figure \ref{Figure: local}.
 \begin{equation}
 T=\left\{ \begin{array}{lc}
 (n-1)\times(\alpha+m\beta)\times\gamma & if\, m<M\\
 (n-1)\times((\alpha+m\beta)\times\gamma+\delta)\,\,\,\,\, & if\, m\geq M\end{array}\right.\label{eq:6}\end{equation}
 
 \begin{figure}
-	\begin{center}\includegraphics[width=0.7\columnwidth]{images/newcomp24_pred_log}\end{center}
-	\caption{\label{Figure: local}Measured and predicted performance for the standard MPI\_Alltoall in a Gigabit Ethernet network}
+	\centering
+		\includegraphics[width=0.7\columnwidth]{images/newcomp24_pred_log}
+	\caption{\label{Figure: local}Performance mesurée et modélisée pour le MPI\_Alltoall dans un réseau Gigabit Ethernet}
 \end{figure}
 
 
@@ -1178,8 +1021,10 @@ En effet, la figure \ref{Figure: standard} représente des mesures effectuées e
 
 
 \begin{figure}
-	\begin{center}\includegraphics[width=0.7\columnwidth]{images/standard}\end{center}
-	\vspace{-0.5cm}\caption{\label{Figure: standard}Measured and predicted performance for the standard MPI\_Alltoall in a grid}\vspace{-0.5cm}
+	\centering
+	\includegraphics[width=0.7\columnwidth]{images/standard}
+	%\vspace{-0.5cm}
+	\caption{\label{Figure: standard}Performance mesurée et modélisée pour le MPI\_Alltoall dans un grid} %\vspace{-0.5cm}
 \end{figure}
  
 Bien qu'on pourrait rajouter des paramètres supplémentaires pour s'approcher des performances observées, nous avons décidé d'attaquer le problème directement à sa source en optimisant la façon dont les communications sont effectuées sur un grid. 
@@ -1191,7 +1036,7 @@ Lors de l'opération dans un grid de calcul, l'un des facteurs les plus importan
 
 La plupart des algorithmes pour les communications collectives sur les grids (PACX MPI~\cite{Gabriel98}, MagPIe~\cite{Kielmann01}) visent la minimisation des communications à grande distance en choisissant un coordinateur dans chaque cluster qui sera responsable par les échanges intra-cluster. Bien que ce mécanisme présente des avantages pour d'autres patrons de communication, il n'est pas adapté aux opérations de type  MPI\_Alltoall. En premier lieu, ce mécanisme  induit des étapes de communication supplémentaires du fait de forcer le passage par les coordinateurs des clusters, qui de plus deviennent des goulots d'étranglement. En deuxième lieu, cette approche n'est pas optimale par rapport à l'utilisation des liens inter-cluster, souvent capables de supporter des flux multiples \cite{Casanova05}. 
 
-Afin de mieux traiter ce problème, nous essayons de minimiser les échanges distants d'une autre manière. En effet, la grande complexité des échanges du All-to-All réside dans les différentes perforances des liens locaux et distants, or les implémentations traditionnelles de MPI\_Alltoall sont incapables de faire la différence. Si nous pouvons identifier la disposition des n{\oe}uds, on peut utiliser toutes les machines d'un cluster pour collecter les données à un niveau local avant de les envoyer simultanément au réseau distant, en une unique étape de communication. 
+Afin de mieux traiter ce problème, nous essayons de minimiser les échanges distants d'une autre manière. En effet, la grande complexité des échanges du All-to-All réside dans les différentes performances des liens locaux et distants, or les implémentations traditionnelles de MPI\_Alltoall sont incapables de faire la différence. Si nous pouvons identifier la disposition des n{\oe}uds, on peut utiliser toutes les machines d'un cluster pour collecter les données à un niveau local avant de les envoyer simultanément au réseau distant, en une unique étape de communication. 
 
 Ainsi, le mécanisme que nous avons proposé en \cite{Steffenel07c} est une solution "grid aware" qui s'exécute en deux étapes. Dans un premier moment, seulement les échanges locaux sont effectués. Cette phase inclut les échanges attendus entre les n{\oe}uds intra-cluster mais aussi l'échange des données destinés aux autres clusters, stockés dans des buffers supplémentaires pour la deuxième phase. L'avantage de cet échange est que son coût est très faible par rapport au coût d'une communication distante (voir Figure \ref{Figure: standard}). Finalement, lors de la deuxième phase, les buffers sont transmis directement aux n{\oe}uds destinataires, complétant ainsi l'échange total.  
 
@@ -1199,15 +1044,16 @@ Plus exactement, l'algorithme peut être décrit comme suit. Sans perte de gén�
 
 L'algorithme suit les deux étapes : 
 \begin{description}
-	\item[Première étape] Pendant cette phase, nous effectuons les échanges locaux : Le processus $i$  envoie ${\mathcal M}_{i,j}$ au processus $j$, seulement si $i$ et $j$ font partie du même cluster. Ensuite, ils préparent les buffers pour les communications distantes de manière à ce que les données à destination d'un node distant $j$ on ${\mathcal C}_2$ seront d'abord stockés sur le n{\oe}ud $j~ mod~ n_1$ de ${\mathcal C}_1$. De même, les données sur un n{\oe}ud $i$ de ${\mathcal C}_2$ à destination de $j$ sur ${\mathcal C}_1$ seront stockés sur le n{\oe}ud $ \lfloor i/n_1 \rfloor \times n_1 + j $.
+	\item[Première étape] Pendant cette phase, nous effectuons les échanges locaux : Le processus $i$  envoie ${\mathcal M}_{i,j}$ au processus $j$, seulement si $i$ et $j$ font partie du même cluster. Ensuite, ils préparent les buffers pour les communications distantes de manière à ce que les données à destination d'un n{\oe}ud distant $j$ on ${\mathcal C}_2$ seront d'abord stockés sur le n{\oe}ud $j~ mod~ n_1$ de ${\mathcal C}_1$. De même, les données sur un n{\oe}ud $i$ de ${\mathcal C}_2$ à destination de $j$ sur ${\mathcal C}_1$ seront stockés sur le n{\oe}ud $ \lfloor i/n_1 \rfloor \times n_1 + j $.
 	\item[Deuxième étape] Pendant cette deuxième étape, seulement $n_2$ communications inter-cluster auront lieu. Cette phase est décomposée en $\lceil n_2/n_1\rceil$ vagues avec $n_1$ communications chacune. Ainsi, pendant la vague $s$, le processus  $i$ de ${\mathcal C}_1$ échangera son buffer local avec le processus $j=i+n_1\times s$ de ${\mathcal C}_2$ (si $j < n_1+n_2$). Plus exactement, $i$ envoie  ${\mathcal M}_{k,j}$ à $j$ où $k\in [0,n_1]$ et $j$ envoie ${\mathcal M}_{k,i}$ à $i$ où $k\in[n_1\times s,n_1\times s+n_1-1]$.
 \end{description}
 
-Comme cet algorithme minimise le nombre de communications inter-cluster et les organise par vagues, nous n'avons besoin que de $2\times \max(n_1,n_2)$ messages dans les deux directions (par rapport à  $2\times n_1 \times n_2$ messages dans l'algorithme traditionnel). Si les deux clusters ont le même nombre de n{\oe}uds, une seule vague d'échanges sera nécessaire. Notre algorithme est aussi optimisé sur la longue distance car il regroupe plusieurs messages ensemble, réduisant l'impact de la latence et des interférences sur le backbone. La Figure \ref{Figure: comp} présente une comparaison entre la performance de l'algorithme traditionnel implémenté par OpenMPI et celle de l'implémentation de l'algorithme ${\mathcal LG}$. Nous observons que l'algorithm ${\mathcal LG}$ obtient un gain de performance de presque 50\% par rapport à la stratégie traditionnelle.
+Comme cet algorithme minimise le nombre de communications inter-cluster et les organise par vagues, nous n'avons besoin que de $2\times \max(n_1,n_2)$ messages dans les deux directions (par rapport à  $2\times n_1 \times n_2$ messages dans l'algorithme traditionnel). Si les deux clusters ont le même nombre de n{\oe}uds, une seule vague d'échanges sera nécessaire. Notre algorithme est aussi optimisé sur la longue distance car il regroupe plusieurs messages ensemble, réduisant l'impact de la latence et des interférences sur le backbone. La Figure \ref{Figure: comp} présente une comparaison entre la performance de l'algorithme traditionnel implémenté par OpenMPI et celle de l'implémentation de l'algorithme ${\mathcal LG}$. Nous observons que l'algorithme ${\mathcal LG}$ obtient un gain de performance de presque 50\% par rapport à la stratégie traditionnelle.
 
 \begin{figure}
-	\begin{center}\includegraphics[width=0.7\columnwidth]{images/comp}\end{center}
-	\caption{\label{Figure: comp}Comparaison de performance entre OpenMPI et ${\mathcal LG}$ algorithms}
+	\centering
+	\includegraphics[width=0.7\columnwidth]{images/comp}
+	\caption{\label{Figure: comp}Comparaison de performance entre OpenMPI et l'algorithme ${\mathcal LG}$}
 \end{figure}
 
 L'ordonnancement des communications effectué par ${\mathcal LG}$ a aussi une conséquence sur la modélisation des performances. Tout d'abord, il minimise les communications de longue distance, réduisant les risques de congestion qui sont difficiles de modéliser. De plus, la transmission groupée des messages réduit l'impact de la latence et des fluctuations de performance du réseau. C'est ainsi que nous avons pu établir un modèle composé des performances locales (${\mathcal T_{C_{n}}}$, obtenues à partir de l'équation \ref{eq:6}) et des prédictions pour les communications de longue distance obtenues par les méthodes traditionnelles :
@@ -1219,11 +1065,12 @@ T=max(T_{\mathcal C_1},T_{\mathcal C_2})+\lceil n_2/n_1\rceil \times (\alpha_w+\
 Afin d'obtenir les paramètres nécessaires aux prédictions, nous avons utilisé la procédure décrite par Kielman \textit{et al.} \cite{Kielmann00}. Les facteurs de contention $\gamma=2.6887$ et $\delta=0.005039$ pour $M>=1KB$ ont été obtenus par la méthode des moindres carrés comme décrit par \cite{Steffenel06b}.
 
 \begin{figure}
-	\begin{center}\includegraphics[width=0.7\columnwidth]{images/simul}\end{center}
+	\centering
+		\includegraphics[width=0.7\columnwidth]{images/simul}
 	\caption{\label{Figure: simul}Performance de ${\mathcal LG}$ et sa prédiction}
 \end{figure}
 
-La Figure \ref{Figure: simul} compare ainsi les prédictions obtenues avec l'Equation \ref{eq:8} et les performances mesurées pour l'algorithm ${\mathcal LG}$. Nous observons une bonne adéquation des prédictions, ce qui était impossible avec l'implémentation traditionnelle de MPI\_Alltoall. 
+La Figure \ref{Figure: simul} compare ainsi les prédictions obtenues avec l'Équation \ref{eq:8} et les performances mesurées pour l'algorithme ${\mathcal LG}$. Nous observons une bonne adéquation des prédictions, ce qui était impossible avec l'implémentation traditionnelle de MPI\_Alltoall. 
 
 \section{Bilan et Perspectives}
 
