@@ -981,7 +981,7 @@ Un réseau, appelé \textit{backbone}, interconnecte les deux clusters. Nous ass
 Maintenant supposons qu'une application doit échanger des données entre les machines dans ${\mathcal C}_1$ et ${\mathcal C}_2$ et que pour chaque source, les données à destination des autres machines ne sont pas identiques (mais ont toutes une taille $m$).  Comme résultat, nous devons transmettre l'équivalent à $(n_1+ n_2)^2$ messages différents. Alors que plusieurs bibliothèques MPI  (OpenMPI, MPICH2, etc.) implémentent l'opération \textit{MPI\_AllltoAll} en supposant que les n{\oe}uds se trouvent dans le même réseau et donc que les communications ont le même coût, dans notre cas certains messages sont envoyés entre n{\oe}uds d'un même cluster et d'autres entre n{\oe}uds de réseaux différents. Dans le premier cas, la latence des communications est plus favorable que dans le deuxième, et souvent le même principe s'applique pour le débit du réseau.
 
 
-\subsection{\label{cluster}Modélisation de la congestion du réseau}
+\subsection{\label{cluster}Modélisation de la Congestion du Réseau}
 
 La communication intensive engendrée par les opérations de type \textit{alltoall} peut facilement saturer le réseau ou les destinataires, dégradant ainsi la performance globale de l'opération. Chun \cite{Chun01} a démontré que le coût des communications collectives est souvent dominé par le coût de la congestion du réseau et des subséquentes pertes de paquets.
 
@@ -994,9 +994,7 @@ Comme ce modèle linéaire n'est pas capable de prendre en compte la congestion 
 
 Une approche légèrement différente a été proposée par Chun \cite{Chun01}, qui associe la congestion à la latence et donc utilise différentes valeurs de latence selon la taille des messages. Cependant, ce modèle ignore le nombre de messages circulant sur un réseau ou un lien, alors et ceci est directement lié au phénomène de la congestion. 
 
-\subsection{Modélisation de la congestion dans un cluster homogène}
-
-Afin de mieux comprendre l'impact de la congestion sur les communications collectives de type All-to-All dans les clusters, nous avons proposé en \cite{Steffenel06b} un modèle où la congestion du réseau est dépendant des caractéristiques de l'environnement physique (interfaces réseaux, liens, switches) mais aussi de la taille des messages. En effet, nous avons observé expérimentalement que les temps de communication varient selon la taille des messages,  et que le facteur de contention  $\gamma$ doit aussi prendre cela en compte. 
+Afin de mieux représenter l'impact de la congestion sur les communications collectives de type All-to-All dans les clusters, nous avons proposé en \cite{Steffenel06b} un modèle où la congestion du réseau est dépendant des caractéristiques de l'environnement physique (interfaces réseaux, liens, switches) mais aussi de la taille des messages. En effet, nous avons observé expérimentalement que les temps de communication varient selon la taille des messages,  et que le facteur de contention  $\gamma$ doit aussi prendre cela en compte. 
 
 Ainsi, notre modèle associe le facteur de contention $\gamma$ de Clement et \textit{al.} \cite{Clement96} avec un nouveau paramètre $\delta$, ce dernier dépendant du nombre de processus et de la taille des messages, comme indiqué ci-dessous. Comme résultat, nous associons deux équations (l'une linéaire, l'autre affine) afin de mieux représenter la performance de communication de MPI\_Alltoall dans un réseau donné, comme illustré en Figure \ref{Figure: local}.
 \begin{equation}
@@ -1030,7 +1028,7 @@ En effet, la figure \ref{Figure: standard} représente des mesures effectuées e
 Bien qu'on pourrait rajouter des paramètres supplémentaires pour s'approcher des performances observées, nous avons décidé d'attaquer le problème directement à sa source en optimisant la façon dont les communications sont effectuées sur un grid. 
 
 
-\subsection{L'algorithme LG}
+\subsection{All-to-All pour les Grids : l'algorithme LG}
 
 Lors de l'opération dans un grid de calcul, l'un des facteurs les plus importants à prendre en compte est le temps nécessaire à ce que les messages soient livrés car ceux-ci sont affectés par la distance géographique mais aussi par l'hétérogénéité des protocoles, le routage des messages et les interférences des autres flux rencontrés sur le backbone. 
 
