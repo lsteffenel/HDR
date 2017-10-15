@@ -2,13 +2,13 @@
 \begin{resume}
 Dans l'ensemble des éléments qui composent les systèmes informatiques, le réseau d'interconnexion est parmi les éléments qui sont les plus exposés et impactés par l'hétérogénéité. Cette hétérogénéité peut se présenter sous différentes formes : diversité d'équipements et de technologies, variations de performance et disponibilité (volatilité), limitations liées aux caractéristiques physiques ou à la capacité des ressources, etc. 
 
-Si cette hétérogénéité doit être prise en compte lors du développement de systèmes et applications, il s'avère souvent que les solutions se limitent à pallier les éventuels problèmes. Les travaux que j'ai mené dans le domaine de l'hétérogénéité des réseaux visent la compréhension des facteurs liés à l'hétérogénéité, leur caractérisation et aussi l'optimisation de l'usage des ressources afin de rendre les systèmes et applications plus performants et fiables.
+Si cette hétérogénéité doit être prise en compte lors du développement de systèmes et applications, il s'avère souvent que les solutions se limitent à pallier les éventuels problèmes. Parmi les travaux que j'ai mené dans le domaine de l'hétérogénéité des réseaux on trouve souvent l'association entre l'observation (mesure des performances) et la modélisation (prédiction des performances). Ces deux facettes de la recherche visent la compréhension des facteurs liés à l'hétérogénéité, leur caractérisation et aussi l'optimisation des algorithmes de communication.
 
-L'une des premières étapes dans l'étude de l'hétérogénéité requiert l'observation et l'analyse des communications réseau afin de modéliser leur fonctionnement et ainsi permettre une estimation de leurs performances. Cette étude cache néanmoins une grande complexité car même sur un petit ensemble de ressources la variation de certains facteurs peut créer un nombre important de situations, chacune avec un modèle de communication différent. Afin de permettre l'application pratique de cette modélisation de performance nous devons non seulement être en mesure de découvrir la topologie du réseau, mais aussi de pouvoir quantifier les différents facteurs et émettre des hypothèses sur les modèles de communication observés. 
+Dans ce sens, je me suis orienté à l'étude et modélisation des primitives de communication collective dans les réseaux hétérogènes de type grid. Contrairement aux communications réseaux point à point (\textit{unicast}), les communications collectives visent à la diffusion ou collecte de messages auprès un ensemble de n{\oe}uds. Parmi les patrons de communication collective nous trouvons celui dit \textit{one-to-many}, qui représente une diffusion (\textit{broadcast/multicast}), mais aussi des patrons plus élaborés tels que \textit{many-to-many} qui représente un échange total entre les n{\oe}uds : chaque n{\oe}ud a un message différent à envoyer à chacun des autres n{\oe}uds du réseau. 
 
-Un mécanisme très utile dans la réduction de la complexité de la modélisation des communications réside dans la classification et catégorisation des ressources observées. Non seulement cela permet de se concentrer sur des modèles "type" qui représentent convenablement des ensembles de ressources, comme aussi on ouvre la possibilité d'utiliser ces informations dans le but d'optimiser les échanges entre les applications.
+Les travaux présentés ici concernent les développements effectués à la fin de mes travaux de thèse et poursuivis lors de mes activités en tant que ATER à Nancy, entre 2005 et 2007, période dans laquelle j'ai intégré l'Équipe ALGORILLE de l'INRIA Lorraine. Dans le même registre, il faut rajouter des collaborations autour de la modélisation des performances des algorithmes parallèles de multiplication matricielle avec le professeur Wahid Nasri de l'ESSTT (Tunisie) ou des développements sur le broadcast pour les grilles dans le cadre de la thèse de doctorat de Hazem Fkaier (Université Paris 13).
 
-Tous ces éléments sont connectés aux travaux qui seront présentés dans les chapitres suivants.  
+
 %Cette première partie regroupe les travaux que j'ai menés sur la
 %structuration des systèmes distribués à l'aide de marches
 %aléatoires. Ils constituent la continuité de ceux menés durant ma
@@ -70,7 +70,7 @@ raison, dans ce chapitre nous voulons identifier les modèles qui ont les caract
 les plus adaptées à la modélisation réaliste des communications.
 
 
-\subsection{Exécution dans les systèmes distribués}
+\subsection{Exécution dans les Systèmes Distribués}
 
 Un système distribué est classiquement défini comme un ensemble
 d'unités de traitement ou de calcul indépendantes, reliées entre elles
@@ -966,11 +966,11 @@ heuristique un peu plus élaborée, comme par exemple l'heuristique
 ECEFLA-T, offre le meilleur rapport coût-bénéfice-robustesse.
 
 
-\section{Amélioration de la performance de MPI\_AlltoAll sur un grid}
+\section{Amélioration de la Performance de MPI\_AlltoAll dans un Grid}
 
 Si les stratégies présentées dans les sections précédentes permettent l'optimisation des communications dans le cadre d'une diffusion MPI\_Bcast, d'autres patrons de communication encore plus couteux sont utilisés par les applications scientifiques. L'une de ces patrons, le \textit{many-to-many}, représente un \emph{échange total} d'informations entre les n{\oe}uds \cite{Christara99}. Plus exactement, chaque processus détient $n$ items de données différentes de taille $m$, lesquels doivent être distribués entre $n$ processus (le processus inclus).  
 
-Vu la complexité de l'opération, les implémentations MPI de All-to-All généralement utilisent des envois directs entre les processus, ce qui peut occasionner la surcharge des communications et des problèmes liés à la congestion du réseau. De surcroît, l'utilisation de cette approche dans un environnement de type grille doit aussi faire face à l'hétérogénéité des temps de communication entre les n{\oe}uds proches et distants.
+Vu la complexité de l'opération, les implémentations de \textit{many-to-many} dans la bibliothèque MPI (appelées "\textit{All-to-All}" par celle-ci) généralement utilisent des envois directs entre les processus, ce qui peut occasionner la surcharge des communications et des problèmes liés à la congestion du réseau. De surcroît, l'utilisation de cette approche dans un environnement de type grille doit aussi faire face à l'hétérogénéité des temps de communication entre les n{\oe}uds proches et distants.
 
 \subsection{Définitions}
 
@@ -981,7 +981,7 @@ Un réseau, appelé \textit{backbone}, interconnecte les deux clusters. Nous ass
 Maintenant supposons qu'une application doit échanger des données entre les machines dans ${\mathcal C}_1$ et ${\mathcal C}_2$ et que pour chaque source, les données à destination des autres machines ne sont pas identiques (mais ont toutes une taille $m$).  Comme résultat, nous devons transmettre l'équivalent à $(n_1+ n_2)^2$ messages différents. Alors que plusieurs bibliothèques MPI  (OpenMPI, MPICH2, etc.) implémentent l'opération \textit{MPI\_AllltoAll} en supposant que les n{\oe}uds se trouvent dans le même réseau et donc que les communications ont le même coût, dans notre cas certains messages sont envoyés entre n{\oe}uds d'un même cluster et d'autres entre n{\oe}uds de réseaux différents. Dans le premier cas, la latence des communications est plus favorable que dans le deuxième, et souvent le même principe s'applique pour le débit du réseau.
 
 
-\subsection{\label{cluster}Modélisation de la Congestion du Réseau}
+\subsection{Modélisation de la Congestion du Réseau\label{cluster}}
 
 La communication intensive engendrée par les opérations de type \textit{alltoall} peut facilement saturer le réseau ou les destinataires, dégradant ainsi la performance globale de l'opération. Chun \cite{Chun01} a démontré que le coût des communications collectives est souvent dominé par le coût de la congestion du réseau et des subséquentes pertes de paquets.
 

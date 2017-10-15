@@ -1,13 +1,16 @@
 % !TeX spellcheck = fr_FR
 \begin{resume}
-La gestion de l'hétérogénéité des ressources peut être considérée sous plusieurs aspects. Les chapitres précédents ont donné des exemples de travaux dans lesquels l'hétérogénéité s'était concentrée sur les communications (Chapitre \ref{Chap:MPI}) ou sur le couple données-communication (Chapitre \ref{SEC:GRAPPES}). Dans ce chapitre nous nous concentrons sur un troisième socle, celui de l'hétérogénéité du calcul. Plus exactement, ce chapitre présente des travaux dont les contributions ont visé la prise en charge de l'hétérogénéité des ressources de calcul ou l'hétérogénéité des tâches de calcul, tous les deux résultant en une variabilité des temps d'exécution de tâches qui a dû être traitée et optimisée. Il est aussi important de remarquer que la communication et le stockage peuvent varier mais, dans ces cas, ils sont traités par des outils et mécanismes subjacents qui n'ont pas été la cible de nos travaux.
+La gestion de l'hétérogénéité peut (et doit) être considérée sous plusieurs aspects. Alors que le chapitre précédent a donné des exemples de travaux dans lesquels l'étude sur l'hétérogénéité s'était concentrée sur les aspects liés à la communication, dans ce chapitre nous nous concentrons sur l'hétérogénéité du calcul. Ce type d'hétérogénéité est souvent le plus simple à traiter car le plus fréquent : il est presque impossible développer une application parallèle où les tâches de calcul sont parfaitement régulières. Bien, sûr, la gestion des tâches régulières ou irrégulières dépend de leur interdépendance. Plus elles sont découplées, moins on trouve de contraintes pour leur exécution, ce que simplifie leur gestion.
 
-Ainsi, ce chapitre démarre avec la description d'une plate-forme de calcul destinée à l'exécution de problèmes d'amarrage moléculaire. Ce travail, développé dans le cadre de la codirection de thèse de Romain Vasseur, est un exemple d'application métier où l'environnement développée sert à déployer de manière distribuée une application déjà existante et dont le code source ne pourrait pas être facilement parallélisée. L'approche retenue a été composée d'une gestion distribuée d'instances de calcul sur un cluster, associée à un découpage plus fin du problème afin de multiplier les tâches de calcul et ainsi mieux utiliser les ressources disponibles.
+Dans ce chapitre nous considérons que les tâches de calcul sont hétérogènes si les différentes tâches d'une application présentent des variabilités dans leurs temps d'exécution à cause des facteurs propres à chaque tâche : variations dans le volume ou nature des données à traiter, variations de la complexité des opérations à effectuer, etc. Contrairement au chapitre précédent, nous n'essayons pas de modéliser les performances ou les prédire, mais simplement essayons d'appliquer des mécanismes de gestion des tâches dans le cas de la parallélisation d'une application métier et de son déploiement sur un cluster de calcul.
 
+Ainsi, ce chapitre démarre avec la description d'une application destinée à l'exécution de problèmes d'amarrage moléculaire. Nous devons la rendre parallèle pour mieux la déployer à plus grande échelle, sans toutefois modifier son code source. Les prochaines sections détaillent donc les spécificités de l'application métier et les approches retenues pour découper les instances de calcul en unités pouvant être traitées en parallèle. Ensuite, on présente deux stratégies de gestion des tâches qui ont été implémentées, destinées nos seulement à garantir le bon déroulement du calcul et le regroupement des résultats mais aussi destinées à mieux utiliser les ressources disponibles dans les environnements de calcul.
+
+Le travail décrit dans ce chapitre a été développé dans le cadre de la codirection de thèse de Romain Vasseur (thèse en bio-informatique, dirigée par le prof. Manuel Dauchez et co-encadré par Stéphanie Baud et moi-même). Cette thèse, effectuée entre 2012 et 2015, était une thèse CIFRE portée par le Laboratoire MeDyC - Matrice Extracellulaire et Dynamique Cellulaire (UMR CNRS 7369), le laboratoire CReSTIC (EA - 3804) et la compagnie Bull-Atos. Ces travaux ont fait l'objet de publication de 2 articles en journaux internationaux, 2 conférences internationales (dont un "\textit{Best Paper Award}") et 3 communications courtes (posters et résumés).
 
 \end{resume}
 
-\section{Hétérogénéité des Tâches - application à la recherche en amarrage moléculaire} \label{sec:Vasseur}
+\section{Hétérogénéité du Calcul - application à la recherche en amarrage moléculaire} \label{sec:Vasseur}
 
 L'utilisation d'approches informatiques pour identifier les interactions biomoléculaires est devenu l'un des principaux piliers de la recherche de nouvelles drogues et principes actifs. En effet, la simulation \emph{in silico} permet de faire une première prospection sur un grand nombre de candidats potentiels, tout avec un gain de temps important et un coût nettement moins onéreux que l'expérimentation \emph{in vitro}. 
 
@@ -15,7 +18,7 @@ L'amarrage moléculaire (aussi appelé \emph{docking moléculaire}) est donc une
 
  Souvent cette étude se fait à travers un "criblage virtuel" (\emph{virtual screening}), qui consiste en un déploiement à grande échelle permettant de tester un grand nombre de ligands (de centaines à plusieurs millions selon l'ampleur de la campagne) sur un nombre très restreint de cibles. En effet, nous trouvons des millions de composants catalogués dans des bases de données telles que la Cambridge Structural Database \cite{Allen2002}, PDBbind  \cite{Wang2004, Wang2005}, ZINC \cite{Irwin2005} et tant d'autres collections privées des groupes pharmaceutiques. De même, un riche catalogue de protéines peut être obtenu à partir du Research Collaboratory for Structural Biology (RCSB) Protein Data Bank (PDB) \cite{PDB}, une base de données ouverte qui contient plus de 120 000 protéines cataloguées et qui est enrichie de plus de 7000 nouvelles protéines par an. Ainsi, un chercheur ou un industriel qui souhaite activer ou désactiver une protéine afin de combattre une maladie peut donc effectuer ce criblage virtuel entre la protéine cible et les milliers de ligands catalogués (enzymes, peptides, etc.).  
 
-Dans le cadre des travaux de thèse de Romain Vasseur (thèse en bio-informatique, dirigée par le prof. Manuel Dauchez et co-encadré par Stéphanie Baud et moi-même) nous nous sommes penchés sur le développement et l'exécution parallèle d'une application pour le criblage moléculaire inversé. Plus exactement, un criblage inversé a pour objectif de discriminer les cibles protéiques les plus favorables à une interaction avec le ligand, parmi un échantillon de structures de protéines plus ou moins important. De cette manière, il est possible d'identifier des cibles secondaires pour un ligand développé, ou bien faire une étude préalable des risques d'interactions indésirables. 
+Dans le cadre des travaux de thèse de Romain Vasseur nous nous sommes penchés sur le développement et l'exécution parallèle d'une application pour le criblage moléculaire inversé. Plus exactement, un criblage inversé a pour objectif de discriminer les cibles protéiques les plus favorables à une interaction avec le ligand, parmi un échantillon de structures de protéines plus ou moins important. De cette manière, il est possible d'identifier des cibles secondaires pour un ligand développé, ou bien faire une étude préalable des risques d'interactions indésirables. 
 
 \subsection{Travaux Proches et Méthodologie de Parallélisation}
 
@@ -33,7 +36,7 @@ Afin d'optimiser l'utilisation des ressources de calcul lors d'une campagne de d
 
 \begin{figure}
 	\centering
-		\includegraphics[width=0.5\linewidth]{images/Romain/fig1-color}
+		\includegraphics[width=0.65\linewidth]{images/Romain/fig1-color}
 	\caption{Exemple d'un schéma de décomposition parallèle}\label{fig:romain-fig1}
 \end{figure}
 
@@ -60,6 +63,8 @@ Ainsi, au lieu de se reposer uniquement sur la recherche de cavités, notre trav
 
 Les techniques de découpage présentées dans la section précédente permettent la parallélisation du traitement d'un couple protéine-ligand. Dans le cas du docking inversé, ce parallélisme dit "interne" doit être associé à la génération et au traitement des multiples tâches de calcul issues de chaque combinaison entre un ligand cible et la base de données de protéines recherchée. Enfin, les tâches de préparation des données (génération des sous-grilles, définition des paramètres, regroupement des résultats, etc.) doivent aussi être prises en compte. 
 
+Il faut noter que la présence de tâches de différentes natures (préparation des grilles, criblage virtuel, détection de cavités) rendent la gestion des tâches un peu moins évident. Même les tâches de nature similaire peuvent présenter des variations selon la nature des données à traiter. Si nous prenons par exemple les tâches de criblage virtuel, le temps d'exécution dépend du degré de liberté des peptides à l'intérieur des boîtes 3D : une boîte découpée "à l'intérieur" de la protéine n'aura aucune surface exploitable et sera rapidement écartée.    
+
 Pour toutes ces raisons, nous avons créé deux implémentations visant la gestion et le déploiement des tâches, toutes les deux intégrées à l'outil AMIDE \cite{Vasseur2015}. Dans le premier cas, une plate-forme générique qui gère tout seule l'ensemble des tâches a été conçue. Dans le deuxième cas, une partie des responsabilités est déléguée aux gestionnaires de tâches des clusters, simplifiant ainsi son exécution dans les environnements déjà pourvus de tels outils.
 
 \subsection{Plate-forme Générique}
@@ -75,7 +80,7 @@ Ainsi, un ensemble de scripts Python a été créé afin d'automatiser toutes le
 	\item[\textbf{(v)}] le déploiement des tâches de calcul. 
 \end{itemize}
 
-Les étapes (i) et (ii) concernent majoritairement la manipulation de fichiers et le parsing des informations, alors que les étapes  (iii) et (iv) sont liées à l'exécution de Autogrid, un outil qui fait partie de la suite Autodock et qui permet la création des grilles pour le docking. Selon la stratégie de décomposition retenue, l'étape (iv) peut créer une ou plusieurs grilles correspondant au découpage 3D. Dans le cas de l'approche par recherche de cavités, des grilles 3D sont généré uniquement autour des zones identifiées par le logiciel Fpocket. 
+Les étapes (i) et (ii) concernent majoritairement la manipulation de fichiers et le \textit{parsing} des informations, alors que les étapes  (iii) et (iv) sont liées à l'exécution de Autogrid, un outil qui fait partie de la suite Autodock et qui permet la création des grilles pour le docking. Selon la stratégie de décomposition retenue, l'étape (iv) peut créer une ou plusieurs grilles correspondant au découpage 3D. Dans le cas où l'on rajoute l'approche par recherche de cavités, il faut rajouter des grilles 3D générées  autour des zones identifiées par le logiciel Fpocket. 
 
 
 \begin{figure}
