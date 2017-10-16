@@ -2,7 +2,7 @@
 \begin{resume}
 La gestion de l'hétérogénéité peut (et doit) être considérée sous plusieurs aspects. Alors que le chapitre précédent a donné des exemples de travaux dans lesquels l'étude sur l'hétérogénéité s'était concentrée sur les aspects liés à la communication, dans ce chapitre nous nous concentrons sur l'hétérogénéité du calcul. Ce type d'hétérogénéité est souvent le plus simple à traiter car le plus fréquent : il est presque impossible développer une application parallèle où les tâches de calcul sont parfaitement régulières. Bien, sûr, la gestion des tâches régulières ou irrégulières dépend de leur interdépendance. Plus elles sont découplées, moins on trouve de contraintes pour leur exécution, ce que simplifie leur gestion.
 
-Dans ce chapitre nous considérons que les tâches de calcul sont hétérogènes si les différentes tâches d'une application présentent des variabilités dans leurs temps d'exécution à cause des facteurs propres à chaque tâche : variations dans le volume ou nature des données à traiter, variations de la complexité des opérations à effectuer, etc. Contrairement au chapitre précédent, nous n'essayons pas de modéliser les performances ou les prédire, mais simplement essayons d'appliquer des mécanismes de gestion des tâches dans le cas de la parallélisation d'une application métier et de son déploiement sur un cluster de calcul.
+Dans ce chapitre nous considérons que les tâches de calcul sont hétérogènes si les différentes tâches d'une application présentent des variabilités dans leurs temps d'exécution à cause des facteurs propres à chaque tâche : variations dans le volume ou nature des données à traiter, variations de la complexité des opérations à effectuer, etc. Contrairement au chapitre précédent, nous n'essayons pas de modéliser les performances ou les prédire, mais simplement essayons d'appliquer des mécanismes de gestion des tâches dans le cas de la parallélisation d'une application métier et de son déploiement sur un \textit{cluster} de calcul.
 
 Ainsi, ce chapitre démarre avec la description d'une application destinée à l'exécution de problèmes d'amarrage moléculaire. Nous devons la rendre parallèle pour mieux la déployer à plus grande échelle, sans toutefois modifier son code source. Les prochaines sections détaillent donc les spécificités de l'application métier et les approches retenues pour découper les instances de calcul en unités pouvant être traitées en parallèle. Ensuite, on présente deux stratégies de gestion des tâches qui ont été implémentées, destinées nos seulement à garantir le bon déroulement du calcul et le regroupement des résultats mais aussi destinées à mieux utiliser les ressources disponibles dans les environnements de calcul.
 
@@ -65,7 +65,7 @@ Les techniques de découpage présentées dans la section précédente permetten
 
 Il faut noter que la présence de tâches de différentes natures (préparation des grilles, criblage virtuel, détection de cavités) rendent la gestion des tâches un peu moins évident. Même les tâches de nature similaire peuvent présenter des variations selon la nature des données à traiter. Si nous prenons par exemple les tâches de criblage virtuel, le temps d'exécution dépend du degré de liberté des peptides à l'intérieur des boîtes 3D : une boîte découpée "à l'intérieur" de la protéine n'aura aucune surface exploitable et sera rapidement écartée.    
 
-Pour toutes ces raisons, nous avons créé deux implémentations visant la gestion et le déploiement des tâches, toutes les deux intégrées à l'outil AMIDE \cite{Vasseur2015}. Dans le premier cas, une plate-forme générique qui gère tout seule l'ensemble des tâches a été conçue. Dans le deuxième cas, une partie des responsabilités est déléguée aux gestionnaires de tâches des clusters, simplifiant ainsi son exécution dans les environnements déjà pourvus de tels outils.
+Pour toutes ces raisons, nous avons créé deux implémentations visant la gestion et le déploiement des tâches, toutes les deux intégrées à l'outil AMIDE \cite{Vasseur2015}. Dans le premier cas, une plate-forme générique qui gère tout seule l'ensemble des tâches a été conçue. Dans le deuxième cas, une partie des responsabilités est déléguée aux gestionnaires de tâches des \textit{clusters}, simplifiant ainsi son exécution dans les environnements déjà pourvus de tels outils.
 
 \subsection{Plate-forme Générique}
 
@@ -97,23 +97,23 @@ Pour plus d'efficacité, la deuxième file d'exécution n'est plus alimentée pa
 
 \subsection{Optimisation aux Clusters HPC}
 
- L'architecture distribuée présentée ci-dessous est adaptée à une exécution sur tout type de réseau d'ordinateurs (cluster, cloud, grid pervasif, etc.). Toutefois, il est possible d'optimiser son fonctionnement sur les clusters HPC si on prend en compte l'existence d'un gestionnaire de tâches propre à ces systèmes. En effet, la plupart des clusters HPC fait l'usage d'un gestionnaire de tâches afin de garantir la réservation et l'équité d'usage des ressources. Des systèmes tels que PBS \cite{Henderson95}, OAR \cite{Capit2005} ou Slurm \cite{Yoo2003} sont capables de gérer plusieurs files d'exécution ainsi que de déployer des tâches en mode \textit{best effort} de manière à occuper les ressources de calcul lorsque les réservations ne suffisent pas. 
+ L'architecture distribuée présentée ci-dessous est adaptée à une exécution sur tout type de réseau d'ordinateurs (\textit{cluster}, infrastructures \textit{cloud}, \textit{grid} pervasif, etc.). Toutefois, il est possible d'optimiser son fonctionnement sur les \textit{clusters} HPC si on prend en compte l'existence d'un gestionnaire de tâches propre à ces systèmes. En effet, la plupart des \textit{clusters} HPC fait l'usage d'un gestionnaire de tâches afin de garantir la réservation et l'équité d'usage des ressources. Des systèmes tels que PBS \cite{Henderson95}, OAR \cite{Capit2005} ou Slurm \cite{Yoo2003} sont capables de gérer plusieurs files d'exécution ainsi que de déployer des tâches en mode \textit{best effort} de manière à occuper les ressources de calcul lorsque les réservations ne suffisent pas. 
  
- Dans le cas de l'optimisation pour les clusters HPC notre stratégie a été d'éliminer la dépendance vis-à-vis d'un n{\oe}ud maître et permettre ainsi l'exécution des tâches indépendantes selon les disponibilités du gestionnaire de tâches. En effet, la présence d'un n{\oe}ud maître était nécessaire afin de gérer les files d'exécution mais aussi de vérifier la terminaison des tâches (garantissant la tolérance aux fautes). Cela oblige donc que le processus maître reste actif pendant toute l'exécution, ce qui impose des problèmes lors de la réservation des ressources destinées au maître (combien de temps faut-il le garder actif ?). Cette limitation est encore plus importante dans le cas d'un déploiement \textit{best-effort}, où la terminaison des tâches risque d'être fortement étalée au gré de l'occupation des ressources. Comme les gestionnaires de tâches des clusters HPC sont capables de détecter une tâche interrompue et la relancer, il suffit de soumettre dans une même tâche les paramètres nécessaires à la génération des sous-grilles et à leur docking. 
+ Dans le cas de l'optimisation pour les \textit{clusters} HPC notre stratégie a été d'éliminer la dépendance vis-à-vis d'un n{\oe}ud maître et permettre ainsi l'exécution des tâches indépendantes selon les disponibilités du gestionnaire de tâches. En effet, la présence d'un n{\oe}ud maître était nécessaire afin de gérer les files d'exécution mais aussi de vérifier la terminaison des tâches (garantissant la tolérance aux fautes). Cela oblige donc que le processus maître reste actif pendant toute l'exécution, ce qui impose des problèmes lors de la réservation des ressources destinées au maître (combien de temps faut-il le garder actif ?). Cette limitation est encore plus importante dans le cas d'un déploiement \textit{best-effort}, où la terminaison des tâches risque d'être fortement étalée au gré de l'occupation des ressources. Comme les gestionnaires de tâches des \textit{clusters} HPC sont capables de détecter une tâche interrompue et la relancer, il suffit de soumettre dans une même tâche les paramètres nécessaires à la génération des sous-grilles et à leur docking. 
  
- Grâce à cette optimisation, l'outil AMIDE issu de ces travaux est capable d'effectuer le docking inversé autant dans un cluster que dans un agglomérat de machines indépendantes.
+ Grâce à cette optimisation, l'outil AMIDE issu de ces travaux est capable d'effectuer le docking inversé autant dans un \textit{cluster} que dans un agglomérat de machines indépendantes.
  
  \section{Évaluation Pratique}
  
  Lors de la mise en place de l'outil AMIDE nous avons exécuté plusieurs expériences dans le but de valider notre approche de travail. L'un de ces tests consistait à évaluer la précision des stratégies de décomposition en étudiant un complexe ligand(X23)-protéine(3CM2) bien connu dans la littérature. La comparaison s'est fait par rapport à la technique classique du \textit{blind docking} mais aussi par rapport à des données expérimentales obtenues par cristallographie. Dans un deuxième moment, nous avons conduit des tests de performance dans lesquels le docking inverse était déployé sur un large ensemble de protéines issues de la bibliothèque PDB.
  
-Toutes les expériences ont été conduites sur le cluster Clovis du centre de calcul ROMEO à Reims. Clovis était un cluster hybride avec 36 n{\oe}uds Westmere-EP (12 c{\oe}urs), 2 n{\oe}uds Nehalem-EX (32 c{\oe}urs), un n{\oe}ud Westmere-EP (12 c{\oe}urs + 2 Fermi C2050 GPUs) et un n{\oe}ud Nehalem-EP (8 c{\oe}urs + GPU Fermi M2090), et au moins 2GB de mémoire par c{\oe}ur. Pour une question de régularité, les expériences ici présentées ont été lancées exclusivement sur les n{\oe}uds Westmere-EP. De plus, afin de mieux évaluer la communication intra-cluster, seulement 4 c{\oe}urs de calcul ont été utilisés par n{\oe}ud.
+Toutes les expériences ont été conduites sur le \textit{cluster} Clovis du centre de calcul ROMEO à Reims. Clovis était un \textit{cluster} hybride avec 36 n{\oe}uds Westmere-EP (12 c{\oe}urs), 2 n{\oe}uds Nehalem-EX (32 c{\oe}urs), un n{\oe}ud Westmere-EP (12 c{\oe}urs + 2 Fermi C2050 GPUs) et un n{\oe}ud Nehalem-EP (8 c{\oe}urs + GPU Fermi M2090), et au moins 2GB de mémoire par c{\oe}ur. Pour une question de régularité, les expériences ici présentées ont été lancées exclusivement sur les n{\oe}uds Westmere-EP. De plus, afin de mieux évaluer la communication \textit{intra-cluster}, seulement 4 c{\oe}urs de calcul ont été utilisés par n{\oe}ud.
  
  Ainsi, pour la première expérience, nous avons initialement exécuté un blind docking de la protéine 3CM2 et du ligand X23. Comme illustré en  Figure \ref{fig:blind}, le blind docking a permis la détection de la cavité et d'une conformation presque identique à celle obtenue par cristallographie (différence RMSD de 1.60 Angstroms seulement).
  
  \begin{figure}[h]
  	\centering
- 		\includegraphics[width=0.85\linewidth]{images/Romain/fig4-color} 
+ 		\includegraphics[width=0.75\linewidth]{images/Romain/fig4-color} 
  		\caption{Placement du ligand selon la méthode cristallographique (rouge) et par blind docking (vert)}\label{fig:blind} %\vspace{-0.3cm}
  \end{figure}
  
@@ -140,7 +140,7 @@ Le découpage avec le meilleur score d'énergie de liaison est celui en $n = 12$
  
  \begin{figure}[h]
  	\centering
- 		\includegraphics[width=0.85\linewidth]{images/Romain/fig5-bw} 
+ 		\includegraphics[width=0.75\linewidth]{images/Romain/fig5-bw} 
  		\caption{Comparaison entre la pose blind docking (a) et celle d'un découpage à $n=12$ (b) et par recherche de cavités (c). }\label{fig:cuts} %\vspace{-0.3cm}
  \end{figure}
 
@@ -167,7 +167,18 @@ mais aussi meilleure prise en charge de la tolérance aux fautes. En effet, la F
 
 \section{Bilan et Perspectives} \label{sec:disc}
 
-%todo falar do trabalho com o Tiago, que também visait a paralelisation e optimisation d'une application métier
+Les travaux présentés dans ce chapitre démontrent l'intérêt des mécanismes de gestion de l'exécution distribuée lorsque les tâches de calcul sont hétérogènes. En effet, c'est l'un des types de hétérogénéité les plus simples à gérer et dont le besoin de fait de plus en plus sentir à cause de la multiplication de ressources parallèles à notre disposition (c{\oe}urs de calcul, GPUs, etc.). 
+
+L'expérience avec le développement de la plate-forme AMIDE a aussi exposé une facette moins connue de la parallélisation des applications : l'étude des stratégies pour la parallélisation lorsqu'on ne peut pas modifier le code source de l'application. En effet, la communauté HPC a souvent tendance à négliger ce type de contrainte alors qu'on est de plus en plus confrontés à des situations où la réécriture de l'application métier est trop complexe	.  
+
+D'un point de vue performance et volume de calcul, plusieurs autres campagnes de simulation ont été conduites ces dernières années, portant sur d'autres peptides d'intérêt pharmaceutique tels que les ligand BAT et NGH, inhibiteurs du MMP-3, une protéine associée à certaines maladies telles que l'arthrite et la métastase des tumeurs. L'intégration avec le gestionnaire de tâches Slurm du Centre de Calcul ROMEO rend plus simple le déploiement de ces campagnes.
+
+Bien évidemment, ça a été aussi une expérience humaine très enrichissante, du fait de pouvoir travailler avec des chercheurs et un doctorant issus d'autres domaines que l'Informatique. Ceci a affecté non seulement les méthodes et outils de travail (par exemple, le choix des langages de programmation) comme a mis en confrontation différentes perceptions des mécanismes de publication et divulgation scientifique. Cette proximité avec des chercheurs d'autres domaines est une spécificité de la recherche HPC à Reims, où des chercheurs en chimie, biologie ou physique côtoient les informaticiens au sein des plateaux techniques de la Maison de Simulation de Champagne-Ardenne (Centre de Calcul ROMEO, Centre Image et P3M - Plateau de Modélisation Moléculaire Multi-échelles). Cette expérience m'a encouragé à poursuivre l'ouverture à d'autres domaines, comme par exemple le projet CAPES-Cofecub MESO mené en partenariat avec des chercheurs en physique de l'atmosphère.
+
+Parmi les perspectives, je peux citer la poursuite de la collaboration autour de AMIDE qui prend la forme d'un proposition de projet ANR en 2017. Ce projet porte sur la possibilité d'intégrer les N-glycosylation aux simulations effectuées sur les protéines de la matrice extra cellulaire. Les N-glycosylation sont des importants marqueurs dans l'étude sur le diabète et les récepteurs de l'insuline et, pour certaines protéines, les sites de sont nombreux et les données expérimentales ne permettent pas toujours de connaître le nombre et les types de N-glycosylation portés par la molécule. Ma participation à ce projet relève de l'adaptation et de l'évolution de la plate-forme AMIDE afin de déployer ces simulations à plus grande échelle.  
+
+
+ 
 
 
 
