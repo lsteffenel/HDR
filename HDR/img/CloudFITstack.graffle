@@ -130,7 +130,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>24</integer>
+					<integer>3</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -157,7 +157,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>23</integer>
+					<integer>4</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -175,7 +175,7 @@
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
-\f0\fs24 \cf0 RESSOURCE MANAGER}</string>
+\f0\fs24 \cf0 RESOURCE MANAGER}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -184,7 +184,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>3</integer>
+					<integer>5</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -211,7 +211,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>4</integer>
+					<integer>6</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -238,7 +238,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>5</integer>
+					<integer>7</integer>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
@@ -257,7 +257,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>6</integer>
+					<integer>8</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -286,7 +286,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>7</integer>
+					<integer>9</integer>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
@@ -305,7 +305,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>8</integer>
+					<integer>10</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -332,7 +332,7 @@
 					<key>Class</key>
 					<string>LineGraphic</string>
 					<key>ID</key>
-					<integer>9</integer>
+					<integer>11</integer>
 					<key>Points</key>
 					<array>
 						<string>{485, 465}</string>
@@ -369,10 +369,10 @@
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>9</integer>
+						<integer>11</integer>
 					</dict>
 					<key>ID</key>
-					<integer>10</integer>
+					<integer>12</integer>
 					<key>Points</key>
 					<array>
 						<string>{485, 139.10156000000001}</string>
@@ -413,7 +413,7 @@
 					<key>Flow</key>
 					<string>Resize</string>
 					<key>ID</key>
-					<integer>11</integer>
+					<integer>13</integer>
 					<key>Style</key>
 					<dict>
 						<key>fill</key>
@@ -462,7 +462,7 @@
 					<key>Flow</key>
 					<string>Resize</string>
 					<key>ID</key>
-					<integer>12</integer>
+					<integer>14</integer>
 					<key>Style</key>
 					<dict>
 						<key>fill</key>
@@ -518,7 +518,7 @@
 						<real>12</real>
 					</dict>
 					<key>ID</key>
-					<integer>13</integer>
+					<integer>15</integer>
 					<key>Style</key>
 					<dict>
 						<key>fill</key>
@@ -575,7 +575,7 @@ Others}</string>
 						<real>12</real>
 					</dict>
 					<key>ID</key>
-					<integer>14</integer>
+					<integer>16</integer>
 					<key>Style</key>
 					<dict>
 						<key>fill</key>
@@ -631,7 +631,7 @@ Others}</string>
 						<real>12</real>
 					</dict>
 					<key>ID</key>
-					<integer>15</integer>
+					<integer>17</integer>
 					<key>Style</key>
 					<dict>
 						<key>fill</key>
@@ -687,7 +687,7 @@ Others}</string>
 						<real>12</real>
 					</dict>
 					<key>ID</key>
-					<integer>16</integer>
+					<integer>18</integer>
 					<key>Style</key>
 					<dict>
 						<key>fill</key>
@@ -732,7 +732,7 @@ Others}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>17</integer>
+					<integer>19</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -759,7 +759,7 @@ Others}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>18</integer>
+					<integer>20</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -788,7 +788,7 @@ Others}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>19</integer>
+					<integer>21</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -817,7 +817,7 @@ Others}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>20</integer>
+					<integer>22</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -844,7 +844,7 @@ Others}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>21</integer>
+					<integer>23</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -871,7 +871,7 @@ Others}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>22</integer>
+					<integer>24</integer>
 					<key>Style</key>
 					<dict>
 						<key>stroke</key>
@@ -972,7 +972,7 @@ Others}</string>
 		<key>Sidebar_Tab</key>
 		<integer>0</integer>
 		<key>VisibleRegion</key>
-		<string>{{35, -82}, {457, 651}}</string>
+		<string>{{19, -82}, {457, 651}}</string>
 		<key>ZoomValues</key>
 		<array>
 			<array>
