@@ -83,6 +83,8 @@
 %\pagestyle{myheadings}
 \renewcommand{\soutname}{Soutenue publiquement le }
 
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
 
 %\let\urlorig\url
 %\renewcommand{\url}[1]{
@@ -90,6 +92,8 @@
 %}
 
 \def\imagetop#1{\vtop{\null\hbox{#1}}}
+
+\hyphenation{con-tex-te}
 
 \usepackage{pstricks}
 \usepackage{colortab}
@@ -122,11 +126,12 @@
 \maketitle
 
 \begin{dedication}
-à Manuele.
+à Manuele \\
+Tu as toujours été là pour me donner des ailles
 \end{dedication}
 
-\begin{thanks}
-{Je tiens à exprimer mes remerciements et toute ma gratitude à :}
+%\begin{thanks}
+%{Je tiens à exprimer mes remerciements et toute ma gratitude à :}
 
 %\item Franck Cappelo, qui m'a fait l'honneur de bien vouloir présider
 %  le jury.
@@ -146,7 +151,7 @@
 %  M. Krajecki et P.-P. Mérel, avec lesquels << l'aventure >> CONFIIT a
 %  été initiée et se poursuit, ainsi qu'à H.~Fouchal.
 %
-\item Je remercie les étudiants qui m'ont fait confiance pour
+%\item Je remercie les étudiants qui m'ont fait confiance pour
 %  l'encadrement de leurs travaux de doctorat : T.~Bernard et C.~Rabat.
 %
 %\item Pour finir ces remerciements, je n'oublie pas ma famille, mon
@@ -155,7 +160,7 @@
 %  << gazouillis >> ont rythmé la rédaction de cette habilitation, sans
 %  oublier mon père qui a toujours cru en moi et m'a toujours soutenu,
 %  et ma mère, pour laquelle j'ai une pensée particulière.
-\end{thanks}
+%\end{thanks}
 
 \tableofcontents
 
@@ -180,306 +185,334 @@
 \input{grappes}
 
 
-\chapter{CloudFIT : un intergiciel pour le \textit{Fog Computing} et l'Internet des Objets\label{chap:CloudFIT}}
+\chapter{CloudFIT, un Intergiciel pour le \textit{Fog Computing} et l'Internet des Objets\label{chap:CloudFIT}}
 
 \input{cloudfit}
 
 
-\Bigchapter{Conclusion et perspectives}
+\Bigchapter{Conclusion et Perspectives}
 
 \input{conclusion}
 
-\Bigchapter{Publications personnelles}
+\Bigchapter{Publications Personnelles}
 
 \section*{Articles dans des revues avec comité de lecture}
 
 \subsection*{Internationales}
 
 \noindent $[1]$
-{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Vaz Peres, L., Kirsch Pinheiro, D.
-{Strategies to implement Edge Computing in a P2P Pervasive Grid}
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Vaz Peres, L., Kirsch Pinheiro, D.,
+{Strategies to implement Edge Computing in a P2P Pervasive Grid},
 {\em International Journal of Information Technologies and Systems Approach (IJITSA)}, IGI Global, accepté, 2018.
 
-\noindent $[2]$
-Cassales, G. W., Charao, A., Kirsch-Pinheiro, M., Souveyet, C., {\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Vaz Peres, L., Kirsch Pinheiro, D.
-{Improving the Performance of Apache Hadoop on Pervasive Environments through Context-Aware Scheduling}
+\vspace{1em} \noindent $[2]$
+Cassales, G. W., Charao, A., Kirsch-Pinheiro, M., Souveyet, C., {\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Vaz Peres, L., Kirsch Pinheiro, D.,
+{Improving the Performance of Apache Hadoop on Pervasive Environments through Context-Aware Scheduling},
 {\em  Journal of Ambient Intelligence and Humanized Computing}, Springer, 7(3), pp. 333-345, 2016. doi:10.1007/s12652-016-0361-8.
 
-Engel, T.A., Charao, A., Kirsch-Pinheiro, M., Steffenel, L.A. "Performance Improvement of Data Mining in Weka through Multi-core and GPU Acceleration: opportunities and pitfalls", Journal of Ambient Intelligence and Humanized Computing, Springer, June 2015. 
+\vspace{1em} \noindent $[3]$
+Engel, T.A., Charao, A., Kirsch-Pinheiro, M., {\bf Steffenel, L.A.} {Performance Improvement of Data Mining in Weka through Multi-core and GPU Acceleration: opportunities and pitfalls}, {\em Journal of Ambient Intelligence and Humanized Computing}, Springer, June 2015. 
 
-Diallo, T. A., Flauzac, O., Steffenel, L.A., N’diaye, S., and Dieng, Y. "GRAPP\&S, a Peer-to-Peer Middleware for Interlinking and Sharing Educational Resources". Transactions on Industrial Networks and Intelligent Systems, EAI, 2(3):e1, May 2015. 
+\vspace{1em} \noindent $[4]$
+Diallo, T. A., Flauzac, O., {\bf Steffenel, L.A.}, N’diaye, S., and Dieng, Y. {GRAPP\&S, a Peer-to-Peer Middleware for Interlinking and Sharing Educational Resources}. {\em Transactions on Industrial Networks and Intelligent Systems}, EAI, 2(3):e1, May 2015. 
 
-Vasseur, R., Baud, S., Steffenel, L. A., Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M. "Inverse Docking Method for New Proteins Targets Identification: A Parallel Approach". Journal of Parallel Computing - special issue on Parallelism in Bionformatics, Elsevier, Vol 42,, pp 48-59. February 2015. 
+\vspace{1em} \noindent $[5]$
+Vasseur, R., Baud, S., {\bf Steffenel, L.A.}, Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M. {Inverse Docking Method for New Proteins Targets Identification: A Parallel Approach}. {\em Journal of Parallel Computing - special issue on Parallelism in Bionformatics}, Elsevier, Vol 42,, pp 48-59. February 2015. 
 
-Steffenel, L. A., Flauzac, O., Charao, A. S., P. Barcelos, P., Stein, B., Cassales, G., Nesmachnow, S., Rey, J., Cogorno, M., Kirsch-Pinheiro, M. and Souveyet, C., "Mapreduce challenges on pervasive grids", Journal of Computer Science, vol. 10 n. 11, pp. 2194-2210, July 2014. 
+\vspace{1em} \noindent $[6]$
+{\bf Steffenel, L.A.}, Flauzac, O., Charao, A. S., P. Barcelos, P., Stein, B., Cassales, G., Nesmachnow, S., Rey, J., Cogorno, M., Kirsch-Pinheiro, M. and Souveyet, C., {Mapreduce challenges on pervasive grids}, {\em Journal of Computer Science}, vol. 10 n. 11, pp. 2194-2210, July 2014. 
 
-Vasseur, R., Baud, S., Steffenel, L. A., Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M.  "AMIDE – Automatic Molecular Inverse Docking Engine for Large-Scale Protein Targets Identification", International Journal On Advances in Life Sciences, 6 :(3\&4), IARIA, 2014.
+\vspace{1em} \noindent $[7]$
+Vasseur, R., Baud, S., {\bf Steffenel, L.A.}, Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M.  {AMIDE – Automatic Molecular Inverse Docking Engine for Large-Scale Protein Targets Identification}, {\em International Journal On Advances in Life Sciences}, 6 :(3\&4), IARIA, 2014.
 
-Flauzac, O., Krajecki, M., Steffenel, L.A. "CONFIIT: a middleware for peer-to-peer computing". Journal of Supercomputing, Springer, vol 53 n. 1, July 2010, pp. 86-102. 
+\vspace{1em} \noindent $8]$
+Flauzac, O., Krajecki, M., {\bf Steffenel, L.A.} {CONFIIT: a middleware for peer-to-peer computing}. {\em Journal of Supercomputing}, Springer, vol 53 n. 1, July 2010, pp. 86-102. 
 
-Nasri, W., Steffenel, L.A., Trystram, D. "Adaptive Approaches for Efficient Parallel Algorithms on Cluster-based Systems". International Journal in Grid and Utility Computing, Inderscience, vol 1 n. 2, 2009, pp 99-108. 
+\vspace{1em} \noindent $[9]$
+Nasri, W., {\bf Steffenel, L.A.}, Trystram, D. {Adaptive Approaches for Efficient Parallel Algorithms on Cluster-based Systems}. {\em International Journal in Grid and Utility Computing}, Inderscience, vol 1 n. 2, 2009, pp 99-108. 
 
-Steffenel, L.A., Martinasso, M., Trystram, D. "Assessing Contention Effects of All-to-All Communications on Clusters and Grids". International Journal of Pervasive Computing and Communications - Special Issue on Towards merging Grid and Pervasive Computing, Vol. 4 n. 4, 2008, pp. 440-459. 
+\vspace{1em} \noindent $[10]$
+{\bf Steffenel, L.A.}, Martinasso, M., Trystram, D. {Assessing Contention Effects of All-to-All Communications on Clusters and Grids}. {\em International Journal of Pervasive Computing and Communications - Special Issue on Towards merging Grid and Pervasive Computing}, Vol. 4 n. 4, 2008, pp. 440-459. 
 
-Steffenel, L.A., Mounié, G. "A Framework for Adaptive Collective Communications for Heterogeneous Hierarchical Computing Systems". Elsevier Journal of Computer and Systems Sciences - Special Issue on Performance Analysis and Evaluation of Parallel, Cluster, and Grid Computing Systems, vol 74 n. 6, 2008, pp. 1082-1093.
+\vspace{1em} \noindent $[11]$
+{\bf Steffenel, L.A.}, Mounié, G. {A Framework for Adaptive Collective Communications for Heterogeneous Hierarchical Computing Systems}. {\em Elsevier Journal of Computer and Systems Sciences - Special Issue on Performance Analysis and Evaluation of Parallel, Cluster, and Grid Computing Systems}, vol 74 n. 6, 2008, pp. 1082-1093.
 
-%\noindent $[1]$
-%M.~Krajecki, {\bf O.~Flauzac}, C.~Jaillet, P.-P.~M\'erel, and R.~Tremblay.
-%{Solving an open instance of the Langford's problem using CONFIIT : a
-%  middleware for peer-to-peer computing.}
-% {\em Parallel Processing Letters}, accepté
-%  2005.
-%
-%\vspace{1em} \noindent $[2]$
-%H.~Baala, {\bf O.~Flauzac}, J.~Gaber, M.~Bui, and T.A. El-Ghazawi.
-%{A self-stabilizing distributed algorithm for spanning tree
-%construction in wireless ad hoc networks.}
-% {\em Journal of Parallel and Distributed Computing}, 63(1):97--104,
-%  2003.
-%
-%\vspace{1em} \noindent $[3]$
-%H.~Baala and {\bf O.~Flauzac}.
-%{Self-stabilizing algorithm for spanning tree construction with mobile
-%  agents.}
-% {\em Studia Informatica Universalis}, 1(1):77--82, 2001.
 
 \subsection*{Nationales}
 
-Vaz Peres, L., Kirsch Pinheiro, D., Steffenel, L.A., Mendes, D., Valentin Bageston, J., Dornelles Bittencourt, G., Passáglia Schuch, A., Anabor, V., Paes Leme, N.M., Schuch, N.J. "Monitoramento de Longo Prazo e Climatologia de Campos Estratosféricos quando da Ocorrência dos Eventos de Influência do Buraco de Ozônio Antártico sobre o Sul do Brasil", Revista Brasileira de Meteorologia, SBMET/Thomson-Reuters, 2017.
+ \noindent $[1]$
+Vaz Peres, L., Kirsch Pinheiro, D., {\bf Steffenel, L.A.}, Mendes, D., Valentin Bageston, J., Dornelles Bittencourt, G., Passáglia Schuch, A., Anabor, V., Paes Leme, N.M., Schuch, N.J. {Monitoramento de Longo Prazo e Climatologia de Campos Estratosféricos quando da Ocorrência dos Eventos de Influência do Buraco de Ozônio Antártico sobre o Sul do Brasil}, {\em Revista Brasileira de Meteorologia}, SBMET/Thomson-Reuters, 2017.
 
-Flauzac, O., Steffenel, L.A., Diallo, T.H., Niang, I., Ndiaye, S. "GRAPP\&S Data Grid : Une approche de type grille et système pair-à-pair pour le stockage de données". Revue URED (Université-Recherche-Développement), Presses Universitaires de l'Université Gaston Berger de Saint-Louis du Sénégal, 2012.
+\vspace{1em} \noindent $[2]$
+Flauzac, O., {\bf Steffenel, L.A.}, Diallo, T.H., Niang, I., Ndiaye, S. {GRAPP\&S Data Grid : Une approche de type grille et système pair-à-pair pour le stockage de données}. {\em Revue URED (Université-Recherche-Développement)}, Presses Universitaires de l'Université Gaston Berger de Saint-Louis du Sénégal, 2012.
 
 \section*{Communications avec actes et comité de sélection}
 
 \subsection*{Internationales}
 
-Beserra, D., Kirsch-Pinheiro, M., Steffenel, L.A.,  Moreno, E.D., "Comparing the Performance of OS-level Virtualization Tools in SoC-based Systems: The Case of I/O-bound Applications", The 22nd IEEE Symposium on Computers and Communications (ISCC 2017), Heraklion, Greece, July 3-6, 2017.
+\noindent $[1]$
+Beserra, D., Kirsch-Pinheiro, M., {\bf Steffenel, L.A.},  Moreno, E.D., {Comparing the Performance of OS-level Virtualization Tools in SoC-based Systems: The Case of I/O-bound Applications}, {\em The 22nd IEEE Symposium on Computers and Communications (ISCC 2017)}, Heraklion, Greece, July 3-6, 2017.
 
-Charao, A., Hoffmann, G., Steffenel, L.A, Kirsch-Pinheiro, M., Stein, B., "Performance Evaluation of Cloud-based RDBMS through a Cloud Scripting Language", 19th International Conference on Enterprise Information Systems (ICEIS), Porto, Portugal, April 26-29, 2017.
+\vspace{1em} \noindent $[2]$
+Charao, A., Hoffmann, G., {\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Stein, B., {Performance Evaluation of Cloud-based RDBMS through a Cloud Scripting Language}, {\em 19th International Conference on Enterprise Information Systems (ICEIS)}, Porto, Portugal, April 26-29, 2017.
 
-Beserra, D., Kirsch-Pinheiro, M., Steffenel, L.A., Souveyet, C., Moreno, E.D., "Performance Evaluation of OS-level Virtualization Solutions for HPC Purposes on SoC-based Systems", IEEE International Conference on  Advanced Information Networking and Applications (AINA), Taipei, Taiwan, March 27-29, 2017.
+\vspace{1em} \noindent $[3]$
+Beserra, D., Kirsch-Pinheiro, M., {\bf Steffenel, L.A.}, Souveyet, C., Moreno, E.D., {Performance Evaluation of OS-level Virtualization Solutions for HPC Purposes on SoC-based Systems}, {\em IEEE International Conference on  Advanced Information Networking and Applications (AINA)}, Taipei, Taiwan, March 27-29, 2017.
 
-Steffenel, L.A., Kirsch-Pinheiro, M., Kirsch-Pinheiro, D., Vaz Peres, L., "Using a Pervasive Computing Environment to Identify Secondary Effects of the Antarctic Ozone Hole", 2nd Workshop on Big Data and Data Mining Challenges on IoT and Pervasive (Big2DM) , Madrid, Spain, May 23 - 26, 2016. Procedia Computer Science, v 83, pp. 1007-1012, Elsevier. 
+\vspace{1em} \noindent $[4]$
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Kirsch-Pinheiro, D., Vaz Peres, L., {Using a Pervasive Computing Environment to Identify Secondary Effects of the Antarctic Ozone Hole}, {\em 2nd Workshop on Big Data and Data Mining Challenges on IoT and Pervasive (Big2DM)}, Madrid, Spain, May 23 - 26, 2016. Procedia Computer Science, v 83, pp. 1007-1012, Elsevier. 
 
-Steffenel, L.A., Kirsch-Pinheiro, M.,  "When the Cloud goes Pervasive: approaches for IoT PaaS on a mobiquitous world",  EAI International Conference on Cloud, Networking for IoT systems (CN4IoT 2015), Rome, Italy, October 126-27, 2015. 
+\vspace{1em} \noindent $[5]$
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M.,  {When the Cloud goes Pervasive: approaches for IoT PaaS on a mobiquitous world},  {\em EAI International Conference on Cloud, Networking for IoT systems (CN4IoT 2015)}, Rome, Italy, October 126-27, 2015. 
 
-Steffenel, L.A., Kirsch-Pinheiro, M.,  "CloudFIT, a PaaS platform for IoT applications over Pervasive Networks",  3rd Workshop on CLoud for IoT (CLIoT 2015), Taormina, Italy, September 15, 2015. Springer CCIS 567, pp 20-32.
+\vspace{1em} \noindent $[6]$
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M.,  {CloudFIT, a PaaS platform for IoT applications over Pervasive Networks},  {\em 3rd Workshop on CLoud for IoT (CLIoT 2015)}, Taormina, Italy, September 15, 2015. Springer CCIS 567, pp 20-32.
 
-Steffenel, L.A., Kirsch-Pinheiro, M.,  "Leveraging Data Intensive Applications on a Pervasive Computing Platform: the case of MapReduce",  1st Workshop on Big Data and Data Mining Challenges on IoT and Pervasive (Big2DM) , London, UK, June 2 - 5, 2015. Procedia Computer Science, vol. 52, Jun 2015, Elsevier, pp. 1034–1039.  
+\vspace{1em} \noindent $[7]$
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M.,  {Leveraging Data Intensive Applications on a Pervasive Computing Platform: the case of MapReduce}, {\em  1st Workshop on Big Data and Data Mining Challenges on IoT and Pervasive (Big2DM)}, London, UK, June 2 - 5, 2015. Procedia Computer Science, vol. 52, Jun 2015, Elsevier, pp. 1034–1039.  
 
-Cassales, G.W., Charao, A.,Kirsch-Pinheiro, M., Souveyet, C., Steffenel, L.A., "Context-Aware Scheduling for Apache Hadoop over Pervasive Environments", The 6th International Conference on Ambient Systems, Networks and Technologies (ANT 2015),  London, UK, June 2 - 5, 2015. Procedia Computer Science, vol. 52, Jun 2015, Elsevier, pp. 202–209.  
+\vspace{1em} \noindent $[8]$
+Cassales, G.W., Charao, A.,Kirsch-Pinheiro, M., Souveyet, C., {\bf Steffenel, L.A.}, {Context-Aware Scheduling for Apache Hadoop over Pervasive Environments}, {\em The 6th International Conference on Ambient Systems, Networks and Technologies (ANT 2015)},  London, UK, June 2 - 5, 2015. Procedia Computer Science, vol. 52, Jun 2015, Elsevier, pp. 202–209.  
 
-Rey, J., Cogorno, M., Nesmachnow, S. and Steffenel, L.A. "Efficient Prototyping of Fault-Tolerant Map-Reduce Applications with Docker-Hadoop". WoC: First International Workshop on Container Technologies and Container Clouds,  Tempe, AZ, USA, March 9-13, 2015.
+\vspace{1em} \noindent $[9]$
+Rey, J., Cogorno, M., Nesmachnow, S. and {\bf Steffenel, L.A.} {Efficient Prototyping of Fault-Tolerant Map-Reduce Applications with Docker-Hadoop}. {\em WoC: First International Workshop on Container Technologies and Container Clouds},  Tempe, AZ, USA, March 9-13, 2015.
 
-Cassales, G.W., Charao, A.,Kirsch-Pinheiro, M., Souveyet, C., Steffenel, L.A., "Bringing Context to Apache Hadoop", 8th International Conference on Mobile Ubiquitous Computing, Systems, Services and Technologies (UBICOMM 2014), Rome, Italy, August 24 - 28, 2014. ISBN: 978-1-61208-353-7, IARIA, pp. 252-258 
+\vspace{1em} \noindent $[10]$
+Cassales, G.W., Charao, A.,Kirsch-Pinheiro, M., Souveyet, C., {\bf Steffenel, L.A.}, {Bringing Context to Apache Hadoop}, {\em 8th International Conference on Mobile Ubiquitous Computing, Systems, Services and Technologies (UBICOMM 2014)}, Rome, Italy, August 24 - 28, 2014. ISBN: 978-1-61208-353-7, IARIA, pp. 252-258 
 
-Engel, T.A., Charao, A., Kirsch-Pinheiro, M., Steffenel, L.A. "Performance Improvement of Data Mining in Weka through GPU Acceleration", 5th International Conference on Ambient Systems, Networks and Technologies (ANT 2014), Hasselt, Belgium, June 2 - 5, 2014. Procedia Computer Science, vol. 32, 2014, Elsevier, pp. 93–100.  
+\vspace{1em} \noindent $[11]$
+Engel, T.A., Charao, A., Kirsch-Pinheiro, M., {\bf Steffenel, L.A.} {Performance Improvement of Data Mining in Weka through GPU Acceleration}, {\em 5th International Conference on Ambient Systems, Networks and Technologies (ANT 2014)}, Hasselt, Belgium, June 2 - 5, 2014. Procedia Computer Science, vol. 32, 2014, Elsevier, pp. 93–100.  
 
-Rey, J., Cogorno, M., Nesmachnow, S. and Steffenel, L.A. "Fast Prototyping of Map-Reduce Applications with Docker-Hadoop". Conférence d’informatique en Parallélisme, Architecture et Système (ComPAS'14), April 22-25, 2014, Neuchatel, Switzerland.
+\vspace{1em} \noindent $[12]$
+Rey, J., Cogorno, M., Nesmachnow, S. and {\bf Steffenel, L.A.} {Fast Prototyping of Map-Reduce Applications with Docker-Hadoop}. {\em Conférence d’informatique en Parallélisme, Architecture et Système (ComPAS'14)}, April 22-25, 2014, Neuchatel, Switzerland.
 
-Vasseur, R., Baud, S., Steffenel, L. A., Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M. "A Framework for Inverse Virtual Screening". 6th International Conference on Bioinformatics, Biocomputational Systems and Biotechnologies (BIOTECHNO 2014), Chamonix, France, 20-24 April 2014 BEST PAPER Award
+\vspace{1em} \noindent $[13]$
+Vasseur, R., Baud, S., {\bf Steffenel, L.A.}, Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M. {A Framework for Inverse Virtual Screening}. {\em 6th International Conference on Bioinformatics, Biocomputational Systems and Biotechnologies (BIOTECHNO 2014)}, Chamonix, France, 20-24 April 2014 BEST PAPER Award
 
-Diallo, T. A., Flauzac, O., Steffenel, L.A., N’diaye, S., and Dieng, Y. "GrAPP\&S : A Distributed Framework for E-learning Resources Sharing". Proceedings of the 5th International IEEE EAI Conference on e‐Infrastructure and e‐Services for Developing Countries (AFRICOMM 2013), Blantyre, Malawi, November 25-27 2013.  Springer LNICST v. 135, pp. 219-228. 
+\vspace{1em} \noindent $[14]$
+Diallo, T. A., Flauzac, O., {\bf Steffenel, L.A.}, N’diaye, S., and Dieng, Y. {GrAPP\&S : A Distributed Framework for E-learning Resources Sharing}. {\em Proceedings of the 5th International IEEE EAI Conference on e‐Infrastructure and e‐Services for Developing Countries (AFRICOMM 2013)}, Blantyre, Malawi, November 25-27 2013.  Springer LNICST v. 135, pp. 219-228. 
 
-Steffenel, L. A., Flauzac, O., Schwertner Charao, A., Pitthan Barcelos, P., Stein, B., Nesmachnow, S., Kirsch Pinheiro, M., Diaz, D. "PER-MARE: Adaptive Deployment of MapReduce over Pervasive Grids". Proceedings of the 8th International Conference on P2P, Parallel, Grid, Cloud and Internet Computing (3PGCIC'13), Compiegne, France, October 28-30 2013. 
+\vspace{1em} \noindent $[15]$
+{\bf Steffenel, L.A.}, Flauzac, O., Schwertner Charao, A., Pitthan Barcelos, P., Stein, B., Nesmachnow, S., Kirsch Pinheiro, M., Diaz, D. {PER-MARE: Adaptive Deployment of MapReduce over Pervasive Grids}. {\em Proceedings of the 8th International Conference on P2P, Parallel, Grid, Cloud and Internet Computing (3PGCIC'13)}, Compiegne, France, October 28-30 2013. 
 
-Vasseur, R., Baud, S., Steffenel, L. A., Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M. "Parallel Strategies for an Inverse Docking Method". PBio 2013: International Workshop on Parallelism in Bioinformatics (part of EuroMPI 2013), Madrid, Spain, 15-18 September 2013. pp. 253-258
+\vspace{1em} \noindent $[16]$
+Vasseur, R., Baud, S., {\bf Steffenel, L.A.}, Vigouroux, X., Martiny, L., Krajecki, M., Dauchez, M. {Parallel Strategies for an Inverse Docking Method}. {\em PBio 2013: International Workshop on Parallelism in Bioinformatics (part of EuroMPI 2013)}, Madrid, Spain, 15-18 September 2013. pp. 253-258
 
-Najar, S. Kirsch-Pinheiro, M., Souveyet, C., Steffenel, L. A. "Service Discovery Mechanisms for an Intentional Pervasive Information System". Proceedings of 19th IEEE International Conference on Web Services (ICWS 2012), Honolulu, Hawaii, 24-29 June 2012. 
+\vspace{1em} \noindent $[17]$
+Najar, S. Kirsch-Pinheiro, M., Souveyet, C., {\bf Steffenel, L.A.} {Service Discovery Mechanisms for an Intentional Pervasive Information System}. {\em Proceedings of 19th IEEE International Conference on Web Services (ICWS 2012)}, Honolulu, Hawaii, 24-29 June 2012. 
 
-Steffenel, L. A., Jaillet, C., Flauzac, O., Krajecki, M. "Impact of nodes distribution on the performance of a P2P computing middleware based on virtual rings". Proceedings of the Conferencia Latino Americana de Computación de Alto Rendimiento (CLCAR 2010), Gramado, Brazil, 25-28 August 2010.
+\vspace{1em} \noindent $[18]$
+{\bf Steffenel, L.A.}, Jaillet, C., Flauzac, O., Krajecki, M. {Impact of nodes distribution on the performance of a P2P computing middleware based on virtual rings}. {\em Proceedings of the Conferencia Latino Americana de Computación de Alto Rendimiento (CLCAR 2010)}, Gramado, Brazil, 25-28 August 2010.
 
-Fkaier, H., Cérin, C., Steffenel, L. A., Jemni, M. "A new heuristic for broadcasting in clusters of clusters". Proceedings of the 5th International Conference on Grid and Pervasive Computing (GPC 2010), Hualien, Taiwan, 10-14 May 2010.
+\vspace{1em} \noindent $[19]$
+Fkaier, H., Cérin, C., {\bf Steffenel, L.A.}, Jemni, M. {A new heuristic for broadcasting in clusters of clusters}. {\em Proceedings of the 5th International Conference on Grid and Pervasive Computing (GPC 2010)}, Hualien, Taiwan, 10-14 May 2010.
 
-Flauzac, O., Nolot, F., Rabat, C., Steffenel, L. A. "Grid of security: a new approach of the network security". Proceedings of the 3rd International Conference on Network \& System Security (NSS 2009), Gold Coast, Autralia, 19-21 October 2009. pp. 67-72
+\vspace{1em} \noindent $[20]$
+Flauzac, O., Nolot, F., Rabat, C., {\bf Steffenel, L.A.} {Grid of security: a new approach of the network security}. {\em Proceedings of the 3rd International Conference on Network \& System Security (NSS 2009)}, Gold Coast, Autralia, 19-21 October 2009. pp. 67-72
 
-Steffenel, L. A., Kirsch-Pinheiro, M. "Strong Consistency for Shared Objects in Pervasive Grids". Proceedings of the 5th IEEE International Conference on Wireless and Mobile Computing, Networking and Communication (WiMob'2009), Marrakesh, Morroco, 12-14 October 2009. pp. 73-78 
+\vspace{1em} \noindent $[21]$
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M. {Strong Consistency for Shared Objects in Pervasive Grids}. {\em Proceedings of the 5th IEEE International Conference on Wireless and Mobile Computing, Networking and Communication (WiMob'2009)}, Marrakesh, Morroco, 12-14 October 2009. pp. 73-78 
 
-Fathallah, K., Nasri, W., Steffenel, L. A. "On the Evaluation of OpenMP Memory Access in Multi-core Architectures". 4th International Workshop on Automatic Performance Tuning (iWAPT 2009), Tokio, Japan, 1-2 October 2009. 
+\vspace{1em} \noindent $[22]$
+Fathallah, K., Nasri, W., {\bf Steffenel, L.A.} {On the Evaluation of OpenMP Memory Access in Multi-core Architectures}. {\em 4th International Workshop on Automatic Performance Tuning (iWAPT 2009)}, Tokio, Japan, 1-2 October 2009. 
 
-Achour, S., Nasri, W., Steffenel, L. A. "On the use of performance models for adaptive algorithm selection on heterogeneous clusters". Proceedings of the 17th Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP 2009), Weimar, Germany, 18-20 February 2009. 
+\vspace{1em} \noindent $[23]$
+Achour, S., Nasri, W., {\bf Steffenel, L.A.} {On the use of performance models for adaptive algorithm selection on heterogeneous clusters}. {\em Proceedings of the 17th Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP 2009)}, Weimar, Germany, 18-20 February 2009. 
 
-Steffenel, L.A., Kirsch-Pinheiro, M., Bebers, Y. "Total Order Broadcast on Pervasive Systems". Proceedings of the 23rd Annual ACM Symposium on Applied Computing (SAC 2008), Fortaleza, Brazil, 16-20 March 2008. pp. 2202-2206. 
+\vspace{1em} \noindent $[24]$
+{\bf Steffenel, L.A.}, Kirsch-Pinheiro, M., Bebers, Y. {Total Order Broadcast on Pervasive Systems}. {\em Proceedings of the 23rd Annual ACM Symposium on Applied Computing (SAC 2008)}, Fortaleza, Brazil, 16-20 March 2008. pp. 2202-2206. 
 
-Jeannot, E., Steffenel, L.A. "Fast and Efficient Total Exchange on Two Clusters". Proceedings of the 13th International Conference on Parallel Computing (EURO-PAR 2007), Rennes, France, 28-31 August 2007. Springer. LNCS 4641, pp. 848-857. 
+\vspace{1em} \noindent $[25]$
+Jeannot, E., \textbf{Steffenel, L.A.} {Fast and Efficient Total Exchange on Two Clusters}. {\em Proceedings of the 13th International Conference on Parallel Computing (EURO-PAR 2007)}, Rennes, France, 28-31 August 2007. Springer. LNCS 4641, pp. 848-857. 
 
-Steffenel, L.A., Jeannot, E. "Total Exchange Performance Prediction on Grid Environments: modeling and algorithmic issues". Towards Next Generation Grid - Proceedings of the CoreGRID Symposium, Rennes, France, 27-28 August 2007. Springer, pp. 131-140.
+\vspace{1em} \noindent $[26]$
+{\bf Steffenel, L.A.}, Jeannot, E. {Total Exchange Performance Prediction on Grid Environments: modeling and algorithmic issues}. {\em Towards Next Generation Grid - Proceedings of the CoreGRID Symposium}, Rennes, France, 27-28 August 2007. Springer, pp. 131-140.
 
-Steffenel, L.A., Martinasso, M. and Trystram, D. "Assessing contention effects on MPI\_Alltoall communications". GPC 07 - International Conference on Grid and Pervasive Computing, Paris, France, May 2007. LNCS 4459, Springer Verlag, pp 424-435.
+\vspace{1em} \noindent $[27]$
+{\bf Steffenel, L.A.}, Martinasso, M. and Trystram, D. {Assessing contention effects on MPI\_Alltoall communications}. {\em GPC 07 - International Conference on Grid and Pervasive Computing}, Paris, France, May 2007. LNCS 4459, Springer Verlag, pp 424-435.
 
-Nasri, W., Steffenel, L.A. and Trystram, D. "Adaptive performance modeling on hierarchical grid computing environments". 7th IEEE International Symposium on Cluster Computing and the Grid - CCGrid 2007, Rio de Janeiro, Brazil, pp 505-512, May 2007. IEEE Society.
+\vspace{1em} \noindent $[28]$
+Nasri, W., {\bf Steffenel, L.A.} and Trystram, D. {Adaptive performance modeling on hierarchical grid computing environments}. {\em 7th IEEE International Symposium on Cluster Computing and the Grid - CCGrid 2007}, Rio de Janeiro, Brazil, pp 505-512, May 2007. IEEE Society.
 
-Steffenel, L. A. "Modeling Network Contention Effects on AlltoAll Operations". IEEE Conference on Cluster Computing (CLUSTER 2006). Barcelona, Spain, 25-28 September 2006. 
+\vspace{1em} \noindent $[29]$
+{\bf Steffenel, L.A.} {Modeling Network Contention Effects on AlltoAll Operations}. {\em IEEE Conference on Cluster Computing (CLUSTER 2006)}. Barcelona, Spain, 25-28 September 2006. 
 
-Barchet-Steffenel, L. A., Mounié, G. "Scheduling Heuristics for Efficient Broadcast Operations on Grid Environments". International Workshop on Performance Modeling, Evaluation, and Optimisation of Parallel and Distributed Systems (PMEO-PDS'06), in conjunction with IPDPS'06. Rhodes Island, Greece, 25-29 Avril 2006.
+\vspace{1em} \noindent $[30]$
+\textbf{Barchet-Steffenel, L. A.}, Mounié, G. {Scheduling Heuristics for Efficient Broadcast Operations on Grid Environments}. {\em International Workshop on Performance Modeling, Evaluation, and Optimisation of Parallel and Distributed Systems (PMEO-PDS'06)}, in conjunction with IPDPS'06. Rhodes Island, Greece, 25-29 Avril 2006.
 
-Barchet-Steffenel, L. A., Mounié, G. "Total Exchange Performance Modelling under Network Contention". Proceedings of the 6th International Conference on Parallel Processing and Applied Mathematics, LNCS vol. 3911, Springer-Verlag, pp 100-107. Poznan, Pologne. 2005. 
+\vspace{1em} \noindent $[31]$
+\textbf{Barchet-Steffenel, L. A.}, Mounié, G. {Total Exchange Performance Modelling under Network Contention}. {\em Proceedings of the 6th International Conference on Parallel Processing and Applied Mathematics}, LNCS vol. 3911, Springer-Verlag, pp 100-107. Poznan, Pologne. 2005. 
 
-Barchet-Steffenel, L. A., Mounié, G. "Performance Characterisation of Intra-Cluster Collective Communications". Proceedings of the SBAC-PAD 2004 16th Symposium on Computer Architecture and High Performance Computing, Foz-do-Iguacu, Brazil, IEEE Press, pp. 254-261, 2004. 
+\vspace{1em} \noindent $[32]$
+\textbf{Barchet-Steffenel, L. A.}, Mounié, G. {Performance Characterisation of Intra-Cluster Collective Communications}. {\em Proceedings of the SBAC-PAD 2004 16th Symposium on Computer Architecture and High Performance Computing}, Foz-do-Iguacu, Brazil, IEEE Press, pp. 254-261, 2004. 
 
-Barchet-Steffenel, L. A., Mounié, G. "Identifying Logical Homogeneous Clusters for Efficient Wide-area Communications". Proceedings of the EuroPVM/MPI 2004 11th European PVM/MPI Users' Group Meeting (2004), Budapest, Hungary, September 2004. LNCS vol. 3241, Springer-Verlag, pp. 319-326, 2004. 
+\vspace{1em} \noindent $[33]$
+\textbf{Barchet-Steffenel, L. A.}, Mounié, G. {Identifying Logical Homogeneous Clusters for Efficient Wide-area Communications}. {\em Proceedings of the EuroPVM/MPI 2004 11th European PVM/MPI Users' Group Meeting (2004)}, Budapest, Hungary, September 2004. LNCS vol. 3241, Springer-Verlag, pp. 319-326, 2004. 
 
-Barchet-Steffenel, L. A., Mounié, G. "Fast Tuning of Intra-Cluster Collective Communications". Proceedings of the EuroPVM/MPI 2004 11th European PVM/MPI Users' Group Meeting (2004), Budapest, Hungary, September 2004. LNCS vol. 3241, Springer-Verlag, pp. 28-35, 2004. 
+\vspace{1em} \noindent $[34]$
+\textbf{Barchet-Steffenel, L. A.}, Mounié, G. {Fast Tuning of Intra-Cluster Collective Communications}. {\em Proceedings of the EuroPVM/MPI 2004 11th European PVM/MPI Users' Group Meeting (2004)}, Budapest, Hungary, September 2004. LNCS vol. 3241, Springer-Verlag, pp. 28-35, 2004. 
 
-Barchet-Steffenel, L. A. "iRBP, A Fault Tolerant Total Order Broadcast for Large Scale Systems". Proceedings of the 9th International Conference on Parallel Computing (EURO-PAR 2003), University Klagenfurt, Klagenfurt, Austria, August 2003. LNCS vol. 2790, Springer-Verlag, pp. 632-639, 2003. 
+\vspace{1em} \noindent $[35]$
+\textbf{Barchet-Steffenel, L. A.} {iRBP, A Fault Tolerant Total Order Broadcast for Large Scale Systems}. {\em Proceedings of the 9th International Conference on Parallel Computing (EURO-PAR 2003)}, University Klagenfurt, Klagenfurt, Austria, August 2003. LNCS vol. 2790, Springer-Verlag, pp. 632-639, 2003. 
 
-Barchet-Steffenel, L. A.; Jansch-Pôrto, I. "On the Evaluation of heartbeat-like Detectors". Proceedings of the IEEE 2nd Latin-American Test Workshop, Cancun, México, February 2001, pp 142-147. 
+\vspace{1em} \noindent $[36]$
+\textbf{Barchet-Steffenel, L. A.}; Jansch-Pôrto, I. {On the Evaluation of heartbeat-like Detectors}. {\em Proceedings of the IEEE 2nd Latin-American Test Workshop}, Cancun, México, February 2001, pp 142-147. 
 
-%\noindent $[4]$ A.~Bui, {\bf O.~Flauzac} and C.~Rabat.  A random walk
-%topology management solution for Grid computing In {\em I2CS'05,
-%Innovative Internet Community Systems}, Lecture Notes on Computer
-%Science. Springer, 2005, à paraître.
-%
-%\vspace{1em} \noindent $[5]$ T.~Bernard, A.~Bui, and {\bf O.~Flauzac}.
-%{Random distributed self-stabilizing structures maintenance.}  {In
-%{\em ISSADS'04, Advanced Distributed Systems: Third International
-%School and Symposium}, Lecture Notes on Computer Science, volume 3061,
-%pages 231--240. Springer Verlag, 2004.}
-%
 
 \subsection*{Nationales}
 
-Nesi, L., Koslovski, G., Charão, A., Pinheiro, D., Steffenel, L.A., "Paralelização de Cálculos Estatísticos sobre Dados de Monitoramento da Camada de Ozônio: um Estudo com GPU". Fórum de iniciação científica Escola Regional de Alto Desempenho (ERAD/RS), April 5-7, 2017, Ijui, Brazil.
+\noindent $[1]$
+Nesi, L., Koslovski, G., Charão, A., Pinheiro, D., \textbf{Steffenel, L.A.}, {Paralelização de Cálculos Estatísticos sobre Dados de Monitoramento da Camada de Ozônio: um Estudo com GPU}. {\em Fórum de iniciação científica Escola Regional de Alto Desempenho (ERAD/RS)}, April 5-7, 2017, Ijui, Brazil.
 
-Muenchen, B., Siqueira, T., Nesi, L., Koslovski, G., Charão, A., Pinheiro, D., Steffenel, L.A., "Análise de Dados Observacionais sobre a Camada de Ozônio: uma Abordagem Usando MPI e OpenMP". Fórum de iniciação científica Escola Regional de Alto Desempenho (ERAD/RS), April 5-7, 2017, Ijui, Brazil.
+\vspace{1em} \noindent $[2]$
+Muenchen, B., Siqueira, T., Nesi, L., Koslovski, G., Charão, A., Pinheiro, D., \textbf{Steffenel, L.A.}, {Análise de Dados Observacionais sobre a Camada de Ozônio: uma Abordagem Usando MPI e OpenMP}. {\em Fórum de iniciação científica Escola Regional de Alto Desempenho (ERAD/RS)}, April 5-7, 2017, Ijui, Brazil.
 
-Steffenel, L.A., Kirsch-Pinheiro, M., "Stratégies Multi-Échelle pour les Environnements Pervasifs et l’Internet des Objets". Proceedings of 11èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2016), July 5, Lorient, France.
+\vspace{1em} \noindent $[3]$
+\textbf{Steffenel, L.A.}, Kirsch-Pinheiro, M., {Stratégies Multi-Échelle pour les Environnements Pervasifs et l’Internet des Objets}. {\em Proceedings of 11èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2016)}, July 5, Lorient, France.
 
-Diallo, T.H., Flauzac, O., Steffenel, L.A., Ndiaye, S., "Routage Préfixé dans GRAPP\&S". Proceedings of Colloque Africain sur la Recherche en Informatique et en Mathématiques Appliquées (CARI'2014), October 20-23, 2014, Saint Louis, Sénégal.
+\vspace{1em} \noindent $[4]$
+Diallo, T.H., Flauzac, O., \textbf{Steffenel, L.A.}, Ndiaye, S., {Routage Préfixé dans GRAPP\&S}. {\em Proceedings of Colloque Africain sur la Recherche en Informatique et en Mathématiques Appliquées (CARI'2014)}, October 20-23, 2014, Saint Louis, Sénégal.
 
-Diallo, T.H., Ndiaye, S., Flauzac, O., Steffenel, L.A., "GRAPP\&S, une Architecture Multi-Échelle pour les Données et le Services". Proceedings of 9èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2013), June 5-6, 2013, Nancy, France. 
+\vspace{1em} \noindent $[5]$
+Diallo, T.H., Ndiaye, S., Flauzac, O., \textbf{Steffenel, L.A.}, {GRAPP\&S, une Architecture Multi-Échelle pour les Données et le Services}. {\em Proceedings of 9èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2013)}, June 5-6, 2013, Nancy, France. 
 
-Najar, S. Kirsch-Pinheiro, M., Steffenel, L. A., Souveyet, C. "Analyse des mécanismes de découverte de services avec prise en charge du contexte et de l'intention". Proceedings of 8èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2012), June 4-6, 2012, Anglet, France. 
+\vspace{1em} \noindent $[6]$
+Najar, S. Kirsch-Pinheiro, M., \textbf{Steffenel, L. A.}, Souveyet, C. {Analyse des mécanismes de découverte de services avec prise en charge du contexte et de l'intention}. {\em Proceedings of 8èmes Journées Francophones Mobilité et Ubiquité (Ubimob 2012)}, June 4-6, 2012, Anglet, France. 
 
-Flauzac, O., Steffenel, L.A., Diallo, T.H., Niang, I., Ndiaye, S. "GRAPP\&S Data Grid : Une approche de type grille et système pair-à-pair pour le stockage de données". Colloque National sur la Recherche en Informatique et ses Applications (CNRIA'2012), Thiès/Bambey, Senegal. April 25-27, 2012.
+\vspace{1em} \noindent $[7]$
+Flauzac, O., \textbf{Steffenel, L.A.}, Diallo, T.H., Niang, I., Ndiaye, S. {GRAPP\&S Data Grid : Une approche de type grille et système pair-à-pair pour le stockage de données}. {\em Colloque National sur la Recherche en Informatique et ses Applications (CNRIA'2012)}, Thiès/Bambey, Senegal. April 25-27, 2012.
 
-Steffenel, L.A., Boisson, J-C., Barberot, C., Gérard, S., Hénon, E., Jaillet, C., Flauzac, O., Krajecki, M. "Deploying a fault-tolerant computing middleware over Grid’5000: performance analysis of CONFIIT and its integration with a quantum molecular docking application". 4th Grid'5000 Spring School, Reims, France, April 18-21, 2011. 
+\vspace{1em} \noindent $[8]$
+\textbf{Steffenel, L.A.}, Boisson, J-C., Barberot, C., Gérard, S., Hénon, E., Jaillet, C., Flauzac, O., Krajecki, M. {Deploying a fault-tolerant computing middleware over Grid’5000: performance analysis of CONFIIT and its integration with a quantum molecular docking application}. {\em 4th Grid'5000 Spring School}, Reims, France, April 18-21, 2011. 
 
-Barchet-Steffenel, L. A., Mounié, G. "Prédiction de Performances pour les Communications Collectives". Proceedings of the 16ème Rencontre Francophone du Parallélisme (RenPar'16), Le Croisic, France, pp. 101-112, April 2005. 
+\vspace{1em} \noindent $[9]$
+\textbf{Barchet-Steffenel, L. A.}, Mounié, G. {Prédiction de Performances pour les Communications Collectives}. {\em Proceedings of the 16ème Rencontre Francophone du Parallélisme (RenPar'16)}, Le Croisic, France, pp. 101-112, April 2005. 
 
-Barchet-Steffenel, L. A.; Jansch-Pôrto, I. "On the Evaluation of Failure Detectors Performance". Proceedings of the IX Simpósio de Computação Tolerante a Falhas (IX SCTF), Florianópolis, Brazil, March 2001, pp 73-84.
+\vspace{1em} \noindent $[10]$
+\textbf{Barchet-Steffenel, L. A.}, Jansch-Pôrto, I. {On the Evaluation of Failure Detectors Performance}. {\em Proceedings of the IX Simpósio de Computação Tolerante a Falhas (IX SCTF)}, Florianópolis, Brazil, March 2001, pp 73-84.
 
-Barchet-Steffenel, L. A. "Avaliação Prática do Desempenho dos Detectores de Defeitos" (Practical Evaluation of Failure Detectors Performance). Workshop de Teses e Dissertações do IX SCTF, Florianópolis, Brazil, March 2001. 
+\vspace{1em} \noindent $[11]$
+\textbf{Barchet-Steffenel, L. A.} {Avaliação Prática do Desempenho dos Detectores de Defeitos} (Practical Evaluation of Failure Detectors Performance). {\em Workshop de Teses e Dissertações do IX SCTF}, Florianópolis, Brazil, March 2001. 
 
-Barchet-Steffenel, L. A., Jansch-Pôrto, I. "Comunicação Não Confiável em Detectores de Defeitos com Falhas por Crash" (Unreliable Communication in Failure Detectors with Crash Faults). Proceedings of the II Workshop de Testes e Tolerância a Falhas, Curitiba, Brazil, July 2000. 
+\vspace{1em} \noindent $[12]$
+\textbf{Barchet-Steffenel, L. A.}, Jansch-Pôrto, I. {Comunicação Não Confiável em Detectores de Defeitos com Falhas por Crash} (Unreliable Communication in Failure Detectors with Crash Faults). {\em Proceedings of the II Workshop de Testes e Tolerância a Falhas}, Curitiba, Brazil, July 2000. 
 
-Barchet-Steffenel, L. A., Jansch-Pôrto, I. "Avaliação Prática de um Detector de Defeitos: teoria versus implementação" (Practical Evaluation of a Failure Detector: theory versus implementation). Proceedings of the II Workshop de Testes e Tolerância a Falhas, Curitiba, Brazil, July 2000. 
+\vspace{1em} \noindent $[13]$
+\textbf{Barchet-Steffenel, L. A.}, Jansch-Pôrto, I. {Avaliação Prática de um Detector de Defeitos: teoria versus implementação} (Practical Evaluation of a Failure Detector: theory versus implementation). {\em Proceedings of the II Workshop de Testes e Tolerância a Falhas}, Curitiba, Brazil, July 2000. 
 
-Barchet-Steffenel, L. A. "Avaliação Prática dos Detectores de Defeitos e sua Influência no Desempenho das Operações de Consenso" (Practical Evaluation of Failure Detectors and their Influence on the Consensus Operations Performance). Proceedings of the V Semana Acadêmica do PPGC-UFRGS, Porto Alegre, Brazil, July 2000. 
+\vspace{1em} \noindent $[14]$
+\textbf{Barchet-Steffenel, L. A.} {Avaliação Prática dos Detectores de Defeitos e sua Influência no Desempenho das Operações de Consenso} (Practical Evaluation of Failure Detectors and their Influence on the Consensus Operations Performance). {\em Proceedings of the V Semana Acadêmica do PPGC-UFRGS}, Porto Alegre, Brazil, July 2000. 
 
-Barchet-Steffenel, L. A. "Estudo sobre Comunicação de Grupos para Tolerância a Falhas" (A Survey on Group Communication for Fault Tolerance). Proceedings of the IV Simpósio Nacional de Informática, Centro Universitário Franciscano, Santa Maria, Brazil, 1999. 
+\vspace{1em} \noindent $[15]$
+\textbf{Barchet-Steffenel, L. A.} {Estudo sobre Comunicação de Grupos para Tolerância a Falhas} (A Survey on Group Communication for Fault Tolerance). {\em Proceedings of the IV Simpósio Nacional de Informática}, Centro Universitário Franciscano, Santa Maria, Brazil, 1999. 
 
-Barchet-Steffenel, L. A. "Csockets - classes para comunicação de rede com autenticação e criptografia". Proceedings of the V Jornada Integrada de Pesquisa da UFSM (CSocketS - Communication Classes with Authentication and Cryptography), Santa Maria, Brazil, 1998.
+\vspace{1em} \noindent $[16]$
+\textbf{Barchet-Steffenel, L. A.} {Csockets - classes para comunicação de rede com autenticação e criptografia} (CSocketS - Communication Classes with Authentication and Cryptography). {\em Proceedings of the V Jornada Integrada de Pesquisa da UFSM}, Santa Maria, Brazil, 1998.
 
 \section*{Ouvrage Scientifique / Livres}
 
-Steffenel, L.A., "Communications Collectives pour les Grilles de Calcul" , Éditions Universitaires Européennes, 2010. 188 pages. ISBN 978-613-1-53126-2
+\noindent $[1]$
+\textbf{Steffenel, L.A.}, {Communications Collectives pour les Grilles de Calcul} , {\em Éditions Universitaires Européennes}, 2010. 188 pages. ISBN 978-613-1-53126-2
 
 \section*{Chapitres de Livres}
 
-Najar, S., Vanrompay, Y., Kirsch-Pinheiro, M., Steffenel, L.A., Souveyey, C., "Intention Prediction Mechanism in an Intentional Pervasive Information System" in K Kolomvatsos, C Anagnostopoulos, and C Hadjiefthymiades (Eds.), 'Intelligent Technologies and Techniques for Pervasive Computing, IGI Global, pp. 251-275. Mai 2013. pp. 251-275. ISBN 978-1-4666-4038-2
+\noindent $[1]$
+Najar, S., Vanrompay, Y., Kirsch-Pinheiro, M., \textbf{Steffenel, L.A.}, Souveyey, C., {Intention Prediction Mechanism in an Intentional Pervasive Information System} in K Kolomvatsos, C Anagnostopoulos, and C Hadjiefthymiades (Eds.), {\em Intelligent Technologies and Techniques for Pervasive Computing}, IGI Global, pp. 251-275. Mai 2013. pp. 251-275. ISBN 978-1-4666-4038-2
 
-Flauzac, O., Nolot, F., Rabat, C., Steffenel, L.A., "Grid of Security : a decentralized enforcement of the network security" in Manish Gupta, John Walp, and Raj Sharman (Eds.), Threats, Countermeasures and Advances in Applied Information Security, IGI Global, april 2012. pp. 426-443. ISBN 9781466609785
+\vspace{1em} \noindent $[2]$
+Flauzac, O., Nolot, F., Rabat, C., \textbf{Steffenel, L.A.}, {Grid of Security : a decentralized enforcement of the network security} in Manish Gupta, John Walp, and Raj Sharman (Eds.), {\em Threats, Countermeasures and Advances in Applied Information Security}, IGI Global, april 2012. pp. 426-443. ISBN 9781466609785
 
-Cérin, C., Steffenel, L.A., Fkaier, H., "Broadcasting for Grids" in Frédéric Magoules (Eds.), Fundamentals in Grid Computing: Theory, Algorithms and Technologies, Chapman \& Hall/CRC Numerical Analysis and Scientific Computing Series, chapter 8, pp 209-236, december 2009. ISBN 9781439803677
+\vspace{1em} \noindent $[3]$
+Cérin, C., \textbf{Steffenel, L.A.}, Fkaier, H., {Broadcasting for Grids} in Frédéric Magoules (Eds.), {\em Fundamentals in Grid Computing: Theory, Algorithms and Technologies}, Chapman \& Hall/CRC Numerical Analysis and Scientific Computing Series, chapter 8, pp 209-236, december 2009. ISBN 9781439803677
 
 \section*{Abstracts/Posters avec actes et comité de sélection}
 
 \subsection*{Internationales}
 
-Vasseur, R., Haschka, T., Verzeaux, L., Albin, J., Steffenel, L.A., Khartabil, H., Belloy, N., Baud, S., Henon, E., Krajecki, M., Martiny, L., Dauchez, M., "Deciphering molecular interactions using HPC simulations: getting new therapeutic targets", 9th Ter@tec Forum, Palaiseau, France, July 1-2, 2014.
+\noindent $[1]$
+Vasseur, R., Haschka, T., Verzeaux, L., Albin, J., \textbf{Steffenel, L.A.}, Khartabil, H., Belloy, N., Baud, S., Henon, E., Krajecki, M., Martiny, L., Dauchez, M., {Deciphering molecular interactions using HPC simulations: getting new therapeutic targets}, {\em 9th Ter@tec Forum}, Palaiseau, France, July 1-2, 2014.
 
-Deleau, H., Jaillet, C., Krajecki, M. and Steffenel, L.A., "Towards the Parallel Resolution of the Langford Problem on a Cluster of GPU Devices", Sixth SIAM Workshop on Combinatorial Scientific Computing (CSC14), Lyon, France, July 21-23, 2014.
+\vspace{1em} \noindent $[2]$
+Deleau, H., Jaillet, C., Krajecki, M. and \textbf{Steffenel, L.A.}, {Towards the Parallel Resolution of the Langford Problem on a Cluster of GPU Devices}, {\em Sixth SIAM Workshop on Combinatorial Scientific Computing (CSC14)}, Lyon, France, July 21-23, 2014.
 
-Barberot, C., Boisson, J-C., Thiriot, E., Gérard, S., Monard, G., Stefenel, L-A., Hénon, E. "Study of PDE4 Inhibitors: Quantum Mechanical Molecular Docking Deployed in a Grid using CONFIIT". 9th Triennial Congress of the World Association of Theoretical and Computational Chemists (WATOC 2011). Santiago de Compostela, Spain, 17-22 July 2011. BEST POSTER AWARD
+\vspace{1em} \noindent $[3]$
+Barberot, C., Boisson, J-C., Thiriot, E., Gérard, S., Monard, G., \textbf{Stefenel, L-A.}, Hénon, E. {Study of PDE4 Inhibitors: Quantum Mechanical Molecular Docking Deployed in a Grid using CONFIIT}. {\em 9th Triennial Congress of the World Association of Theoretical and Computational Chemists (WATOC 2011)}. Santiago de Compostela, Spain, 17-22 July 2011. BEST POSTER AWARD
 
-Nasri, W., Achour, S., Steffenel, L. A. "Integrating performance models and adaptive approaches for efficient parallel algorithms". 5th International Workshop on Parallel Matrix Algorithms and Applications (PMAA'08), Neuchâtel, Switzerland, pp. 18, 20-22 June 2008. 
+\vspace{1em} \noindent $[4]$
+Nasri, W., Achour, S., \textbf{Steffenel, L. A.} {Integrating performance models and adaptive approaches for efficient parallel algorithms}. {\em 5th International Workshop on Parallel Matrix Algorithms and Applications (PMAA'08)}, Neuchâtel, Switzerland, pp. 18, 20-22 June 2008. 
 
 \subsection*{Nationales}
 
-Vasseur, R., Baud, S., Steffenel, L.A., Vigouroux, N., Martiny, L., Krajecki, M., Dauchez, M., "'Developments for a Novel Inverse Docking Method" , Journées de la Société Française de Chémoinformatique, Nancy, France, 10 et 11 octobre 2013.
+ \noindent $[1]$
+Vasseur, R., Baud, S., \textbf{Steffenel, L.A.}, Vigouroux, N., Martiny, L., Krajecki, M., Dauchez, M., {'Developments for a Novel Inverse Docking Method} , {\em Journées de la Société Française de Chémoinformatique}, Nancy, France, 10 et 11 octobre 2013.
 
-Vasseur, R., Baud, S., Steffenel, L.A., Vigouroux, N., Martiny, L., Krajecki, M., Dauchez, M., "Développements HPC pour une nouvelle méthode de docking inverse" , Journée ROMEO, Université de Reims Champagne-Ardenne, Reims, France, 26 juin 2012.
+\vspace{1em} \noindent $[2]$
+Vasseur, R., Baud, S.,\textbf{ Steffenel, L.A.}, Vigouroux, N., Martiny, L., Krajecki, M., Dauchez, M., {Développements HPC pour une nouvelle méthode de docking inverse} , {\em Journée ROMEO}, Université de Reims Champagne-Ardenne, Reims, France, 26 juin 2012.
 
-Barchet-Steffenel, L. A.; Ceretta-Nunes, R. "Implementação de uma Situação de Corrida Crítica em Java" (Implementation of a Critical Run Situation in Java), Proceedings of the II Ciclo de Palestras do Curso de Informática, UFSM, Santa Maria, Brazil, october 1997
-
-\section*{Conférences invitées}
-
-Latin America High Performance Computing Conference (CARLA 2017)
-Keynote "Harvesting the mist: expanding HPC with the help of surrounding resources". 21 september 2017.
-Buenos Aires, Argentina
-
-CLIoT/CloudWay workshops joint panel "Migrating to Cloud and IoT Solutions: Challenges and Perspectives" , 15 septembre 2015
-Moderator: Nabor Mendonça, University of Fortaleza, Brazil
-Panelists:
-Pooyan Jamshidi, Imperial College London, U.K., \& IC4, Ireland
-Maria Fazio, University of Messina, Italy
-Orazio Tormachio, University of Catania, Italy
-Luiz Angelo Steffenel, Université de Reims Champagne-Ardenne, France
-
-
-Réunion RGE - Réseaux Grand Est. Reims, 13 février 2014.
-"PER-MARE: adaptation du paradigme MapReduce aux réseaux pervasifs".
-
-Universidade Federal de Santa Maria (UFSM, Brésil), 30 avril 2013
-"O Ensino Superior em Computação na França" (L'enseignement supérieur en Informatique en France)
-Rentrée solennelle du cours en Informatique à l'UFSM
-
-IUT Villetaneuse (Université Paris 13), mai 2011
-"Structure et gestion du Centre de Calcul ROMEO"
-
-Journée ROMEO, 18 mai 2011.
-"Deploying large scale application with CONFIIT: study on the Quantum Molecular Docking problem".
-
-Universidade Federal de Santa Maria (Brésil), juillet 2010
-"RemoteLabz - Environnement virtuel pour l’apprentissage des technologies réseau"
-
-École Supérieure de Sciences et Techniques de Tunis, mai 2009.
-"CONFIIT : un système pair-à-pair pour le calcul".
-"GPGPU : du calcul haute performance dans votre machine".
-
-Réunion RGE - Réseaux Grand Est. Strasbourg, 1er juin 2006.
-"Modélisation des Communications de type All-to-All sujettes à la congestion du réseau".
-
-Réunion GridExplorer (GdX). Lyon, 21 juin 2005.
-"Modélisation des Communications pour les Grilles de Calcul".
-
-Séminaires Laboratoire ID-IMAG. Grenoble, 14 novembre 2003.
-"Tolérance aux Pannes et le Protocole iRBP".
-
+\vspace{1em} \noindent $[3]$
+\textbf{Barchet-Steffenel, L. A.}; Ceretta-Nunes, R. {Implementação de uma Situação de Corrida Crítica em Java} (Implementation of a Critical Run Situation in Java), {\em Proceedings of the II Ciclo de Palestras do Curso de Informática}, UFSM, Santa Maria, Brazil, october 1997
 
 \section*{Thèses et dissertations}
 
-Barchet-Steffenel, L.A. "LaPIe : Communication Collectives Adaptées aux Grilles de Calcul". PhD Thesis, INPG, Grenoble, France, December 2005. 
+\noindent $[1]$
+\textbf{Barchet-Steffenel, L.A.} {LaPIe : Communication Collectives Adaptées aux Grilles de Calcul}. {\em PhD Thesis}, INPG, Grenoble, France, December 2005. 
 
-Barchet-Steffenel, L.A. "Analyzing RBP, a Total Order Broadcast Protocol for Unreliable Channels". MSc. Dissertation, Doctoral School in Communication Systems, EPFL, Lausanne, Switzerland, July 2002.
+\vspace{1em} \noindent $[2]$
+\textbf{Barchet-Steffenel, L.A.} {Analyzing RBP, a Total Order Broadcast Protocol for Unreliable Channels}. {\em MSc. Dissertation}, Doctoral School in Communication Systems, EPFL, Lausanne, Switzerland, July 2002.
 
-Barchet-Steffenel, L. A. "Avaliação dos Detectores de Defeitos e sua Influência nas Operações de Consenso" (Evaluation of Failure Detectors and their Influence on the Consensus Operations), Master Thesis, PPGC:UFRGS, Porto Alegre, Brazil, March 2001.
+\vspace{1em} \noindent $[3]$
+\textbf{Barchet-Steffenel, L. A.} {Avaliação dos Detectores de Defeitos e sua Influência nas Operações de Consenso} (Evaluation of Failure Detectors and their Influence on the Consensus Operations), {\em Master Thesis}, PPGC:UFRGS, Porto Alegre, Brazil, March 2001.
 
-Barchet-Steffenel, L. A. "CsocketS - Classes para Comunicação de Rede com Autenticação e Criptografia usando Java e CORBA" (CSocketS - Classes for Network Communication with Authentication and Criptography, using Java and CORBA). Bsc. Dissertation, UFSM, Santa Maria, Brazil, March 1999.
+\vspace{1em} \noindent $[4]$
+\textbf{Barchet-Steffenel, L. A.} {CsocketS - Classes para Comunicação de Rede com Autenticação e Criptografia usando Java e CORBA} (CSocketS - Classes for Network Communication with Authentication and Criptography, using Java and CORBA). {\em Bsc. Dissertation}, UFSM, Santa Maria, Brazil, March 1999.
 
-%\noindent $[22]$
-%{\bf O.~Flauzac}
-% {\em Conception d'algorithmes distribu\'es de routage tol\'erants aux
-%  fautes}.
-% PhD thesis, Université de Technologie de Compi\`egne,
-%Janvier 2000.
 
 \section*{Rapports de recherche}
 
-Steffenel, L. A. "D2.1 - First Steps on the Development of a P2P Middleware for Map-Reduce". Deliverable for project STIC-AmSud PER-MARE (13STIC-07), July 2013. 
+ \noindent $[1]$
+\textbf{Steffenel, L. A.} {D2.1 - First Steps on the Development of a P2P Middleware for Map-Reduce}. Deliverable for project STIC-AmSud PER-MARE (13STIC-07), July 2013. 
 
-Steffenel, L. A. "Modeling Network Contention Effects on AlltoAll Operations". Rapport de recherche INRIA RR-6038 (extended version of the Cluster06 paper), November 2006. 
+\vspace{1em} \noindent $[2]$
+\textbf{Steffenel, L. A.} {Modeling Network Contention Effects on AlltoAll Operations}. Rapport de recherche INRIA RR-6038 (extended version of the Cluster06 paper), November 2006. 
 
-Steffenel, L. A. "Fast and Scalable Total Order Broadcast for Wide-area Networks". Rapport de recherche INRIA RR-6037, November 2006. 
+\vspace{1em} \noindent $[3]$
+\textbf{Steffenel, L. A.} {Fast and Scalable Total Order Broadcast for Wide-area Networks}. Rapport de recherche INRIA RR-6037, November 2006. 
 
-Steffenel, L. A. "A Framework for Adaptive Collective Communications on Heterogeneous Hierarchical Networks". Rapport de recherche INRIA RR-6036 (extended version of the IPDPS06 paper), November 2006.
+\vspace{1em} \noindent $[4]$
+\textbf{Steffenel, L. A.} {A Framework for Adaptive Collective Communications on Heterogeneous Hierarchical Networks}. Rapport de recherche INRIA RR-6036 (extended version of the IPDPS06 paper), November 2006.
 
-F. Cappello, P. Owezarski, R. Namyst, O. Richard, P. Vicat-Blanc-Primet, E. Jeannot, L.A. Steffenel, D. Caromel, P. Sens, P. Fraigniaud, C. Cérin, S. Petiton, J. Gustedt, C. Blanchet, C. Randriamaro, S. Tixieuil. "Data Grid Explorer". Rapport LAAS No05491, Projet ACI Masse de Données. Data Grid eXplorer, Septembre 2005, 48p. 
+\vspace{1em} \noindent $[5]$
+F. Cappello, P. Owezarski, R. Namyst, O. Richard, P. Vicat-Blanc-Primet, E. Jeannot, \textbf{L.A. Steffenel,} D. Caromel, P. Sens, P. Fraigniaud, C. Cérin, S. Petiton, J. Gustedt, C. Blanchet, C. Randriamaro, S. Tixieuil. {Data Grid Explorer}. Rapport LAAS No05491, Projet ACI Masse de Données. Data Grid eXplorer, Septembre 2005, 48p. 
 
-Steffenel, L. A. "Detectores de Defeitos não Confiáveis" (Unreliable Failure Detectors). Research Report (Trabalho Individual), PPGC-UFRGS, January 2000. 
+\vspace{1em} \noindent $[6]$
+\textbf{Steffenel, L. A.} {Detectores de Defeitos não Confiáveis} (Unreliable Failure Detectors). Research Report (Trabalho Individual), PPGC-UFRGS, January 2000. 
 
 
+
+
+\section*{Conférences invitées}
+
+\noindent $[1]$ Keynote {Harvesting the mist: expanding HPC with the help of surrounding resources}. \em{Latin America High Performance Computing Conference (CARLA 2017)}, 21 september 2017. Buenos Aires, Argentina
+
+\vspace{1em} \noindent $[2]$ Panel {Migrating to Cloud and IoT Solutions: Challenges and Perspectives}, \em{CLIoT/CloudWay workshops joint panel}, 15 septembre 2015, Catania, Italy
+
+\vspace{1em} \noindent $[3]$ {PER-MARE: adaptation du paradigme MapReduce aux réseaux pervasifs}, \em{Réunion RGE - Réseaux Grand Est}, 13 février 2014, Reims.
+
+\vspace{1em} \noindent $[4]$ {O Ensino Superior em Computação na França" (L'enseignement supérieur en Informatique en France)}, Rentrée solennelle du cours en Informatique à l'UFSM, \em{Universidade Federal de Santa Maria (UFSM, Brésil)}, 30 avril 2013
+
+\vspace{1em} \noindent $[5]$ {Structure et gestion du Centre de Calcul ROMEO}, IUT Villetaneuse (Université Paris 13), mai 2011
+
+\vspace{1em} \noindent $[6]$ {Deploying large scale application with CONFIIT: study on the Quantum Molecular Docking problem}, \em{Journée ROMEO}, 18 mai 2011, Reims
+
+\vspace{1em} \noindent $[7]$ {RemoteLabz - Environnement virtuel pour l’apprentissage des technologies réseau}, Universidade Federal de Santa Maria (Brésil), juillet 2010
+
+\vspace{1em} \noindent $[8]$ {CONFIIT : un système pair-à-pair pour le calcul},  École Supérieure de Sciences et Techniques de Tunis, mai 2009.
+
+\vspace{1em} \noindent $[9]$ {GPGPU : du calcul haute performance dans votre machine},  École Supérieure de Sciences et Techniques de Tunis, mai 2009.
+
+\vspace{1em} \noindent $[10]$ {Modélisation des Communications de type All-to-All sujettes à la congestion du réseau}, \em{Réunion RGE - Réseaux Grand Est}, Strasbourg, 1er juin 2006.
+
+\vspace{1em} \noindent $[11]$ {Modélisation des Communications pour les Grilles de Calcul}, \em{Réunion GridExplorer (GdX)}. Lyon, 21 juin 2005.
 
 
 \bibliographystyle{plain}

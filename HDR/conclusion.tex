@@ -1,13 +1,65 @@
 % !TeX spellcheck = fr_FR
 
+Tout au long de ce document j'ai essayé de mettre en évidence les différentes façons dont l'hétérogénéité peut affecter l'opération d'un système ou application, ainsi que mes contributions pour leur prise en charge.
+
+L'hétérogénéité peut se présenter sous différentes formes, demandant des actions spécifiques selon l'application, l'environnement et le contexte d'utilisation. Une première catégorie représente les \textit{variations matérielles} des composants d'un système informatique. À l'hétérogénéité matérielle s'ajoutent les problèmes de l'\textit{hétérogénéité des communications}, dont la prise en charge se fait notamment par l'optimisation des échanges, et \textit{l'hétérogénéité des tâches}, résultat d'une distribution déséquilibré de charge entre les différents ressources participant à un calcul. 
+
+Il faut également être capable de supporter les variations des ressources tout au long de l'exécution, vu que \textit{l'hétérogénéité issue de la dynamique} d'un système peut prendre différentes formes telles que le départ ou l'arrivé de ressources ou bien par par leur changement d'état ou de capacité. Finalement, \textit{l'hétérogénéité des données} peut aussi impacter le développement d'une application à cause de leur variété et spécificités d'accès selon ses sources : des objets dans la mémoire, des fichiers, des URIs ou des requêtes distantes (RPC, Web services, etc.). 
+
+Les travaux que j'ai conduit au fil des années touchent une ou plusieurs de ces manifestations de l'hétérogénéité, et dans ce document j'essaye de montres des cas représentatifs de ces travaux. 
+Ainsi, au cours de la première partie de ce mémoire, je présente des algorithmes originaux issus des travaux visant la compréhension des facteurs qui impactent les opérations de communication collective dans les \textit{grids}. J'exploite ainsi des méthodes de mesure de performance et de découverte de la topologie réseau dans le but  d'optimiser ces opérations mais aussi de pouvoir estimer leur performance avec une haute précision. 
+
+Dans la deuxième partie j'illustre les efforts pour gérer l'hétérogénéité des tâches lors de la parallélisation et gestion de l'exécution distribuée d'une application en biochimie. À partir d'une exécution monolithique, j'ai participé au développent de stratégies visant à découper  l'espace de données et permettre la création de tâches de calcul pouvant être exécutées en parallèle Ceci a été accompagné par le développement d'une plateforme de déploiement capable de gérer l'exécution des tâches distribuées sur plusieurs n{\oe}uds ou bien de tirer profit des gestionnaires de tâches présents sur la plupart des \textit{clusters} HPC. 
+
+La troisième partie de ce mémoire se consacre à la dynamique des ressources et aux stratégies pour sa prise en charge. Ceci est illustré par une expérience visant à améliorer le comportement de la plateforme \textit{big data} Apache Hadoop dans les environnements hétérogènes et dynamiques (environnements pervasifs). En s'aidant d'un un mécanisme de collecte d'informations sur le contexte des ressources de calcul, il a été possible de modifier cette application et ainsi adapter la gestion des tâches aux ressources disponibles à chaque instant. 
+
+La quatrième partie présente la spécification d'une base documentaire permettant l'accès transparent aux sources de données, peu importe leur nature (fichiers, flux, bases de données, etc.). Pour cela, je présente l'organisation et les protocoles nécessaires à la construction d'un réseau hiérarchique pouvant héberger cette base documentaire.
+
+Finalement, dans la dernière partie de cette habilitation j'introduit la plateforme expérimentale de calcul distribué CloudFIT. Dans un premier moment je présente l'architecture et les mécanismes de communication et de gestion des n{oe}uds, puis des stratégies pour l'ordonnancement adapté au contexte pour les ressources sont introduites. Au fil du temps CloudFIT est devenu une plateforme expérimentale très intéressante pour le prototypage, dont le m'en sert pour le test de techniques pour le \textit{fog computing} et l'Internet des Objets (\textit{Internet of Things} - IoT). Cette partie se termine par la présentation de deux exemples d'utilisation de CloudFIT, tous les deux issus de projets internationaux dont on a participé.
+
+L'ensemble de mes travaux a été à l'origine d'un nombre significatif de publications internationales (11 revues, 37 conférences, 3 posters, 3 chapitres de livre) et nationales (2 revues, 15 conférences, 3 posters). J'ai aussi participé au co-encadrements de deux thèses de doctorat et d'un post-doctorat : lea thèse de Romain Vasseur (thèse CIFRE, dirigée par Manuel Dauchez et aussi co-encadrée par Stéphanie Baud), celle de Thierno Ahmadou Diallo (thèse en co-tutelle avec l'Université Cheikh Anta Diop - Sénégal, dirigée par Olivier Flauzac et Samba Ndiaye), et le stage post-doctoral de Iyad Alshabani (dans le cadre du projet ANR USS-SIMGRID). 
+
+J'ai également été responsable par l'élaboration de trois projets de collaboration internationale entre l'Université de Reims et l'Amérique du Sud : le projet STIC-AmSud PER-MARE (2013-2014, avec l'Universidad de la República - Uruguay et l'Universidade Federal de Santa Maria - Brésil), le projet STIC-AmSud CC-SEM (2017-2018, avec L'Universidad de Buenos Aires - Argentine et l'Universidad de la República - Uruguay), puis le projet CAPES-Cofecub MESO (2017-2020, avec l'Université de la Réunion et  l'Universidade Federal de Santa Maria - Brésil). Dans tous ces projets j'ai exercé le rôle de coordinateur pour l'équipe de Reims et, dans le cas du projet PER-MARE, j'ai été aussi le coordinateur international.
+
+Les perspectives associées à mes travaux sont nombreuses, d'une part à cause des projets en cours et d'autre part par les opportunités d'innovation dans les domaines de mes activités. Néanmoins, je souhaite à l'avenir privilégier trois thèmes.
+
+\subsection*{Expérimentation et développement de \textit{middlewares} pour le \textit{fog \\ computing}}
+
+Le développement de la plateforme CloudFIT offre à la fois un outil pour la recherche et un cadre pour l'expérimentation de nouvelles techniques. Tout naturellement, je souhaite continuer son développement, intégrant des éléments issus de mes recherches autour du \textit{fog computing} mais aussi des projets que je participe. Comme indiqué dans le chapitre dédié à CloudFIT, on a tous les outils pour créer une organisation multi-échelle du réseau, ce que permettrait une meilleure gestion des ressources. La mise en place de mécanismes pour la création à la volée de communautés CloudFIT fait partie de mes priorités immédiates, tout comme le prototypage de la technique de renforcement de la localité des données proposé dans le même chapitre.
+
+Plus à moyen terme, j'envisage rajouter des mécanismes pour la migration des tâches, permettant à la plateforme d'équilibrer la charge des n{\oe}uds ou de répondre aux besoins des applications. Pour cela, il faut doter CloudFIT de mécanismes capables de gérer des machines virtuelles de type conteneur, le moyen le plus simple à mon avis pour effectuer la migration de tâches en exécution. Très probablement, cette activité sera intégrée à la poursuite des recherches sur l'ordonnancement orienté par le contexte, vu que la collaboration avec l'Université Paris 1 vise déjà le déploiement de micro-services encapsulés dans des contaneurs sous contrôle de CloudFIT. 
+
+Également, l'arrivée d'une doctorante en co-tutelle et d'un post-doctorant à l'hiver 2017, dans le cadre du projet CAPES-Cofecub MESO, sera aussi l'occasion de créer une application CloudFIT pour l'exécution distribuée de modèles atmosphériques spécifiques pour la couche d'Ozone.
+
+Mon intérêt pour cette thématique ne se limite pas à CloudFIT. En effet, je surveille de près d'autres plateformes telles que Apache Storm, vu que ces plateformes peuvent dans certains cas répondre plus efficacement à certaines exigences d'un déploiement \textit{fog computing}. L'expérimentation et le développement sur ces plateformes permet donc d'obtenir des éléments de comparaison pour CloudFIT et de mieux avancer dans mes recherches dans ce domaine.
+
+
+
+\subsection*{Applications de l'\textit{Internet of Things} et des réseaux de capteurs}
+
+Au delà du développement de \textit{middlwares} pour le \textit{fog computing}, je souhaite continuer à développer des équipements et outils pour l'IoT, notamment dans le cadre de l'axe "\textit{smart agriculture}" promu par l'Université de Reims Champagne-Ardenne. Ainsi, nous sommes par exemple en négociations avec les chercheurs de l'Unité de Recherche Vignes et Vin de Champagne afin de développer un réseau de capteurs (équipement, réseaux et outils) pouvant être déployé au pied des vignes, permettant ainsi de surveiller des paramètres tels que l'humidité du sol mais aussi la luminosité, la température et l'humidité de l'air autour des plantes. D'autre part, nous souhaitons aussi développer des techniques d'analyse de ces données afin de connaître le stress hydrique des plantes et de le corréler avec l'apparition de certaines maladies. 
+
+Je souhaite aussi compléter le développement et le déploiement des micro-contrôleurs Arduino équipés du capteur UV de la gamme ML8511, afin de les intégrer à un réseau de surveillance de l'Ozone Antarctique piloté par CloudFIT. Inséré dans le cadre du projet CAPES-Cofecub MESO, ce réseau sera utilisé en complément des mesures effectuées par des instruments spécifiques tels que les spectre-photomètres Dobson et Brewer. Après une première phase de calibration et tests de durabilité (ces capteurs seront déployés à l'air libre), nous espérons pouvoir disseminer  ces capteurs sur une large zone géographique et ainsi améliorer de manière peu onéreuse la couverture des équipements actuelles.
+
+\subsection*{Efficacité énergétique dans le cadre des \textit{Smart cities} et de l'informatique mobile}
+
+L'efficacité énergétique est une thématique forte ces dernières années, avec beaucoup de contribution autant du côté des équipements comme celui des réseaux de distribution. En rejoignant le projet STIC-AmSud CC-SEM, j'ai pu constater que le domaine des \textit{smart cities} est à l'intersection de plusieurs disciplines avec qui j'ai souvent pu travailler : les systèmes distribués, l'IoT et les réseaux de capteurs, les algorithmes de récupération et traitement de données, etc. Lors de la 2ème phase du projet CC-SEM ma participation doit s'élargir au traitement \textit{big data} et à l'apprentissage automatique (\textit{deep learning} afin de pouvoir mettre en place des algorithmes et systèmes capables d'agir et de s'adapter aux changements de l'environnement. . Pour cela,  je compte sur l'expérience obtenue pendant mes interventions dans le module "Outils Big Data" (enseigné en Master 2 Informatique et Master 2 Statistique pour l'Évaluation et Prospective, à l'Université de Reims Champagne-Ardenne), pour lequel j'ai mis en place un \textit{cluster} dédié \textit{big data} et équipé d'outils pour le traitement et l'analyse des données (Hadoop, Spark, Storm, Cassandra, MongoDB, Scikit-Learn, TensorFlow, etc.). 
+
+De même, mon intérêt pour le développement de \textit{middlewares} pour le \textit{fog computing} peut contribuer à l'efficacité énergétique des environnements de calcul. Le développement de stratégies d'ordonnancement basés sur le contexte des ressources et des objectifs de consommation peuvent aider à la réduction de l'empreinte énergétique des applications. Ces stratégies peuvent être adaptées également au développement de services et d'applications mobiles, en utilisant par exemple la migration de composants et d’applications à des fins d’économie d’énergie. Le projet ANR autour de la \textit{Green IT} qui sera soumis cette année sera une occasion de mieux explorer cette thématique.
+
+ 
+
 %TODO mettre ça dans les conclusions finales ? 
-Ainsi, au cours des travaux antérieurs à ma thèse je m'étais penché sur la détection des pannes et leur impact sur les algorithmes de Consensus, ce qui m'a permis entre-autre de faire un séjour à l'EPFL à Lausanne pour travailler avec le professeur André Schiper. Bien que mes recherches se sont diversifiées au fil des années, c'est une thématique qui revient ponctuellement dans mes travaux, comme dans le cas de l'étude sur la diffusion avec ordre total (REFF).
 
-Pendant ma thèse les travaux se sont concentrés sur la modélisation des performances des communications à grande échelle, en profitant de l'essor des recherches sur le grid computing et le lancement du réseau Grid'5000. Cette thématique m'a permis de tisser d'importantes collaborations qui ont perduré après la thèse, comme l'attestent les travaux XXXX et YYY.
-
-L'arrivée à Reims marque un tournant dans mes recherches, du fait d'être intégré à une équipe spécialisée dans le calcul distribué et HPC. Tout en poursuivant une partie des travaux sur la modélisation des performances, j'ai été peu à peu  
-
-
-
-Bien sûr, ce travail n'a pas été le seul dans ce domaine. 
-	
+%
+%
+%Ainsi, au cours des travaux antérieurs à ma thèse je m'étais penché sur la détection des pannes et leur impact sur les algorithmes de Consensus, ce qui m'a permis entre-autre de faire un séjour à l'EPFL à Lausanne pour travailler avec le professeur André Schiper. Bien que mes recherches se sont diversifiées au fil des années, c'est une thématique qui revient ponctuellement dans mes travaux, comme dans le cas de l'étude sur la diffusion avec ordre total (REFF).
+%
+%Pendant ma thèse les travaux se sont concentrés sur la modélisation des performances des communications à grande échelle, en profitant de l'essor des recherches sur le grid computing et le lancement du réseau Grid'5000. Cette thématique m'a permis de tisser d'importantes collaborations qui ont perduré après la thèse, comme l'attestent les travaux XXXX et YYY.
+%
+%L'arrivée à Reims marque un tournant dans mes recherches, du fait d'être intégré à une équipe spécialisée dans le calcul distribué et HPC. Tout en poursuivant une partie des travaux sur la modélisation des performances, j'ai été peu à peu  
+%
+%
+%
+%Bien sûr, ce travail n'a pas été le seul dans ce domaine. 
+%	

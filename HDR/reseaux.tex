@@ -506,7 +506,7 @@ la fin des communications \textit{inter-clusters}. Cette stratégie favorise
 la multiplication des sources disponibles et l'application des heuristiques,
 ainsi que la prédiction du temps total d'exécution du \textit{Broadcast}.
 
-\subsubsection{Heuristiques Traditionnelles}
+\subsection*{Heuristiques Traditionnelles}
 
 \subsubsection*{Diffusion en Arbre Plat (Flat)}
 
@@ -661,7 +661,7 @@ récepteurs, si on considère que $P_{j}$ est transféré vers le groupe
 \textbf{A}. 
 
 
-\subsubsection{Heuristiques "grid-aware"}
+\subsection*{Heuristiques "grid-aware"}
 
 Les heuristiques présentées précédemment hiérarchisent les communications en deux niveaux - \emph{inter-clusters}
 et \emph{intra-clusters}, mais les fonctions d'évaluation ne tiennent compte que des coûts de transmission entre les coordinateurs
@@ -926,7 +926,7 @@ heuristique un peu plus élaborée, comme par exemple l'heuristique
 ECEFLA-T, offre le meilleur rapport coût-bénéfice-robustesse.
 
 
-\section{Amélioration de la Performance de MPI\_AlltoAll dans un \textit{Grid}}
+\section{Amélioration de la Performance de MPI\_AlltoAll \\dans un \textit{Grid}}
 
 Si les stratégies présentées dans les sections précédentes permettent l'optimisation des communications dans le cadre d'une diffusion MPI\_Bcast, d'autres patrons de communication encore plus couteux sont utilisés par les applications scientifiques. L'une de ces patrons, le \textit{many-to-many}, représente un \emph{échange total} d'informations entre les n{\oe}uds \cite{Christara99}. Plus exactement, chaque n{\oe}ud détient $n$ items de données différentes de taille $m$, lesquels doivent être distribués entre $n$ n{\oe}uds (le n{\oe}ud inclus).  
 
@@ -1052,6 +1052,6 @@ En ce moment nous poursuivons ces collaborations avec l'étude des performances 
 
 \subsubsection*{Évaluation des Performances de la Virtualisation sur les Dispositifs SoC (\textit{System on a Chip})}
 
-Ce travail est le résultat d'une collaboration plus récente avec David Beserra, doctorant à l'Université Paris 1 sous l'encadrement de Manuele Kirsch-Pinheiro et Carine Souveyet. L'objectif ici est d'étudier les dispositifs SoC comme par exemple les Raspberry Pi, Banana Pi, etc. par rapport à leur capacité d'exécuter des machines virtuelles de type conteneur (par exemple LXC ou Docker). En effet, une application fréquemment citée pour ces dispositifs est celui de n{oe}ud de proximité dans un réseau \textit{fog computing}, et une meilleure compréhension du support à la virtualisation dans ces dispositifs peut aider le déploiement et la migration d'applications et de micro-services.
+Ce travail est le résultat d'une collaboration plus récente avec David Beserra, doctorant à l'Université Paris 1. L'objectif ici est d'étudier les dispositifs SoC comme par exemple les Raspberry Pi, Banana Pi, etc. par rapport à leur capacité d'exécuter des machines virtuelles de type conteneur (par exemple LXC ou Docker). En effet, une application fréquemment citée pour ces dispositifs est celui de n{oe}ud de proximité dans un réseau \textit{fog computing}, et une meilleure compréhension du support à la virtualisation dans ces dispositifs peut aider le déploiement et la migration d'applications et de micro-services.
 
 Des campagnes de mesure et d'analyse des performances ont été conduits lors de la première année de thèse de M Beserra, et ont donné lieu à deux publications dans des conférences internationales \cite{Beserra17a, Beserra17b}. La suite des travaux vise l'étude des plates-formes de micro-services, on espère bientôt pouvoir effectuer des nouvelles campagnes d'expérimentation.
