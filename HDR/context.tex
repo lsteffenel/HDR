@@ -24,13 +24,33 @@ La majorité des travaux présents dans cette partie ont été réalisés en col
 
 La suite logicielle Apache Hadoop\footnote{\url{http://hadoop.apache.org/}} est très populaire dans le domaine du \textit{big data} et du calcul distribué. En effet, c'est l'un des outils pionniers dans le traitement de grandes masses de données grâce au support du paradigme de programmation \textit{MapReduce} \cite{Dean2008}. Bien que Apache Hadoop puisse être déployé sur des \textit{clusters} composés de milliers de machines, ces ressources sont supposées être homogènes, sauf dans le cas d'une configuration spécifique de la part de l'administrateur. En effet, l'exécution des application \textit{MapReduce} dépend d'une bonne corrélation entre l'ordonnancement des tâches et les ressources alloués, or la présence de ressources hétérogènes ou dynamiques n'est pas suffisamment prise en charge par Hadoop. 
 
-C'est pour cette raison que nous avons lancé le projet STIC-AmSud PER-MARE (Adaptive Deployment of MapReduce-based Applications over Pervasive and Desktop Grid Infrastructures \cite{PER-MARE}) dont j'ai été l'idéalisateur et le coordinateur international. Le but de ce projet de collaboration international entre la France, le Brésil et l'Uruguay était de permettre le support aux applications \textit{big data} de type \textit{MapReduce} dans des environnements de type \textit{grid} pervasif, c'est-à-dire, des environnements de calcul faiblement connexes marqués par l'hétérogénéité et par la volatilité des ressources \cite{3PGCIC}. Le projet PER-MARE était organisé autour de deux volets : d'un côté l'adaptation de la plateforme Hadoop aux environnements pervasifs et, de l'autre, le développement d'une solution de calcul distribué totalement répartie capable d'exécuter des applications de type \textit{MapReduce} (la plateforme CloudFIT, traitée au Chapitre \ref{chap:CloudFIT}).
+C'est pour cette raison que nous avons lancé le projet STIC-AmSud PER-MARE (Adaptive Deployment of MapReduce-based Applications over Pervasive and Desktop Grid Infrastructures \cite{PER-MARE}) dont j'ai été l'idéalisateur et le coordinateur international. Le but de ce projet de collaboration international entre la France, le Brésil et l'Uruguay était de permettre le support aux applications \textit{big data} de type \textit{MapReduce} dans des environnements de type \textit{grid} pervasif, c'est-à-dire, des environnements de calcul faiblement connexes marqués par l'hétérogénéité et par la volatilité des ressources \cite{3PGCIC}. Le projet PER-MARE était organisé autour de deux volets : d'un côté l'adaptation de la plateforme Hadoop aux environnements pervasifs et, de l'autre, le développement d'une solution de calcul distribué totalement répartie capable d'exécuter des applications de type \textit{MapReduce}.
  
 Dans la suite de cette section on présentera donc l'architecture du framework Apache Hadoop et ses limitations concernant l'hétérogénéité des ressources. Par la suite on verra les efforts effectués afin d'introduire des éléments liés au contexte dans l'ordonnancement des tâches, améliorant ainsi la performance et l'adaptabilité de la plateforme. 
 
+\section{Le Paradigme MapReduce et le \textit{Framework} Hadoop}
+
+\textit{MapReduce} \cite{Dean2008} est un paradigme de programmation parallèle très utilisé pour le traitement massif de données. La force de ce paradigme est son modèle de calcul très simple et facile à déployer à grande échelle. En effet, le calcul (ou traitement des données) se fait en deux étapes, la phase \textit{map} et la phase \textit{reduce}, tous les deux utilisant des tuples \textit{clé-valeur} $(k,V)$ en tant qu'entrée ou sortie \cite{White2010}. Plus exactement, un algorithme \textit{MapReduce} peut être décrit selon la procédure suivante : 
+\begin{enumerate}
+	\item \textbf{map} : à partir d'une ou plusieurs tuples \textit{clé-valeur} en entrée, la fonction \textit{map} génère un ensemble de tuples intermédiaires $(k_1;V_1)\rightarrow\{(k_2;V_2)\}$ ; 
+	\item \textbf{reduce} : à partir de l'ensemble de tuples intermédiaires, la fonction \textit{reduce} associe les valeurs de toutes les tuples avec la même clé, produisant une nouvelle tuple en sortie $(k_2;\{V_2\})\rightarrow\{(k_3;V_3)\}$. 
+\end{enumerate}
+
+L'étape \textit{map} est donc facilement parallélisable car la génération des clés intermédiaires ne dépend que des tuples en entrée. Lors de son implémentation dans un système distribué, les tuples intermédiaires pour une clé $k_2$ peuvent être éparpillées sur plusieurs noeuds. L'implémentation doit ainsi regrouper toutes les tuples avec la clé $k_2$ de manière à ce que la fonction \textit{reduce} puisse les associer et produire un résultat final. 
+
+L'exemple de la Figure \ref{fig:annuaire} illustre une implémentation \textit{MapReduce} destinée compter le nombre de clients de chaque rue, à partir des entrées dans un annuaire téléphonique. Les données à l'entrée ont la forme $(ligne, adresse)$ et correspondent aux multiples adresses figurant dans l'annuaire. Ces données seront réparties entre les noeuds qui, pendant la phase \textit{map}, associeront une valeur \textit{1} à chaque rue, créant ainsi des tuples intermédiaires $(rue, 1)$. Les multiples tuples intermédiaires seront triées par leurs clés, de manière à ce que les n\textit{\oe}uds exécutant la phase \textit{reduce} puissent faire la somme des valeurs et sortir le nombre de clients par rue.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/exempleAnuaire}
+	\caption{Schéma \textit{MapReduce} pour de compter le nombre de clients dans chaque rue d'une ville}
+	\label{fig:annuaire}
+\end{figure}
+
+Parmi les différentes implémentations de \textit{MapReduce}, la plus populaire est celle du projet Apache Hadoop \cite{Hadoop}. Pour la soumission d'un programme \textit{MapReduce}, le programmeur ne doit fournir que les instructions pour l'exécution des tâches \textit{map} et \textit{reduce} \cite{White2010}. Le framework Hadoop se charge de tout le reste, autant en ce que concerne la répartition des tâches entre les machines que la distribution des données nécessaires à chaque tâche et à chaque phase. 
 
 
-\section{Architecture et Ordonnancement dans Hadoop \label{subsec:ordoHadoop}}
+\subsection{Architecture et Ordonnancement dans Hadoop \label{subsec:ordoHadoop}}
 
 Le framework Apache Hadoop est en réalité un écosystème assez important composé de presque une dizaine d'outils et services, allant de la gestion "bas niveau" des données et tâches de calcul à l'intégration avec des sources extérieures et le requêtage haut-niveau (parfois en imitant le langage SQL). Certains de ces outils ont été rajoutés au fil du temps grâce à des efforts de différents contributeurs (par exemple, le système de base de données HBASE\footnote{\url{https://hbase.apache.org/}} développé initialement par Facebook). D'autres outils faisaient partie du projet dès son départ mais ont gagné un statut de "projet" propre, comme par exemple le service ZooKeeper\footnote{\url{https://zookeeper.apache.org/}}, responsable de la coordination distribuée fiable entre les n{\oe}uds et souvent au c{\oe}ur des efforts de tolérance aux fautes de Hadoop.
 
@@ -64,7 +84,7 @@ Ceci nous a permis aussi d'observer que l'\texttt{Application Master} se limite 
 
 
 
-\section{Dynamicité des Ressources dans Hadoop} \label{sec:related}
+\subsection{Dynamicité des Ressources dans Hadoop} \label{sec:related}
 
 La littérature propose différentes approches pour rendre Hadoop plus compatible avec les environnements hétérogènes. Des travaux comme \cite{Kumar2012}, \cite{Tian2009} ou \cite{Rasooli2012} assument que les applications \textit{MapReduce} sont exécutées régulièrement dans un environnement de "production", et que chacune des applications a des besoins spécifiques en CPU, mémoire, réseaux ou en stockage. Cette hypothèse considère donc la possibilité d'optimiser l'exécution des application en faisant la correspondance entre les besoins et les caractéristiques des ressources. De même, \cite{Isard2009} propose un algorithme d'ordonnancement où une fonction de coût basée sur un graphe "capacité-demande" permet l'ordonnancement des jobs.
 
@@ -76,9 +96,11 @@ Sans aucun paramètre supplémentaire, les mécanismes cités jusqu'à présent 
 
 Il faut observer cependant que la difficulté à adapter l'exécution de \textit{MapReduce} sur des environnements hétérogènes (et dynamiques) est en grand partie due à la conception même de la plateforme Apache Hadoop, qui est très hiérarchique (voir Figure \ref{fig:ArquiteturaHadoop}). Certains travaux essayent de s'affranchir de ces barrières en développant d'autres plates-formes compatibles avec \textit{MapReduce} mais plus adaptées à l'a dynamicité des ressources.  L'utilisation de overlays P2P est ainsi un choix naturel, comme le montrent \cite{Marozzo2012} et \cite{Steffenel20151034}. Dans le système proposé par \cite{Marozzo2012}, les n{\oe}uds incarnent les différentes fonctions de l'architecture Apache Hadoop (NameNode, etc.) selon les besoins de l'application. Cependant, ce travail vise la tolérance aux fautes et n'explore pas les possibilités d'optimisation de l'ordonnancement des jobs et des tâches. 
 
-L'approche adoptée par la plateforme CloudFIT \cite{Steffenel20151034} est différente car même si elle repose aussi sur un overlay P2P, on n'essaye pas d'imiter le fonctionnement de Hadoop. CloudFIT est une plateforme générique de calcul distribué, où des tâches Map et Reduce sont distribuées aux n{\oe}uds de façon opportuniste, selon un mécanisme "bag of tasks". Cette distribution prend également en considération un ordonnancement guidé par le contexte des ressources et par des profils d'exécution fournis par les applications. Nous détaillerons le fonctionnement de CloudFIT dans le chapitre \ref{chap:CloudFIT}.
+%L'approche adoptée par la plateforme CloudFIT \cite{Steffenel20151034} est différente car même si elle repose aussi sur un overlay P2P, on n'essaye pas d'imiter le fonctionnement de Hadoop. CloudFIT est une plateforme générique de calcul distribué, où des tâches Map et Reduce sont distribuées aux n{\oe}uds de façon opportuniste, selon un mécanisme "bag of tasks". Cette distribution prend également en considération un ordonnancement guidé par le contexte des ressources et par des profils d'exécution fournis par les applications. Nous détaillerons le fonctionnement de CloudFIT dans le chapitre \ref{chap:CloudFIT}.
 
-Il faut aussi noter que, à l'exception de CloudFIT, les travaux cités précédemment ne tiennent pas en compte l'évolution des ressources au fil de l'exécution : les ressources sont décrites mais pas observées. Malgré la diversité de travaux sur l'importance de la prise en compte du contexte d'exécution \cite{Baldauf, Maamar, Ramakrishnan2014, Najar2015}, Hadoop reste essentiellement une plateforme statique, particulièrement adaptée aux clusters homogènes. Pour toutes ces raisons, une partie de notre travail au sein du projet STIC-AmSud PER-MARE a été d'intégrer les informations de contexte à l'exécution de Hadoop.
+
+Il faut aussi noter que %, à l'exception de CloudFIT, 
+les travaux cités précédemment ne tiennent pas en compte l'évolution des ressources au fil de l'exécution : les ressources sont décrites mais pas observées. Malgré la diversité de travaux sur l'importance de la prise en compte du contexte d'exécution \cite{Baldauf, Maamar, Ramakrishnan2014, Najar2015}, Hadoop reste essentiellement une plateforme statique, particulièrement adaptée aux clusters homogènes. Pour toutes ces raisons, une partie de notre travail au sein du projet STIC-AmSud PER-MARE a été d'intégrer les informations de contexte à l'exécution de Hadoop.
 
 \section{Ordonnancement Orienté par le Contexte} \label{sec:desenv}
 
@@ -217,7 +239,7 @@ Parmi les perspectives de recherche visant la prise en charge du contexte des re
 
 \subsubsection*{Ordonnancement sensible au contexte pour le \textit{fog computing}}
 
-Cette activité de recherche entre dans le cadre du développement de la plateforme CloudFIT (présentée en Chapitre \ref{chap:CloudFIT}). Dans ce cas précis, nous utilisons les informations sur les capacités des ressources pour orienter l'ordonnancement des tâches. De surcroît, ces informations peuvent être utilisées pour l'établissement d'une une organisation multi-échelle du réseau, ce qui permet une meilleure gestion des ressources dans des environnements hétérogènes tels que le \textit{fog computing}. On étudie également les possibilités pour la gestion du déploiement et la migration de  micro-services, dans le cadre du travail de thèse de David Beserra sous la direction de Manuele Kirsch-Pinheiro. 
+Cette activité de recherche entre dans le cadre du développement de la plateforme CloudFIT, qui sera présentée en Chapitre \ref{chap:CloudFIT}. Dans ce cas précis, nous utilisons les informations sur les capacités des ressources pour orienter l'ordonnancement des tâches. De surcroît, ces informations peuvent être utilisées pour l'établissement d'une une organisation multi-échelle du réseau, ce qui permet une meilleure gestion des ressources dans des environnements hétérogènes tels que le \textit{fog computing}. On étudie également les possibilités pour la gestion du déploiement et la migration de  micro-services, dans le cadre d'une collaboration avec un étudiant de doctorat à l'Université Paris 1. 
 
 
 \subsubsection*{Expérimentation avec des capteurs IoT pour la \textit{smart agriculture} et les sciences de l'atmosphère}
