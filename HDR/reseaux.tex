@@ -6,7 +6,7 @@ Si cette hétérogénéité doit être prise en compte lors du développement de
 
 Dans ce sens, je me suis orienté vers l'étude et la modélisation des primitives de communication collective dans les réseaux hétérogènes de type \textit{grid}. Contrairement aux communications réseaux point à point (\textit{unicast}), les communications collectives visent la diffusion ou  la collecte de messages auprès un ensemble de n{\oe}uds. Parmi les patrons de communication collective nous trouvons celui dit \textit{one-to-many}, qui représente une diffusion (\textit{broadcast/multicast}), mais aussi des patrons plus élaborés tels que \textit{many-to-many} qui représente un échange total entre les n{\oe}uds : chaque n{\oe}ud a un message différent à envoyer à chacun des autres n{\oe}uds du réseau. 
 
-Les travaux présentés ici concernent les développements effectués à la fin de mes travaux de thèse et poursuivis lors de mes activités en tant que ATER à Nancy, entre 2005 et 2007, période dans laquelle j'ai intégré l'Équipe ALGORILLE de l'INRIA Lorraine. Dans le même registre, il faut rajouter des collaborations autour de la modélisation des performances des algorithmes parallèles de multiplication matricielle avec le professeur Wahid Nasri de l'ESSTT (Tunisie) ou des développements sur le \textit{broadcast} pour les \textit{grids} dans le cadre de la thèse de doctorat de Hazem Fkaier (Université Paris 13).
+Les travaux présentés ici concernent les développements effectués à la fin de mes travaux de thèse et poursuivis lors de mes activités en tant qu’ATER à Nancy, entre 2005 et 2007, période dans laquelle j'ai intégré l'Équipe ALGORILLE de l'INRIA Lorraine. Dans le même registre, il faut rajouter des collaborations autour de la modélisation des performances des algorithmes parallèles de multiplication matricielle avec le professeur Wahid Nasri de l'ESSTT (Tunisie) ou des développements sur le \textit{broadcast} pour les \textit{grids} dans le cadre de la thèse de doctorat de Hazem Fkaier (Université Paris 13).
 
 
 %Cette première partie regroupe les travaux que j'ai menés sur la
@@ -96,7 +96,7 @@ délais de transmission (latence), caractéristiques des échanges...
 
 Dans notre cas spécifique, nous voulons explorer le modèle à passage de messages afin d'apporter à la fois une
 représentation fidèle du comportement des communications mais aussi une 
-utilisation simple, capable d'être appliquée aux des environnements hétérogènes. Différents abstractions permettent la modélisation des communications avec plus ou moins de détails, ainsi la prochaine section passera en revue certaines modèles que nous avons étudié.
+utilisation simple, capable d'être appliquée aux environnements hétérogènes. Différentes abstractions permettent la modélisation des communications avec plus ou moins de détails, ainsi la prochaine section passera en revue certaines modèles que nous avons étudié.
 
 
 \subsection{Modélisation des Communications}
@@ -185,7 +185,7 @@ Le modèle pLogP (\emph{parameterised LogP}) est une extension
 du modèle LogP présenté par Kielmann \emph{et al.} \cite{Kielmann01}. Son objectif est de 
 représenter à la fois des petits et des grands messages sous un modèle unifié. En effet, le modèle LogP ne disposait pas d'outils suffisamment précis pour représenter les différences observées lors de la transmission de petits et grands messages. Ces différences sont occasionnées par des politiques de transmission et d'acquittement dépendantes de l'implémentation des protocoles et donc impossibles à représenter avec les modèles précédents, plus théoriques.
 
-Comme ses prédécesseurs, le modèle pLogP est inclut des
+Comme ses prédécesseurs, le modèle pLogP est inclus des
 paramètres qui représentent la latence, les surcouts d'initialisation,
 le \emph{gap} et le nombre de n{\oe}uds. La première différence est
 l'utilisation de valeurs distinctes, $o_{r}$ et $o_{s}$, pour représenter
@@ -206,7 +206,7 @@ retarder la communication entre deux n{\oe}uds, comme, par exemple,
 la copie de données en mémoire tampon vers les interfaces réseaux,
 qui s'ajoutent au temps de transfert des messages déjà considéré par
 LogP. Ainsi, dans le cas d'un réseau local, le paramètre \emph{gap}
-est défini comme l'intervalle minimale entre deux transmissions ou
+est défini comme l'intervalle minimal entre deux transmissions ou
 réceptions consécutives, ce qui implique que $g(m)\geq os(m)$ et
 $g(m)\geq or(m)$ tient toujours. La relation entre ces différents
 paramètres est illustrée dans la Figure \ref{Figure: pLogP}. 
@@ -239,8 +239,7 @@ de la saturation de la fenêtre TCP et de la politique d'acquittement.
 \centering
 \includegraphics[width=0.7\linewidth]{images/p2p/hockney-logp1}
 
-\caption{\label{Figure: logp x hockney}Valeurs de \textit{gap} mesurés entre deux machines
-distantes \cite{Steffenel05c}}
+\caption{\label{Figure: logp x hockney}Valeurs de \textit{gap} mesurés entre deux machines distantes \cite{Steffenel05c}}
 
 \end{figure}
 
@@ -252,7 +251,7 @@ Parmi les opérations de communication collective, les diffusions de type \texti
 appelé \emph{racine,} envoie le même message de taille \emph{m} à
 tous les autres $(P-1)$ n{\oe}uds.  Ceci représente en effet le patron de communication \textit{one-to-all}. 
 
-Dans le cas du calcul distribué, la diffusion d'opérations est souvent nécessaire afin d'apporter des paramètres et des données à tous les n{\oe}uds.  La compréhension de ces mécanismes et la modélisation de ses coûts présente un intérêt stratégique vis-à-vis de la scalabilité et de l'optimisation des algorithmes. Dans ce sens, il est aussi nécessaire prendre en compte les différences architecturales des environnements de communication : les stratégies efficaces pour un environnement homogène diffèrent de celles adaptées aux environnements où les communications sont hétérogènes. Afin de représenter ces deux cas, nous nous sommes intéressés à la modélisation et l'optimisation des communications collectives de type \textit{Broadcast} dans deux types distincts de réseaux : les clusters (grappes de machines) et les \textit{grids} (grilles de calcul). Le premier cas  peut souvent être considéré comme homogène, alors que le deuxième apporte un degré d'hétérogénéité à cause des différences de communication intra et inter-cluster. Afin d'implémenter et valider des stratégies pour ces réseaux, nous avons choisi d'utiliser comme point de départ la bibliothèque MPI (Message Passing Interface), très utilisée par la communauté du calcul parallèle et qui dispose déjà d'une implémentation simple de l'opération \textit{broadcast} appelée MPI\_BCast.   
+Dans le cas du calcul distribué, la diffusion d'opérations est souvent nécessaire afin d'apporter des paramètres et des données à tous les n{\oe}uds.  La compréhension de ces mécanismes et la modélisation de ses coûts présente un intérêt stratégique vis-à-vis de la scalabilité et de l'optimisation des algorithmes. Dans ce sens, il est aussi nécessaire prendre en compte les différences architecturales des environnements de communication : les stratégies efficaces pour un environnement homogène diffèrent de celles adaptées aux environnements où les communications sont hétérogènes. Afin de représenter ces deux cas, nous nous sommes intéressés à la modélisation et l'optimisation des communications collectives de type \textit{Broadcast} dans deux types distincts de réseaux : les clusters (grappes de machines) et les \textit{grids} (grilles de calcul). Le premier cas  peut souvent être considéré comme homogène, alors que le deuxième apporte un degré d'hétérogénéité à cause des différences de communication \textit{intra} et \textit{inter-cluster}. Afin d'implémenter et valider des stratégies pour ces réseaux, nous avons choisi d'utiliser comme point de départ la bibliothèque MPI (Message Passing Interface), très utilisée par la communauté du calcul parallèle et qui dispose déjà d'une implémentation simple de l'opération \textit{broadcast} appelée MPI\_BCast.   
 
 \subsection{\label{sec:Broadcast}Modélisation d'un \textit{Broadcast} dans un réseaux homogène}
 
@@ -343,7 +342,7 @@ dans le Tableau \ref{table:bcast_models_seg}. D'abord, on cherche
 une taille de segment \emph{s} qui minimise le temps de communication
 parmi $s=m/2^{i}\;\mathrm{pour}\; i\in[0\ldots log_{2}m]$. Ensuite,
 on peut affiner la recherche de la taille optimale avec l'aide d'heuristiques
-comme le "local hill-climbing" \cite{Kielmann01}.
+comme le "\textit{local hill-climbing}" \cite{Kielmann01}.
 
 %
 \begin{table}
@@ -451,7 +450,7 @@ encore facilement abordable par les méthodes d'optimisation classiques grâce �
 Cependant, à défaut de leur apport aux algorithmes de \textit{Broadcast}, ces
 techniques peuvent encore être améliorées. En effet, les travaux précédents
 ont été établis dans un contexte où les communications de longue distance
-étaient plusieurs ordres plus lentes que celles à l'intérieur des
+étaient plusieurs ordres plus lents que celles à l'intérieur des
 réseaux locaux, et la réduction des communications \textit{inter-clusters} permettait
 la minimisation de la congestion sur les liens les plus lents. Si
 cela est encore vrai en ce qui concerne la latence entre les n{\oe}uds,
@@ -486,7 +485,7 @@ messages à l'intérieur des  \textit{clusters}.
 Pour décrire les heuristiques présentées dans cette section, nous
 utilisons un formalisme de groupes similaire à celui de Bhat \cite{Bhat03}.
 Dans ce formalisme, les  \textit{clusters} sont séparés en deux groupes, \textbf{A}
-et \textbf{B}. Le groupe \textbf{A} contient les  \textit{clusters} qui ont déjà
+et \textbf{B}. Le groupe \textbf{A} contient les \textit{clusters} qui ont déjà
 reçu le message (la réception du message par le coordinateur du
  \textit{cluster} est suffisante). Le groupe \textbf{B} contient les  \textit{clusters}
 qui devront recevoir le message. De cette manière, le groupe \textbf{A}
@@ -636,7 +635,7 @@ C'est ainsi que Bhat a proposé l'utilisation d'une fonction de \emph{lookahead}
 (recherche en avant) pour évaluer si le choix d'un récepteur est réellement
 bon. De cette manière, l'algorithme calcule préalablement la fonction
 de \emph{lookahead} $F_{j}$ pour tous les n{\oe}uds dans le groupe
-\textbf{B}, et la pair émetteur-récepteur est celle qui minimise
+\textbf{B}, et le pair émetteur-récepteur est celle qui minimise
 la somme :
 
 \[
@@ -668,7 +667,7 @@ et \emph{intra-clusters}, mais les fonctions d'évaluation ne tiennent compte qu
 des différentes  \textit{clusters} du réseau.
 
 Comme nous l'avons déjà exposé, le coût d'une communication
-hiérarchique ne dépend pas seulement des latences entre les différentes
+hiérarchique ne dépend pas seulement des latences entre les différents
  \textit{clusters}, mais aussi du temps nécessaire à la diffusion des messages
 à l'intérieur de ces  \textit{clusters}. Ce coût de diffusion \textit{intra-clusters} devient
 encore plus important avec l'augmentation du nombre de n{\oe}uds à l'intérieur
@@ -945,7 +944,7 @@ Maintenant supposons qu'une application doit échanger des données entre les ma
 
 La communication intensive engendrée par les opérations de type \textit{alltoall} peut facilement saturer le réseau ou les destinataires, dégradant ainsi la performance globale de l'opération. Chun \cite{Chun01} a démontré que le coût des communications collectives est souvent dominé par le coût de la congestion du réseau et des subséquentes pertes de paquets.
 
-Malheureusement, plusieurs modèles de communication tels que \cite{Christara99} ou \cite{Pjesivac-Grbovic05} ne prennent pas en compte les impacts potentiels de la congestion. En effet, ces travaux considèrent que l'opération All-to-All n'est qu'une exécution parallèle de plusieurs opérations de type \emph{personalized one-to-many} \cite{Johnsson89}. Cela s'exprime par le modèle de performances linéaire représenté en Equation \ref{eq:1}, où $\alpha$ correspond à la latence de communication entre les n{\oe}uds, $\frac{1}{\beta}$ correspond au débit du lien, $m$ représente la taille des messages en octets et  $n$ correspond au nombre de n{\oe}uds :
+Malheureusement, plusieurs modèles de communication tels que \cite{Christara99} ou \cite{Pjesivac-Grbovic05} ne prennent pas en compte les impacts potentiels de la congestion. En effet, ces travaux considèrent que l'opération All-to-All n'est qu'une exécution parallèle de plusieurs opérations de type \emph{personalized one-to-many} \cite{Johnsson89}. Cela s'exprime par le modèle de performances linéaire représenté en Équation \ref{eq:1}, où $\alpha$ correspond à la latence de communication entre les n{\oe}uds, $\frac{1}{\beta}$ correspond au débit du lien, $m$ représente la taille des messages en octets et  $n$ correspond au nombre de n{\oe}uds :
 \begin{equation}
 T=(n-1)\times(\alpha+\beta m)\label{eq:1}
 \end{equation}
@@ -1034,7 +1033,7 @@ La Figure \ref{Figure: simul} compare ainsi les prédictions obtenues avec l'Éq
 
 Les travaux présentés dans ce chapitre prouvent l'intérêt de la modélisation des communications dans les réseaux hétérogènes, autant pour la prédiction des temps de communication que pour l'optimisation des algorithmes existants. Ceci est démontré notamment dans le cas de l'algorithme $LG$, qui a vu le jour uniquement parce que l'observation et la modélisation des performances indiquait des situations non-optimales dans les échanges entre deux \textit{clusters}.
 
-Au fil des années mes intérêts se sont diversifiés et la modélisation des performances telles que présentées dans ce chapitre ne sont plus si fréquentes. Dans la plupart des cas mes travaux visent la comparaison des performances entre différentes approches logiciel et environnements d'exécution, ou bien l'amélioration des performances des applications grâce à la parallélisation de certaines routines. Ceci est le cas de deux sujets de recherche et expérimentation que j'ai démarré récemment:
+Au fil des années mes intérêts se sont diversifiés et la modélisation des performances telles que présentées dans ce chapitre ne sont plus si fréquentes. Dans la plupart des cas mes travaux visent la comparaison des performances entre différentes approches logicielle et environnements d'exécution, ou bien l'amélioration des performances des applications grâce à la parallélisation de certaines routines. Ceci est le cas de deux sujets de recherche et expérimentation que j'ai démarré récemment :
 
 \subsubsection*{Utilisation de GPUs pour Augmenter la Performance d'une Application de \textit{Data Mining}}
 
@@ -1044,9 +1043,9 @@ Bien que les termes \textit{data mining} et \textit{machine learning} soient fr�
 
 Weka est un environnement très connu des chercheurs en \textit{data mining}, souvent utilisé pour l'apprentissage des techniques de classification, régression, clusterisation, etc. Weka est aussi une bibliothèque qui peut être intégrée aux application.  
 
-Dans le cadre de ce travail nous avons constaté que la plupart des opérations sur Weka ne sont pas parallélisés (ni sur les multiples c{oe}urs de la CPU, ni sur un accélérateur GPU). En choissant les bonnes routines, nous croyons pouvoir améliorer sensiblement la performance de cette plateforme.
+Dans le cadre de ce travail nous avons constaté que la plupart des opérations sur Weka ne sont pas parallélisés (ni sur les multiples c{oe}urs de la CPU, ni sur un accélérateur GPU). En choisissant les bonnes routines, nous croyons pouvoir améliorer sensiblement la performance de cette plateforme.
 
-Grâce à l'étude des profiles d'exécutions lors de l'exécution d'une application métier (étude d'images de mammographie afin d'identifier des possibles sites tumoraux), nous avons pu déterminer un petit nombre d'opérations qui consommaient la plupart du temps de calcul. Ainsi, nous avons étudié le remplacement de ces opérations par des versions multi-c{oe}ur et GPU, avec comme résultat une réduction de plus de 50\% du temps d'exécution de l'application \cite{Engel14a,Engel2015}.
+Grâce à l'étude des profils d'exécutions lors de l'exécution d'une application métier (étude d'images de mammographie afin d'identifier des possibles sites tumoraux), nous avons pu déterminer un petit nombre d'opérations qui consommaient la plupart du temps de calcul. Ainsi, nous avons étudié le remplacement de ces opérations par des versions multi-c{oe}ur et GPU, ayant par résultat une réduction de plus de 50\% du temps d'exécution de l'application \cite{Engel14a,Engel2015}.
 
 En ce moment nous poursuivons ces collaborations avec l'étude des performances d'accès aux services cloud \cite{Charao17a}  ou en associant des étudiants, comme par exemple les deux articles publiés récemment au Brésil (\cite{Nesi17a, Muenchen17a}) et conduits dans le cadre du projet de collaboration international CAPES-Cofecub MESO.
 
